@@ -1,0 +1,8 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "lithiccoins:item/bottom_die_base",
+  "textures": {
+    "all": "tfc:block/metal/smooth/bismuth_bronze",
+    "particle": "tfc:block/metal/smooth/bismuth_bronze"
+  }
+}

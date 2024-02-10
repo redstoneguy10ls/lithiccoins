@@ -1,0 +1,8 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "lithiccoins:item/top_die_base",
+	"textures": {
+		"all": "tfc:block/metal/smooth/copper",
+		"particle": "tfc:block/metal/smooth/copper"
+	}
+}

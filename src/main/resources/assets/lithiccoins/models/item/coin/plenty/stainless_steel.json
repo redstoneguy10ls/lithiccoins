@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "lithiccoins:item/coin/plenty/stainless_steel"
+  }
+}

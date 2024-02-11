@@ -1,0 +1,15 @@
+{
+    "__comment__": "Recipe written by CaveNJ",
+    "type": "tfc:casting",
+    "mold": {
+        "item": "lithiccoins:ceramic/coin_mold"
+    },
+    "fluid": {
+        "ingredient": "tfc:metal/gold",
+        "amount": 100
+    },
+    "result": {
+        "item": "lithiccoins:blank_coin/gold"
+    },
+    "break_chance": 0.1
+}

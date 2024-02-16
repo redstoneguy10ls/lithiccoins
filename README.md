@@ -8,6 +8,7 @@ features/road map:
   ❌Dies insert into an anvil
   ❌Die processing
   ❌Die recipes
+  ❌Dies have an image tool tip showing what die it is
   ❌Coin minting recipes
   ❌Coin purse
   ❌Flipable

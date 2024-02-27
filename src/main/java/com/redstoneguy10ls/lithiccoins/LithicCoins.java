@@ -4,6 +4,8 @@ import com.mojang.logging.LogUtils;
 import com.redstoneguy10ls.lithiccoins.items.ModItems;
 import com.redstoneguy10ls.lithiccoins.items.ModTabs;
 import com.redstoneguy10ls.lithiccoins.items.coinItem;
+import com.redstoneguy10ls.lithiccoins.recipes.ModRecipeSerializers;
+import com.redstoneguy10ls.lithiccoins.recipes.ModRecipeTypes;
 import net.dries007.tfc.ForgeEventHandler;
 import net.dries007.tfc.client.ClientForgeEventHandler;
 import net.dries007.tfc.compat.patchouli.PatchouliClientEventHandler;
@@ -40,6 +42,8 @@ public class LithicCoins
         ModItems.ITEMS.register(modEventBus);
         ModTabs.CREATIVE_TABS.register(modEventBus);
         ForgeEventHandlers.init();
+        ModRecipeTypes.RECIPE_TYPES.register(modEventBus);
+        ModRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
 
 
         if (FMLEnvironment.dist == Dist.CLIENT)

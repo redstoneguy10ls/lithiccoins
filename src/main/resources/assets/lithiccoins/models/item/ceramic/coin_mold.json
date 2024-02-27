@@ -1,0 +1,9 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "loader": "tfc:contained_fluid",
+  "parent": "forge:item/default",
+  "textures": {
+    "base": "lithiccoins:item/ceramic/blank_coin/fired_mold/coin_mold_empty",
+    "fluid": "lithiccoins:item/ceramic/blank_coin/fired_mold/coin_mold_overlay"
+  }
+}

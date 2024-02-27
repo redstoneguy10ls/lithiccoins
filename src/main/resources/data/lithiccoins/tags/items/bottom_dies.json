@@ -1,0 +1,13 @@
+{
+  "values": [
+        "lithiccoins:bottom_die/bismuth_bronze",
+        "lithiccoins:bottom_die/blank_bronze",
+        "lithiccoins:bottom_die/black_steel",
+        "lithiccoins:bottom_die/blue_steel",
+        "lithiccoins:bottom_die/bronze",
+        "lithiccoins:bottom_die/copper",
+        "lithiccoins:bottom_die/red_steel",
+        "lithiccoins:bottom_die/steel",
+        "lithiccoins:bottom_die/wrought_iron"
+  ]
+}

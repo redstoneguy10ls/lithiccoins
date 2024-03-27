@@ -1,4 +1,9 @@
 {
+  "item.lithiccoins.ceramic.coin_mold" :  "Coin Mold",
+  "item.lithiccoins.ceramic.unfired_coin_mold" :  "Unfired Coin Mold",
+  "item.lithiccoins.ceramic.unfired_fire_coin_mold" :  "Unfired Fire Coin Mold",
+  "item.lithiccoins.ceramic.fire_coin_mold" :  "Fire Coin Mold",
+
   "item.lithiccoins.blank_coin.aluminum" :  "Blank Aluminum Coin",
   "item.lithiccoins.blank_coin.bismuth" : "Blank Bismuth Coin",
   "item.lithiccoins.blank_coin.bismuth_bronze" :  "Blank Bismuth Bronze Coin",

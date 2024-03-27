@@ -1,3 +1,4 @@
+/*
 package com.redstoneguy10ls.lithiccoins.test;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -7,3 +8,4 @@ public interface Accessor {
         return null;
     }
 }
+*/

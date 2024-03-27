@@ -1,0 +1,12 @@
+{
+    "__comment__": "Recipe written by redstoneguy10ls",
+    "type": "tfc:heating",
+    "ingredient": {
+        "item": "lithiccoins:blank_coin/copper"
+    },
+    "result_fluid": {
+        "fluid": "tfc:metal/copper",
+        "amount": 15
+    },
+    "temperature": 1080
+}             

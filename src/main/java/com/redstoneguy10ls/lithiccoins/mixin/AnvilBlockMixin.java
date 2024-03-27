@@ -1,9 +1,11 @@
+/*
 package com.redstoneguy10ls.lithiccoins.mixin;
 
 
 import com.redstoneguy10ls.lithiccoins.blocks.ModBlockStateProperties;
 import com.redstoneguy10ls.lithiccoins.test.SelectionPlace;
 import com.redstoneguy10ls.lithiccoins.test.dieAccessor;
+import com.redstoneguy10ls.lithiccoins.util.ModTags;
 import net.dries007.tfc.client.particle.TFCParticles;
 import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.blockentities.AnvilBlockEntity;
@@ -38,6 +40,7 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.ItemHandlerHelper;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -53,13 +56,14 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import static com.redstoneguy10ls.lithiccoins.test.SelectionPlace.DIE_WEST;
 import static com.redstoneguy10ls.lithiccoins.test.test.*;
+import static net.dries007.tfc.common.blocks.devices.AnvilBlock.FACING;
 
 @Mixin(value = AnvilBlock.class, remap = false)
 public abstract class AnvilBlockMixin extends DeviceBlock implements Tiered{
 
 
-    @Shadow @Final
-    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+    //@Shadow @Final
+    //public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
     //X
 
@@ -132,7 +136,7 @@ public abstract class AnvilBlockMixin extends DeviceBlock implements Tiered{
 
 
 
-        /*
+
     private static InteractionResult insertOrExtract(Level level, AnvilBlockEntity anvil, IItemHandler inventory, Player player, ItemStack stack, int slot)
     {
         if(!stack.isEmpty())
@@ -152,7 +156,7 @@ public abstract class AnvilBlockMixin extends DeviceBlock implements Tiered{
         anvil.markForSync();
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
-    */
+
 
 
 
@@ -171,6 +175,17 @@ public abstract class AnvilBlockMixin extends DeviceBlock implements Tiered{
         if (player.isShiftKeyDown())
         {
             final ItemStack playerStack = player.getItemInHand(hand);
+
+            final SelectionPlace selection = getPlayerSelection(level, pos, player, hit);
+            boolean lookingAtDie = false;
+            switch(selection)
+            {
+                case DIE_WEST -> lookingAtDie = true;
+                case DIE_EAST -> lookingAtDie = true;
+                case DIE_NORTH -> lookingAtDie = true;
+                case DIE_SOUTH -> lookingAtDie = true;
+            }
+
             if (playerStack.isEmpty()) // Extraction requires held item to be empty
             {
                 for (int slot : AnvilBlockEntity.SLOTS_BY_HAND_EXTRACT)
@@ -187,15 +202,6 @@ public abstract class AnvilBlockMixin extends DeviceBlock implements Tiered{
             }
             else if (Helpers.isItem(playerStack, TFCTags.Items.HAMMERS)) // Attempt welding or minting with a hammer in hand
             {
-                final SelectionPlace selection = getPlayerSelection(level, pos, player, hit);
-                boolean lookingAtDie = false;
-                switch(selection)
-                {
-                    case DIE_WEST -> lookingAtDie = true;
-                    case DIE_EAST -> lookingAtDie = true;
-                    case DIE_NORTH -> lookingAtDie = true;
-                    case DIE_SOUTH -> lookingAtDie = true;
-                }
                 if(lookingAtDie)//if looking at a die, then attempt to mint,
                 {
                     attemptMint(level,pos,anvil);
@@ -226,6 +232,15 @@ public abstract class AnvilBlockMixin extends DeviceBlock implements Tiered{
             }
             else
             {
+                if(lookingAtDie)
+                {
+                    final ItemStack heldStack = player.getItemInHand(hand);
+                    if(Helpers.isItem(heldStack, ModTags.Items.BOTTOM_DIE))
+                    {
+                        insertOrExtract(level,anvil,inventory,player,heldStack,4);
+                    }
+
+                }
                 // Try and insert an item
                 final ItemStack insertStack = playerStack.copy();
                 for (int slot : AnvilBlockEntity.SLOTS_BY_HAND_INSERT)
@@ -281,3 +296,4 @@ public abstract class AnvilBlockMixin extends DeviceBlock implements Tiered{
     //Shapes.join(Block.box(11.5, 11, 6, 15.5, 16, 10), Block.box(0, 0, 3, 16, 11, 13), BooleanOp.OR)
 
 }
+*/

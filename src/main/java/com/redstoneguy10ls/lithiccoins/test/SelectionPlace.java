@@ -1,3 +1,4 @@
+/*
 package com.redstoneguy10ls.lithiccoins.test;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -16,3 +17,4 @@ public enum SelectionPlace {
         this.shape = shape;
     }
 }
+*/

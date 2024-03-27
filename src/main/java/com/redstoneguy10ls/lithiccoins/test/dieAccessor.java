@@ -1,3 +1,4 @@
+/*
 package com.redstoneguy10ls.lithiccoins.test;
 
 public interface dieAccessor {
@@ -8,3 +9,4 @@ public interface dieAccessor {
 
     public boolean startMinting();
 }
+*/

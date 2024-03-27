@@ -1,5 +1,7 @@
+
+
 {
-    "__comment__": "Recipe written by CaveNJ",
+    "__comment__": "Recipe written by redstoneguy10ls",
     "type": "tfc:casting",
     "mold": {
         "item": "lithiccoins:ceramic/fire_coin_mold"
@@ -9,7 +11,9 @@
         "amount": 100
     },
     "result": {
-        "item": "lithiccoins:blank_coin/lead"
+        "item": "lithiccoins:blank_coin/lead",
+        "count": 4
     },
     "break_chance": 0.01
-}
+}             
+                 

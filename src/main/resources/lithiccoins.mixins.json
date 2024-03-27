@@ -7,8 +7,7 @@
     "defaultRequire": 1
   },
   "mixins": [
-      "AnvilBlockMixin",
-    "AnvilBlockEntityMixin"
+
 
   ],
   "refmap": "lithiccoins.refmap.json"

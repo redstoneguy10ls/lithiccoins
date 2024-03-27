@@ -37,12 +37,20 @@ public final class ModTabs {
     private static void fillTab(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output out)
     {
         ModItems.BLANK_COINS.values().forEach(reg -> accept(out, reg));
+        /*
         for(stampTypes stamps : stampTypes.VALUES)
         {
                 accept(out,ModItems.STAMPED_COINS.get(coinMaterial.GOLD), stamps);
 
         }
+        */
 
+        accept(out, ModItems.FIRE_COIN_MOLD);
+        accept(out, ModItems.UNFIRED_FIRE_COIN_MOLD);
+        accept(out, ModItems.COIN_MOLD);
+        accept(out, ModItems.UNFIRED_COIN_MOLD);
+
+        /*
         for(stampTypes stamps : stampTypes.VALUES)
         {
             for(stampMaterials mats : stampMaterials.VALUES)
@@ -52,7 +60,7 @@ public final class ModTabs {
             }
         }
         ModItems.BOTTOM_DIE.values().forEach(reg -> accept(out, reg));
-
+        */
 
     }
 

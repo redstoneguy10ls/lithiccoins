@@ -1,3 +1,4 @@
+/*
 package com.redstoneguy10ls.lithiccoins.recipes;
 
 import net.dries007.tfc.common.recipes.SimpleItemRecipe;
@@ -43,3 +44,4 @@ public class MintRecipe extends SimpleItemRecipe {
         return ModRecipeTypes.MINT.get();
     }
 }
+*/

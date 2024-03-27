@@ -1,3 +1,4 @@
+/*
 package com.redstoneguy10ls.lithiccoins.test;
 
 import net.minecraft.world.phys.AABB;
@@ -31,3 +32,4 @@ public class test {
     
     
 }
+*/

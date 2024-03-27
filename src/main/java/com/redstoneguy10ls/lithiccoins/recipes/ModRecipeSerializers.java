@@ -1,3 +1,4 @@
+/*
 package com.redstoneguy10ls.lithiccoins.recipes;
 
 import net.dries007.tfc.common.recipes.QuernRecipe;
@@ -25,3 +26,4 @@ public class ModRecipeSerializers {
     }
 
 }
+*/

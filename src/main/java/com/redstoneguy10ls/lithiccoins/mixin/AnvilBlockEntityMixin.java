@@ -1,3 +1,4 @@
+/*
 package com.redstoneguy10ls.lithiccoins.mixin;
 
 import com.redstoneguy10ls.lithiccoins.recipes.MintRecipe;
@@ -65,5 +66,5 @@ public class AnvilBlockEntityMixin extends InventoryBlockEntity<AnvilBlockEntity
         return SLOT_BOTTOM_DIE;
     }
 }
-
+*/
 

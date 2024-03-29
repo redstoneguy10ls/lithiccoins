@@ -1,15 +1,18 @@
 package com.redstoneguy10ls.lithiccoins.items;
 
 import com.redstoneguy10ls.lithiccoins.Capability.LocationCapability;
+import com.redstoneguy10ls.lithiccoins.config.LithicConfig;
 import com.redstoneguy10ls.lithiccoins.util.ModTags;
+import net.dries007.tfc.common.capabilities.VesselLike;
 import net.dries007.tfc.util.Helpers;
-import net.dries007.tfc.util.calendar.Calendars;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
@@ -26,20 +29,24 @@ import net.minecraft.world.inventory.tooltip.BundleTooltip;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.items.IItemHandler;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public class coinPurseItem extends BundleItem {
+import static org.openjdk.nashorn.internal.objects.NativeMath.floor;
+
+public class coinPurseItem extends Item {
 
     private static final String TAG_ITEMS = "Items";
-    public static final int MAX_WEIGHT = 64*4;
+    public static final int MAX_WEIGHT = 64 * Helpers.getValueOrDefault(LithicConfig.SERVER.numberOfStacksInCoinPurse);
     private static final int BAR_COLOR = Mth.color(0.4F, 0.4F, 1.0F);
 
     public coinPurseItem(Properties pProperties) {
         super(pProperties);
     }
+
 
     public static float getFullnessDisplay(ItemStack pStack) {
         return (float)getContentWeight(pStack) / MAX_WEIGHT;
@@ -61,8 +68,9 @@ public class coinPurseItem extends BundleItem {
                 itemstack.getCapability(LocationCapability.CAPABILITY).ifPresent(test ->
                         {
                             if(test.getLocationSet() && (Helpers.isItem(itemstack, ModTags.Items.FIT_IN_PURSE))) {
-                                int i = (64 - getContentWeight(pStack)) / getWeight(itemstack);
+                                int i = (MAX_WEIGHT - getContentWeight(pStack)) / getWeight(itemstack);
                                 int j = add(pStack, pSlot.safeTake(itemstack.getCount(), i, pPlayer));
+                                System.out.println("j = " +j);
                                 if (j > 0) {
                                     this.playInsertSound(pPlayer);
                                 }
@@ -112,7 +120,7 @@ public class coinPurseItem extends BundleItem {
     }
 
     public int getBarWidth(ItemStack pStack) {
-        return Math.min(1 + 12 * getContentWeight(pStack) / 64, 13);
+        return Math.min(1 + 12 * getContentWeight(pStack) / MAX_WEIGHT, 13);
     }
 
     public int getBarColor(ItemStack pStack) {
@@ -124,31 +132,54 @@ public class coinPurseItem extends BundleItem {
     //and reporting it back
     private static int add(ItemStack CoinStack, ItemStack pInsertedStack) {
         if (!pInsertedStack.isEmpty() && pInsertedStack.getItem().canFitInsideContainerItems() && (Helpers.isItem(pInsertedStack, ModTags.Items.FIT_IN_PURSE))) {
-            CompoundTag compoundtag = CoinStack.getOrCreateTag();
-            if (!compoundtag.contains("Items")) {
-                compoundtag.put("Items", new ListTag());
+            CompoundTag nbt = CoinStack.getOrCreateTag();
+            if (!nbt.contains("Items")) {
+                nbt.put("Items", new ListTag());
             }
 
             int coinsInPurse = getContentWeight(CoinStack);
+            System.out.println("coinsInPurse = " + coinsInPurse);
             int j = getWeight(pInsertedStack);//weight of stack being added
+            System.out.println("weight of stack being added = " + j);
+
             int k = Math.min(pInsertedStack.getCount(), (MAX_WEIGHT - coinsInPurse) / j);
+            System.out.println("k = " + k);
             if (k == 0) {
                 return 0;
             } else {
-                ListTag listtag = compoundtag.getList("Items", 10);
+                ListTag listtag = nbt.getList("Items", 10);
+
+                System.out.println(getMatchingItem(pInsertedStack, listtag));
+
                 Optional<CompoundTag> optional = getMatchingItem(pInsertedStack, listtag);
+
                 if (optional.isPresent()) {
-                    CompoundTag compoundtag1 = optional.get();
-                    ItemStack itemstack = ItemStack.of(compoundtag1);
+                    System.out.println("optional.isPresent() is true");
+                    CompoundTag nbt1 = optional.get();
+                    ItemStack itemstack = ItemStack.of(nbt1);
+                    System.out.println("number of items same items "+itemstack.getCount());
                     itemstack.grow(k);
-                    itemstack.save(compoundtag1);
-                    listtag.remove(compoundtag1);
-                    listtag.add(0, (Tag)compoundtag1);
+
+                    ResourceLocation resourcelocation = BuiltInRegistries.ITEM.getKey(itemstack.getItem());
+
+
+
+                    nbt1.putString("id", resourcelocation == null ? "minecraft:air" : resourcelocation.toString());
+                    nbt1.putInt("Count", itemstack.getCount());
+
+                    //itemstack.save(nbt1);
+                    listtag.remove(nbt1);
+                    listtag.add(0, (Tag)nbt1);
                 } else {
                     ItemStack itemstack1 = pInsertedStack.copyWithCount(k);
-                    CompoundTag compoundtag2 = new CompoundTag();
-                    itemstack1.save(compoundtag2);
-                    listtag.add(0, (Tag)compoundtag2);
+                    CompoundTag nbt2 = new CompoundTag();
+
+                    ResourceLocation resourcelocation = BuiltInRegistries.ITEM.getKey(itemstack1.getItem());
+                    nbt2.putString("id", resourcelocation == null ? "minecraft:air" : resourcelocation.toString());
+                    nbt2.putInt("Count", itemstack1.getCount());
+
+                    //itemstack1.save(nbt2);
+                    listtag.add(0, (Tag)nbt2);
                 }
 
                 return k;
@@ -157,6 +188,10 @@ public class coinPurseItem extends BundleItem {
             return 0;
         }
     }
+
+
+
+
     private static Optional<CompoundTag> getMatchingItem(ItemStack pStack, ListTag pList) {
         return pStack.is(ModItems.COIN_PURSE.get()) ? Optional.empty() : pList.stream().filter(CompoundTag.class::isInstance).map(CompoundTag.class::cast).filter((p_186350_) -> {
             return ItemStack.isSameItemSameTags(ItemStack.of(p_186350_), pStack);
@@ -178,27 +213,27 @@ public class coinPurseItem extends BundleItem {
     }
 
     private static Stream<ItemStack> getContents(ItemStack pStack) {
-        CompoundTag compoundtag = pStack.getTag();
-        if (compoundtag == null) {
+        CompoundTag nbt = pStack.getTag();
+        if (nbt == null) {
             return Stream.empty();
         } else {
-            ListTag listtag = compoundtag.getList("Items", 10);
+            ListTag listtag = nbt.getList("Items", 10);
             return listtag.stream().map(CompoundTag.class::cast).map(ItemStack::of);
         }
     }
 
     private static Optional<ItemStack> removeOne(ItemStack pStack) {
-        CompoundTag compoundtag = pStack.getOrCreateTag();
-        if (!compoundtag.contains("Items")) {
+        CompoundTag nbt = pStack.getOrCreateTag();
+        if (!nbt.contains("Items")) {
             return Optional.empty();
         } else {
-            ListTag listtag = compoundtag.getList("Items", 10);
+            ListTag listtag = nbt.getList("Items", 10);
             if (listtag.isEmpty()) {
                 return Optional.empty();
             } else {
                 int i = 0;
-                CompoundTag compoundtag1 = listtag.getCompound(0);
-                ItemStack itemstack = ItemStack.of(compoundtag1);
+                CompoundTag nbt1 = listtag.getCompound(0);
+                ItemStack itemstack = ItemStack.of(nbt1);
                 listtag.remove(0);
                 if (listtag.isEmpty()) {
                     pStack.removeTagKey("Items");
@@ -210,16 +245,16 @@ public class coinPurseItem extends BundleItem {
     }
 
     private static boolean dropContents(ItemStack pStack, Player pPlayer) {
-        CompoundTag compoundtag = pStack.getOrCreateTag();
-        if (!compoundtag.contains("Items")) {
+        CompoundTag nbt = pStack.getOrCreateTag();
+        if (!nbt.contains("Items")) {
             return false;
         } else {
             if (pPlayer instanceof ServerPlayer) {
-                ListTag listtag = compoundtag.getList("Items", 10);
+                ListTag listtag = nbt.getList("Items", 10);
 
                 for(int i = 0; i < listtag.size(); ++i) {
-                    CompoundTag compoundtag1 = listtag.getCompound(i);
-                    ItemStack itemstack = ItemStack.of(compoundtag1);
+                    CompoundTag nbt1 = listtag.getCompound(i);
+                    ItemStack itemstack = ItemStack.of(nbt1);
                     pPlayer.drop(itemstack, true);
                 }
             }
@@ -228,13 +263,23 @@ public class coinPurseItem extends BundleItem {
             return true;
         }
     }
-
+/*
     public Optional<TooltipComponent> getTooltipImage(ItemStack pStack) {
         NonNullList<ItemStack> nonnulllist = NonNullList.create();
         getContents(pStack).forEach(nonnulllist::add);
-        return Optional.of(new BundleTooltip(nonnulllist, getContentWeight(pStack)));
+
+        final VesselLike coin = VesselLike.get(pStack);
+
+        int x = (int)Math.ceil(0.5*Helpers.getValueOrDefault(LithicConfig.SERVER.numberOfStacksInCoinPurse));
+
+        return Helpers.getTooltipImage(coin,x,x,0,Integer.MAX_VALUE);
+        //return Optional.of(new BundleTooltip(nonnulllist, getContentWeight(pStack)));
+
+
     }
 
+
+ */
     /**
      * Allows items to add custom lines of information to the mouseover description.
      */

@@ -191,13 +191,15 @@ def melt():
     },
     "result_fluid": {
         "fluid": \""""+metalfluid[x]+"""\",
-        "amount": 15
+        "amount": 20
     },
     "temperature": """+str(temps[x])+"""
 }             """)
         f.close
 
-find_heat_capacity()
+melt()
+
+# find_heat_capacity()
 
 def heat_capacity():
 
@@ -215,4 +217,4 @@ def heat_capacity():
 }             """)
         f.close
 
-heat_capacity()
+# heat_capacity()

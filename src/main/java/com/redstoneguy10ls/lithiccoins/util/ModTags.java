@@ -15,6 +15,8 @@ public class ModTags {
 
     public static class Items {
         public static final TagKey<Item> STAMPED_COINS = tag("stamped_coins");
+
+        public static final TagKey<Item> FIT_IN_PURSE = tag("fit_in_purse");
         public static final TagKey<Item> BOTTOM_DIE = tag("bottom_dies");
 
         private static TagKey<Item> tag(String name){

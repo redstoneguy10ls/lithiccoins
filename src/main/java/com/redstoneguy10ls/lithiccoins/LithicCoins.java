@@ -1,11 +1,13 @@
 package com.redstoneguy10ls.lithiccoins;
 
 import com.mojang.logging.LogUtils;
+import com.redstoneguy10ls.lithiccoins.config.LithicConfig;
 import com.redstoneguy10ls.lithiccoins.items.ModItems;
 import com.redstoneguy10ls.lithiccoins.items.ModTabs;
 import com.redstoneguy10ls.lithiccoins.items.coinItem;
 //import com.redstoneguy10ls.lithiccoins.recipes.ModRecipeSerializers;
 //import com.redstoneguy10ls.lithiccoins.recipes.ModRecipeTypes;
+import com.redstoneguy10ls.lithiccoins.misc.ModSounds;
 import net.dries007.tfc.ForgeEventHandler;
 import net.dries007.tfc.client.ClientForgeEventHandler;
 import net.dries007.tfc.compat.patchouli.PatchouliClientEventHandler;
@@ -33,6 +35,7 @@ public class LithicCoins
     private static final Logger LOGGER = LogUtils.getLogger();
     public LithicCoins()
     {
+        LithicConfig.init();
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
@@ -44,6 +47,8 @@ public class LithicCoins
         ForgeEventHandlers.init();
         //ModRecipeTypes.RECIPE_TYPES.register(modEventBus);
         //ModRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
+        ModSounds.SOUNDS.register(modEventBus);
+
 
 
         if (FMLEnvironment.dist == Dist.CLIENT)

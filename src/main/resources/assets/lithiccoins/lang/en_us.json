@@ -576,8 +576,9 @@
   "item.lithiccoins.coin.trifoil.uranium" : "Uranium Trifoil Coin",
   "item.lithiccoins.coin.trifoil.wrought_iron" : "Wrought Iron Trifoil Coin",
   "item.lithiccoins.coin.trifoil.zinc" : "Zinc Trifoil Coin",
+  "item.lithiccoins.coin_purse" : "Coin Purse",
 
-  "lithiccoins.creative_tab.coins" : "Coin Tab",
+  "lithiccoins.creative_tab.coins" : "Lithic Coins",
 
   "tooltip.lithiccoins.coins.tooltip_blank" : "This %s was made at %s",
   "tooltip.lithiccoins.coins.tooltip_blank2" : "This %s has not been made yet",

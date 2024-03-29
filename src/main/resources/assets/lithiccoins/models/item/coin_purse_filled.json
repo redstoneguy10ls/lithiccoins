@@ -1,0 +1,6 @@
+{
+    "parent": "lithiccoins:item/coin_purse",
+    "textures": {
+        "layer0": "lithiccoins:item/coin_purse_filled"
+    }
+}

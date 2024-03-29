@@ -39,6 +39,8 @@ public class ModItems {
             register("bottom_die/" + metal.name())
     );
 
+    public static final RegistryObject<Item> COIN_PURSE = register("coin_purse", () -> new coinPurseItem(new Item.Properties().stacksTo(1)));
+
     public static final RegistryObject<Item> UNFIRED_COIN_MOLD = register("ceramic/unfired_coin_mold");
     public static final RegistryObject<Item> COIN_MOLD = register("ceramic/coin_mold",
             () -> new MoldItem(TFCConfig.SERVER.moldFireIngotCapacity, ModTags.Fluids.USABLE_IN_COIN_MOLD, new Item.Properties()));

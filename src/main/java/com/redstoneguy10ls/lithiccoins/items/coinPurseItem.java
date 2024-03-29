@@ -70,7 +70,6 @@ public class coinPurseItem extends Item {
                             if(test.getLocationSet() && (Helpers.isItem(itemstack, ModTags.Items.FIT_IN_PURSE))) {
                                 int i = (MAX_WEIGHT - getContentWeight(pStack)) / getWeight(itemstack);
                                 int j = add(pStack, pSlot.safeTake(itemstack.getCount(), i, pPlayer));
-                                System.out.println("j = " +j);
                                 if (j > 0) {
                                     this.playInsertSound(pPlayer);
                                 }
@@ -81,6 +80,7 @@ public class coinPurseItem extends Item {
         }
     }
 
+    //for clicking on the purse with items
     public boolean overrideOtherStackedOnMe(ItemStack pStack, ItemStack pOther, Slot pSlot, ClickAction pAction, Player pPlayer, SlotAccess pAccess) {
         if (pStack.getCount() != 1) return false;
         if (pAction == ClickAction.SECONDARY && pSlot.allowModification(pPlayer)) {
@@ -138,47 +138,65 @@ public class coinPurseItem extends Item {
             }
 
             int coinsInPurse = getContentWeight(CoinStack);
-            System.out.println("coinsInPurse = " + coinsInPurse);
             int j = getWeight(pInsertedStack);//weight of stack being added
-            System.out.println("weight of stack being added = " + j);
 
             int k = Math.min(pInsertedStack.getCount(), (MAX_WEIGHT - coinsInPurse) / j);
-            System.out.println("k = " + k);
             if (k == 0) {
                 return 0;
             } else {
                 ListTag listtag = nbt.getList("Items", 10);
 
-                System.out.println(getMatchingItem(pInsertedStack, listtag));
 
                 Optional<CompoundTag> optional = getMatchingItem(pInsertedStack, listtag);
 
                 if (optional.isPresent()) {
-                    System.out.println("optional.isPresent() is true");
                     CompoundTag nbt1 = optional.get();
                     ItemStack itemstack = ItemStack.of(nbt1);
-                    System.out.println("number of items same items "+itemstack.getCount());
-                    itemstack.grow(k);
-
+                    if(itemstack.getCount() >= 64)
+                    {
+                        ItemStack itemstack1 = pInsertedStack.copyWithCount(k);
+                        CompoundTag nbt2 = new CompoundTag();
+                        itemstack1.save(nbt2);
+                        listtag.add(0, (Tag)nbt2);
+                    }else {
+                        itemstack.grow(k);
+                        /*
                     ResourceLocation resourcelocation = BuiltInRegistries.ITEM.getKey(itemstack.getItem());
-
-
-
                     nbt1.putString("id", resourcelocation == null ? "minecraft:air" : resourcelocation.toString());
                     nbt1.putInt("Count", itemstack.getCount());
 
-                    //itemstack.save(nbt1);
-                    listtag.remove(nbt1);
-                    listtag.add(0, (Tag)nbt1);
+                    if (itemstack.getTag() != null) {
+                        nbt1.put("tag", itemstack.getTag().copy());
+                    }
+
+                    CompoundTag cnbt = itemstack.serializeNBT();
+                    if (cnbt != null && !cnbt.isEmpty()) {
+                        nbt1.put("ForgeCaps", cnbt);
+                    }
+
+                 */
+                        itemstack.save(nbt1);
+                        listtag.remove(nbt1);
+                        listtag.add(0, (Tag)nbt1);
+                    }
                 } else {
                     ItemStack itemstack1 = pInsertedStack.copyWithCount(k);
                     CompoundTag nbt2 = new CompoundTag();
-
+                    /*
                     ResourceLocation resourcelocation = BuiltInRegistries.ITEM.getKey(itemstack1.getItem());
                     nbt2.putString("id", resourcelocation == null ? "minecraft:air" : resourcelocation.toString());
                     nbt2.putInt("Count", itemstack1.getCount());
+                    if (itemstack1.getTag() != null) {
+                        nbt2.put("tag", itemstack1.getTag().copy());
+                    }
 
-                    //itemstack1.save(nbt2);
+                    CompoundTag cnbt = itemstack1.serializeNBT();
+                    if (cnbt != null && !cnbt.isEmpty()) {
+                        nbt2.put("ForgeCaps", cnbt);
+                    }
+
+                    */
+                    itemstack1.save(nbt2);
                     listtag.add(0, (Tag)nbt2);
                 }
 
@@ -226,15 +244,25 @@ public class coinPurseItem extends Item {
         CompoundTag nbt = pStack.getOrCreateTag();
         if (!nbt.contains("Items")) {
             return Optional.empty();
-        } else {
+        }
+        else {
             ListTag listtag = nbt.getList("Items", 10);
             if (listtag.isEmpty()) {
                 return Optional.empty();
-            } else {
+            }
+            else {
                 int i = 0;
-                CompoundTag nbt1 = listtag.getCompound(0);
-                ItemStack itemstack = ItemStack.of(nbt1);
-                listtag.remove(0);
+                CompoundTag nbt1 = listtag.getCompound(0);//the last item added to the purse
+                ItemStack itemstack = ItemStack.of(nbt1);//converting to item stack
+                if(itemstack.getCount() >64)
+                {
+                    itemstack.shrink(64);
+                    nbt1.putInt("Count", 64);
+                    listtag.setTag(0,nbt1);
+                }
+                else{
+                    listtag.remove(0);
+                }
                 if (listtag.isEmpty()) {
                     pStack.removeTagKey("Items");
                 }
@@ -263,23 +291,23 @@ public class coinPurseItem extends Item {
             return true;
         }
     }
-/*
+
     public Optional<TooltipComponent> getTooltipImage(ItemStack pStack) {
         NonNullList<ItemStack> nonnulllist = NonNullList.create();
         getContents(pStack).forEach(nonnulllist::add);
 
-        final VesselLike coin = VesselLike.get(pStack);
+        //final VesselLike coin = VesselLike.get(pStack);
 
-        int x = (int)Math.ceil(0.5*Helpers.getValueOrDefault(LithicConfig.SERVER.numberOfStacksInCoinPurse));
+        //int x = (int)Math.ceil(0.5*Helpers.getValueOrDefault(LithicConfig.SERVER.numberOfStacksInCoinPurse));
 
-        return Helpers.getTooltipImage(coin,x,x,0,Integer.MAX_VALUE);
-        //return Optional.of(new BundleTooltip(nonnulllist, getContentWeight(pStack)));
+        //return Helpers.getTooltipImage(coin,x,x,0,Integer.MAX_VALUE);
+        return Optional.of(new BundleTooltip(nonnulllist, getContentWeight(pStack)));
 
 
     }
 
 
- */
+
     /**
      * Allows items to add custom lines of information to the mouseover description.
      */

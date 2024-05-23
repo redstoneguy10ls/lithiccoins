@@ -1,8 +1,8 @@
 
 package com.redstoneguy10ls.lithiccoins;
 
-import com.redstoneguy10ls.lithiccoins.Capability.LocationCapability;
-import com.redstoneguy10ls.lithiccoins.items.ModItems;
+import com.redstoneguy10ls.lithiccoins.common.Capability.LocationCapability;
+import com.redstoneguy10ls.lithiccoins.common.items.ModItems;
 import net.dries007.tfc.client.model.ContainedFluidModel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;

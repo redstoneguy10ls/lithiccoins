@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "LSL",
+    " L "
+  ],
+  "key": {
+    "C": {
+      "item": "tfc:metal/rod/copper"
+    },
+    "L": {
+      "tag": "forge:leather"
+    },
+    "S": {
+      "tag": "forge:string"
+    }
+
+  },
+  "result": {
+    "item": "lithiccoins:coin_purse"
+  }
+}

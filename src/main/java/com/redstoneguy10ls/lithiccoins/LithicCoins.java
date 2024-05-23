@@ -1,16 +1,13 @@
 package com.redstoneguy10ls.lithiccoins;
 
 import com.mojang.logging.LogUtils;
+import com.redstoneguy10ls.lithiccoins.common.blocks.ModBlocks;
 import com.redstoneguy10ls.lithiccoins.config.LithicConfig;
-import com.redstoneguy10ls.lithiccoins.items.ModItems;
-import com.redstoneguy10ls.lithiccoins.items.ModTabs;
-import com.redstoneguy10ls.lithiccoins.items.coinItem;
+import com.redstoneguy10ls.lithiccoins.common.items.ModItems;
+import com.redstoneguy10ls.lithiccoins.common.items.ModTabs;
 //import com.redstoneguy10ls.lithiccoins.recipes.ModRecipeSerializers;
 //import com.redstoneguy10ls.lithiccoins.recipes.ModRecipeTypes;
-import com.redstoneguy10ls.lithiccoins.misc.ModSounds;
-import net.dries007.tfc.ForgeEventHandler;
-import net.dries007.tfc.client.ClientForgeEventHandler;
-import net.dries007.tfc.compat.patchouli.PatchouliClientEventHandler;
+import com.redstoneguy10ls.lithiccoins.common.misc.ModSounds;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -44,6 +41,8 @@ public class LithicCoins
         modEventBus.addListener(this::addCreative);
         ModItems.ITEMS.register(modEventBus);
         ModTabs.CREATIVE_TABS.register(modEventBus);
+        ModBlocks.BLOCKS.register(modEventBus);
+
         ForgeEventHandlers.init();
         //ModRecipeTypes.RECIPE_TYPES.register(modEventBus);
         //ModRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);

@@ -1,9 +1,9 @@
 package com.redstoneguy10ls.lithiccoins.datagen;
 
 import com.redstoneguy10ls.lithiccoins.LithicCoins;
-import com.redstoneguy10ls.lithiccoins.items.ModItems;
-import com.redstoneguy10ls.lithiccoins.items.coinMaterial;
-import com.redstoneguy10ls.lithiccoins.items.stampTypes;
+import com.redstoneguy10ls.lithiccoins.common.items.ModItems;
+import com.redstoneguy10ls.lithiccoins.common.items.coinMaterial;
+import com.redstoneguy10ls.lithiccoins.common.items.stampTypes;
 import com.redstoneguy10ls.lithiccoins.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;

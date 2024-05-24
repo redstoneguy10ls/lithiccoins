@@ -1,14 +1,24 @@
 package com.redstoneguy10ls.lithiccoins.common.items;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemUtils;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.ChunkPos;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+
+import java.util.Objects;
 
 public class coinItem extends Item {
     public coinItem(Properties pProperties) {
@@ -16,72 +26,28 @@ public class coinItem extends Item {
     }
 
 
-
-
-    /*
     @Override
-    public InteractionResult useOn(UseOnContext pContext)
-    {
-        if(!pContext.getLevel().isClientSide())
+    public InteractionResult onItemUseFirst(ItemStack stack, UseOnContext context) {
+
+        Player player = Objects.requireNonNull(context.getPlayer());
+        int rand = player.getRandom().nextIntBetweenInclusive(1, 100);
+        if(rand <= 50)
         {
-            BlockPos blockPos = pContext.getClickedPos();
-            ChunkPos chunkPos = new ChunkPos(blockPos);
-
-            ItemStack stack = new ItemStack(this);
-
-            stack.getCapability(LocationCapability.CAPABILITY).ifPresent(test ->
-            {
-                test.setCreationLocation(chunkPos);
-            });
-            /*
-            BlockPos positionClicked = pContext.getClickedPos();
-            Player player = pContext.getPlayer();
-            boolean foundBlock = false;
-
-            for(int i = 0; i <= positionClicked.getY() + 64; i++)
-            {
-                BlockState state = pContext.getLevel().getBlockState(positionClicked.below(i));
-
-                if(isValuableBlock(state)){
-                    outputValuableChunk(positionClicked.below(i),player,state.getBlock());
-                    //outputValuableCoordinantes(positionClicked.below(i),player,state.getBlock());
-                    foundBlock = true;
-                    break;
-                }
-            }
-            *//*
+            player.displayClientMessage(Component.translatable("lithiccoins.tooltip.lithiccoins.coins.tails").withStyle(ChatFormatting.BOLD), true);
         }
+        else
+        {
+            player.displayClientMessage(Component.translatable("lithiccoins.tooltip.lithiccoins.coins.heads").withStyle(ChatFormatting.BOLD), true);
+
+        }
+
+
+        player.getCooldowns().addCooldown(this, 10);
+
         return InteractionResult.SUCCESS;
     }
-    */
 
-    private void outputValuableChunk(BlockPos blockPos, Player player, Block block) {
-        ChunkPos chunkpos = new ChunkPos(blockPos);
 
-        //String test = String.valueOf(chunkpos.x);
 
-        player.sendSystemMessage(Component.literal("Found" + I18n.get(block.getDescriptionId()) +
-                " at " + "(" + chunkpos.x + "," + chunkpos.z + ")"));
 
-    }
-    /*
-    private void outputValuableCoordinantes(BlockPos blockPos, Player player, Block block) {
-        player.sendSystemMessage(Component.literal("Found" + I18n.get(block.getDescriptionId()) +
-                " at " + "(" + blockPos.getX() + "," + blockPos.getY() + "," + blockPos.getZ() + ")"));
-
-    }
-
-     */
-
-    private boolean isValuableBlock(BlockState state) {
-        return state.is(Blocks.IRON_BLOCK);
-    }
-    /*
-    @Override
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        final int test = 5;
-        pTooltipComponents.add(Component.translatable("tooltip.lithiccoins.coins.tooltip",test));
-        super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
-    }
-    */
 }

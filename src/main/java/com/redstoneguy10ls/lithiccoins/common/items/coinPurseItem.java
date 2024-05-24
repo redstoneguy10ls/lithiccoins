@@ -1,8 +1,12 @@
 package com.redstoneguy10ls.lithiccoins.common.items;
 
+import com.redstoneguy10ls.lithiccoins.common.Capability.IPurse;
 import com.redstoneguy10ls.lithiccoins.common.Capability.LocationCapability;
+import com.redstoneguy10ls.lithiccoins.common.Capability.PurseCapability;
+import com.redstoneguy10ls.lithiccoins.common.Capability.PurseHandler;
+import com.redstoneguy10ls.lithiccoins.common.misc.LCSounds;
 import com.redstoneguy10ls.lithiccoins.config.LithicConfig;
-import com.redstoneguy10ls.lithiccoins.util.ModTags;
+import com.redstoneguy10ls.lithiccoins.util.LCTags;
 import net.dries007.tfc.util.Helpers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.NonNullList;
@@ -26,6 +30,8 @@ import net.minecraft.world.inventory.tooltip.BundleTooltip;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.capabilities.ICapabilityProvider;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Optional;
@@ -43,10 +49,20 @@ public class coinPurseItem extends Item {
         super(pProperties);
     }
 
-
-    public static float getFullnessDisplay(ItemStack pStack) {
-        return (float)getContentWeight(pStack) / MAX_WEIGHT;
+/*
+    public static void getFullnessDisplay(ItemStack pStack) {
+        final IPurse purse = pStack.getCapability(PurseCapability.CAPABILITY).resolve().orElse(null);
+        if((getContentWeight(pStack) / MAX_WEIGHT) > 0)
+        {
+            purse.setHasItem(true);
+        }
+        else
+        {
+            purse.setHasItem(false);
+        }
     }
+
+ */
 
     public boolean overrideStackedOnOther(ItemStack pStack, Slot pSlot, ClickAction pAction, Player pPlayer) {
         if (pStack.getCount() != 1 || pAction != ClickAction.SECONDARY) {
@@ -63,7 +79,7 @@ public class coinPurseItem extends Item {
             else if (itemstack.getItem().canFitInsideContainerItems()) {
                 itemstack.getCapability(LocationCapability.CAPABILITY).ifPresent(test ->
                         {
-                            if(test.getLocationSet() && (Helpers.isItem(itemstack, ModTags.Items.FIT_IN_PURSE))) {
+                            if(test.getLocationSet() && (Helpers.isItem(itemstack, LCTags.Items.FIT_IN_PURSE))) {
                                 int i = (MAX_WEIGHT - getContentWeight(pStack)) / getWeight(itemstack);
                                 int j = add(pStack, pSlot.safeTake(itemstack.getCount(), i, pPlayer));
                                 if (j > 0) {
@@ -72,6 +88,7 @@ public class coinPurseItem extends Item {
                             }
                 });
             }
+            //getFullnessDisplay(pStack);
             return true;
         }
     }
@@ -127,7 +144,7 @@ public class coinPurseItem extends Item {
     //but no like this is finding how much items are in the "bundle"
     //and reporting it back
     private static int add(ItemStack CoinStack, ItemStack pInsertedStack) {
-        if (!pInsertedStack.isEmpty() && pInsertedStack.getItem().canFitInsideContainerItems() && (Helpers.isItem(pInsertedStack, ModTags.Items.FIT_IN_PURSE))) {
+        if (!pInsertedStack.isEmpty() && pInsertedStack.getItem().canFitInsideContainerItems() && (Helpers.isItem(pInsertedStack, LCTags.Items.FIT_IN_PURSE))) {
             CompoundTag nbt = CoinStack.getOrCreateTag();
             if (!nbt.contains("Items")) {
                 nbt.put("Items", new ListTag());
@@ -207,13 +224,13 @@ public class coinPurseItem extends Item {
 
 
     private static Optional<CompoundTag> getMatchingItem(ItemStack pStack, ListTag pList) {
-        return pStack.is(ModItems.COIN_PURSE.get()) ? Optional.empty() : pList.stream().filter(CompoundTag.class::isInstance).map(CompoundTag.class::cast).filter((p_186350_) -> {
+        return pStack.is(LCItems.COIN_PURSE.get()) ? Optional.empty() : pList.stream().filter(CompoundTag.class::isInstance).map(CompoundTag.class::cast).filter((p_186350_) -> {
             return ItemStack.isSameItemSameTags(ItemStack.of(p_186350_), pStack);
         }).findFirst();
     }
 
     private static int getWeight(ItemStack pStack) {
-        if (pStack.is(ModItems.COIN_PURSE.get())) {
+        if (pStack.is(LCItems.COIN_PURSE.get())) {
             return 4 + getContentWeight(pStack);
         } else {
             return 64 / pStack.getMaxStackSize();
@@ -317,15 +334,33 @@ public class coinPurseItem extends Item {
 
 
     private void playRemoveOneSound(Entity pEntity) {
-        pEntity.playSound(SoundEvents.BUNDLE_REMOVE_ONE, 0.8F, 0.8F + pEntity.level().getRandom().nextFloat() * 0.4F);
+
+            pEntity.playSound(SoundEvents.BUNDLE_REMOVE_ONE, 0.8F, 0.8F + pEntity.level().getRandom().nextFloat() * 0.4F);
+
     }
 
     private void playInsertSound(Entity pEntity) {
-        pEntity.playSound(SoundEvents.BUNDLE_INSERT, 0.8F, 0.8F + pEntity.level().getRandom().nextFloat() * 0.4F);
+        if(getWeight(new ItemStack(this.asItem())) == 0)
+        {
+            pEntity.playSound(LCSounds.COINPURSE_EMPTY_ADD.get(), 0.8F, 0.8F + pEntity.level().getRandom().nextFloat() * 0.4F);
+        }
+        else {
+            pEntity.playSound(SoundEvents.BUNDLE_INSERT, 0.8F, 0.8F + pEntity.level().getRandom().nextFloat() * 0.4F);
+
+        }
     }
 
     private void playDropContentsSound(Entity pEntity) {
         pEntity.playSound(SoundEvents.BUNDLE_DROP_CONTENTS, 0.8F, 0.8F + pEntity.level().getRandom().nextFloat() * 0.4F);
     }
+/*
+    @Nullable
+    @Override
+    public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt)
+    {
+        return new PurseHandler(stack);
+    }
+
+ */
 
 }

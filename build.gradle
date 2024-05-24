@@ -125,12 +125,28 @@ dependencies {
 
     annotationProcessor("org.spongepowered:mixin:${mixin_version}:processor")
 
-    implementation fg.deobf("curse.maven:jei-238222:5074448")
+    compileOnly(fg.deobf("mezz.jei:jei-1.20.1-forge-api:15.2.0.23"))
+    compileOnly(fg.deobf("mezz.jei:jei-1.20.1-common-api:15.2.0.23"))
+    runtimeOnly(fg.deobf("mezz.jei:jei-1.20.1-forge:15.2.0.23"))
 
     implementation fg.deobf("curse.maven:patchouli-306770:4636277")
 
 
-    implementation fg.deobf("curse.maven:terrafirmacraft-302973:5065718")
+    implementation fg.deobf("curse.maven:terrafirmacraft-302973:5276689")
+
+    runtimeOnly(fg.deobf("curse.maven:jade-324717:4614153"))
+
+    implementation fg.deobf("blusunrize.immersiveengineering:ImmersiveEngineering:1.20.1-10.1.0-171")
+
+    implementation fg.deobf("curse.maven:firmalife-453394:5280601")
+
+    implementation fg.deobf("curse.maven:tfc-ie-crossover-830886:5188548")
+
+    implementation fg.deobf("curse.maven:mouse-tweaks-60089:4581240")
+
+    //implementation fg.deobf("curse.maven:rhino-416294:4944325")
+    //implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
+    //implementation fg.deobf("curse.maven:kubejs-238086:5268032")
 
 }
 

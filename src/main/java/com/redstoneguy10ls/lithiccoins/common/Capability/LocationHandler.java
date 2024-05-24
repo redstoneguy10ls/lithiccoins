@@ -97,11 +97,11 @@ public class LocationHandler implements ICapabilitySerializable<CompoundTag>, IL
 
         if(creationLocation == DEFUALT_CHUNK_POS)
         {
-            text.add(Component.translatable("tooltip.lithiccoins.coins.tooltip2").withStyle(ChatFormatting.GRAY));
+            text.add(Component.translatable("lithiccoins.tooltip.lithiccoins.coins.tooltip2").withStyle(ChatFormatting.GRAY));
         }
         else {
-            text.add(Component.translatable("tooltip.lithiccoins.coins.tooltip",creationLocation).withStyle(ChatFormatting.GRAY));
-            text.add(Component.translatable("tooltip.lithiccoins.coins.tooltip_time",creationDate).withStyle(ChatFormatting.GRAY));
+            text.add(Component.translatable("lithiccoins.tooltip.lithiccoins.coins.tooltip",creationLocation).withStyle(ChatFormatting.GRAY));
+            text.add(Component.translatable("lithiccoins.tooltip.lithiccoins.coins.tooltip_time",creationDate).withStyle(ChatFormatting.GRAY));
         }
 
 

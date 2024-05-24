@@ -3,7 +3,7 @@ package com.redstoneguy10ls.lithiccoins.mixin;
 
 import com.redstoneguy10ls.lithiccoins.recipes.MintRecipe;
 import com.redstoneguy10ls.lithiccoins.test.dieAccessor;
-import com.redstoneguy10ls.lithiccoins.util.ModTags;
+import com.redstoneguy10ls.lithiccoins.util.LCTags;
 import net.dries007.tfc.common.blockentities.AnvilBlockEntity;
 import net.dries007.tfc.common.blockentities.InventoryBlockEntity;
 import net.dries007.tfc.common.container.ISlotCallback;
@@ -35,7 +35,7 @@ public class AnvilBlockEntityMixin extends InventoryBlockEntity<AnvilBlockEntity
     @Override
     public boolean isItemValid(int slot, ItemStack stack)
     {
-        return slot != SLOT_BOTTOM_DIE || Helpers.isItem(stack.getItem(), ModTags.Items.BOTTOM_DIE);
+        return slot != SLOT_BOTTOM_DIE || Helpers.isItem(stack.getItem(), LCTags.Items.BOTTOM_DIE);
     }
 
     @Override

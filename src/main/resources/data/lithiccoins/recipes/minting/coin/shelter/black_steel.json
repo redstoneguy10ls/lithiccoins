@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "lithiccoins:minting",
+  "top_dies": [
+    "shelter"
+  ],
+  "blank_coin": {
+    "item": "lithiccoins:blank_coin/black_steel"
+  },
+  "tier": 6,
+  "result": {
+    "item": "lithiccoins:coin/shelter/black_steel"
+  }
+}

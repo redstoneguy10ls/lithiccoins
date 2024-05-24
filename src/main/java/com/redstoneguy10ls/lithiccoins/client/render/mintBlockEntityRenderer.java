@@ -3,18 +3,26 @@ package com.redstoneguy10ls.lithiccoins.client.render;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import com.redstoneguy10ls.lithiccoins.common.blockentities.mintBlockEntity;
+import com.redstoneguy10ls.lithiccoins.common.blocks.LCStateProperties;
 import com.redstoneguy10ls.lithiccoins.common.blocks.mintBlock;
 import net.dries007.tfc.common.capabilities.Capabilities;
 import net.dries007.tfc.util.Helpers;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraftforge.items.IItemHandler;
+
+import static com.redstoneguy10ls.lithiccoins.common.blocks.mintBlock.FACING;
+import static net.minecraft.core.Direction.NORTH;
+import static net.minecraft.core.Direction.SOUTH;
 
 public class mintBlockEntityRenderer implements BlockEntityRenderer<mintBlockEntity> {
 
@@ -33,6 +41,13 @@ public class mintBlockEntityRenderer implements BlockEntityRenderer<mintBlockEnt
         final ItemStack coin = inventory.getStackInSlot(mintBlockEntity.SLOT_COIN);
         final ItemStack bottom = inventory.getStackInSlot(mintBlockEntity.SLOT_BOTTOMDIE);
         final ItemStack output = inventory.getStackInSlot(mintBlockEntity.SLOT_OUTPUT);
+
+        final BlockState blockState = mint.getLevel().getBlockState(mint.getBlockPos());
+
+        final boolean hasHit = blockState.hasProperty(LCStateProperties.HIT) ? blockState.getValue(LCStateProperties.HIT).booleanValue() : false;
+
+        final int rotation = blockState.hasProperty(BlockStateProperties.HORIZONTAL_FACING) ? blockState.getValue(BlockStateProperties.HORIZONTAL_FACING).get2DDataValue() : 0;
+        final int coinType = blockState.hasProperty(LCStateProperties.COIN_TYPE) ? blockState.getValue(LCStateProperties.COIN_TYPE) : 0;
 
         if(!output.isEmpty())
         {
@@ -82,27 +97,110 @@ public class mintBlockEntityRenderer implements BlockEntityRenderer<mintBlockEnt
 
         if(!bottom.isEmpty())
         {
-            final float center = 0.5F;
 
             stack.pushPose();
-            stack.translate(center, 0.705D, center);
+            stack.translate(((7.125f+1f)/16f), (10f/16), (6.75f/16f));
 
-            switch(mint.getBlockState().getValue(BlockStateProperties.HORIZONTAL_FACING))
+            if(rotation == 1)
             {
-                case SOUTH:
-                    stack.translate(0.51f - center - 0.055, 0.001F, -0.06);
-                case WEST:
-                    stack.translate(0.625f - center, 0.001F, 0.5f-center);
-                case EAST:
-                    stack.translate(-0.56f +center, 0.001F, -0.5f+center-0.06);
-                case NORTH:
-                    stack.translate(0.5f - center, -0.1F, 0.06);
-
+                stack.translate(((1f)/16),0,((0.25f+1f)/16));
             }
-            stack.scale(1F, 1F, 1F);
+            if(rotation == 2)
+            {
+                stack.translate(0,0,(2.25f/16f));
+            }
+            if(rotation == 3)
+            {
+                stack.translate(-((1f)/16),0,((0.25f+1f)/16));
+            }
+
+            //stack.translate(((7.5f+1f)/16f), (13.5f/16), ((6.5f+1f)/16f));
+            //stack.translate(0,0,0);
+
+            //stack.translate(0.5075F, (15.0f/16.0f), 0.563f);
+            stack.scale(0.9F, 0.9F, 0.9F);
+            //stack.mulPose(Axis.XP.rotationDegrees(90f));
+            //stack.mulPose(Axis.XP.rotationDegrees(90f* rotation + 270F));
+            //stack.mulPose(Axis.ZP.rotationDegrees(90f * rotation + 270F));
             Minecraft.getInstance().getItemRenderer().renderStatic(bottom, ItemDisplayContext.FIXED, packedLight, packedOverlay, stack, bufferSource, mint.getLevel(), 0);
+            stack.popPose();
+
+
+        }
+        if(!topdie.isEmpty())
+        {
+
+                stack.pushPose();
+                stack.translate(((7.125f+1f)/16f), (15f/16), (6.75f/16f));
+
+                if(rotation == 1)
+                {
+                    stack.translate(((1f)/16),0,((0.25f+1f)/16));
+                }
+                if(rotation == 2)
+                {
+                    stack.translate(0,0,(2.25f/16f));
+                }
+                if(rotation == 3)
+                {
+                    stack.translate(-((1f)/16),0,((0.25f+1f)/16));
+                }
+                if(hasHit)
+                {
+                    stack.translate(0,-(1f/16f),0);
+                }
+
+                //stack.translate(((7.5f+1f)/16f), (13.5f/16), ((6.5f+1f)/16f));
+                //stack.translate(0,0,0);
+
+                //stack.translate(0.5075F, (15.0f/16.0f), 0.563f);
+                stack.scale(0.8F, 0.8F, 0.8F);
+                //stack.mulPose(Axis.XP.rotationDegrees(90f));
+                //stack.mulPose(Axis.XP.rotationDegrees(90f* rotation + 270F));
+                //stack.mulPose(Axis.ZP.rotationDegrees(90f * rotation + 270F));
+                Minecraft.getInstance().getItemRenderer().renderStatic(topdie, ItemDisplayContext.FIXED, packedLight, packedOverlay, stack, bufferSource, mint.getLevel(), 0);
+                stack.popPose();
+
+
+        }
+
+        if(!coin.isEmpty())
+        {
+            stack.pushPose();
+            stack.translate(((7.25f+1f)/16f), (13.5f/16), (7.125f/16f));
+            stack.mulPose(Axis.XP.rotationDegrees(90f));
+            rotateTranslate(stack, rotation);
+
+            //stack.translate(((7.5f+1f)/16f), (13.5f/16), ((6.5f+1f)/16f));
+            //stack.translate(0,0,0);
+
+            //stack.translate(0.5075F, (15.0f/16.0f), 0.563f);
+            stack.scale(0.3F, 0.3F, 1F);
+            //stack.mulPose(Axis.XP.rotationDegrees(90f));
+            //stack.mulPose(Axis.XP.rotationDegrees(90f* rotation + 270F));
+            //stack.mulPose(Axis.ZP.rotationDegrees(90f * rotation + 270F));
+            Minecraft.getInstance().getItemRenderer().renderStatic(coin, ItemDisplayContext.FIXED, packedLight, packedOverlay, stack, bufferSource, mint.getLevel(), 0);
             stack.popPose();
         }
 
     }
+    public void rotateTranslate(PoseStack stack,int rotation)
+    {
+        if(rotation == 1)//west
+        {
+            //xzy
+            stack.translate(((1f-(0.125/2))/16),((0.125f+1f)/16),0);
+        }
+        if(rotation == 2)//north
+        {
+            //xzy
+            stack.translate(0,((2.25f-(0.125/2))/16f),0);
+        }
+        if(rotation == 3)//east
+        {
+            //xzy
+            stack.translate(-((1f)/16),((0.2f-(0.125/2)+1f)/16),0);
+        }
+    }
 }
+

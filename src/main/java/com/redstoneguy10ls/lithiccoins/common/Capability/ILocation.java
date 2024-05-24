@@ -30,7 +30,7 @@ public interface ILocation extends INetworkLocation {
         //System.out.println("shit "+stack.getItem());
         //ChunkPos chunkpos = new ChunkPos(blockPos);
 
-        text.add(Component.translatable("tooltip.lithiccoins.coins.tooltip2"));
+        text.add(Component.translatable("lithiccoins.tooltip.lithiccoins.coins.tooltip2"));
 
 
 

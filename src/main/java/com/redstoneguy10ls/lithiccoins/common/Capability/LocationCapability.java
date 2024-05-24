@@ -1,7 +1,7 @@
 package com.redstoneguy10ls.lithiccoins.common.Capability;
 
 
-import com.redstoneguy10ls.lithiccoins.util.ModHelpers;
+import com.redstoneguy10ls.lithiccoins.util.LCHelpers;
 import net.dries007.tfc.util.Helpers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -14,7 +14,7 @@ public class LocationCapability {
 
     public static final Capability<INetworkLocation> NETWORK_CAPABILITY = Helpers.capability(new CapabilityToken<>() {});
 
-    public static final ResourceLocation KEY = ModHelpers.identifier("location");
+    public static final ResourceLocation KEY = LCHelpers.identifier("location");
     //public static final DataManager<LocationDefinition> MANAGER = new DataManager<>(Helpers.identifier("food_items"), "food", FoodDefinition::new, FoodDefinition::new, FoodDefinition::encode, FoodCapability.Packet::new);
     //public static final IndirectHashCollection<Item, FoodDefinition> CACHE = IndirectHashCollection.create(FoodDefinition::getValidItems, MANAGER::getValues);
 

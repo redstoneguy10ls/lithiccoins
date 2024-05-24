@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lithiccoins:block/mint",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "lithiccoins:block/mint",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "lithiccoins:block/mint",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lithiccoins:block/mint",
+      "y": 90
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "lithiccoins:minting",
+  "top_dies": [
+    "miner"
+  ],
+  "blank_coin": {
+    "item": "lithiccoins:blank_coin/uranium"
+  },
+  "tier": 3,
+  "result": {
+    "item": "lithiccoins:coin/miner/uranium"
+  }
+}

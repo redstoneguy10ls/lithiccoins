@@ -1,5 +1,11 @@
 {
     "__comment__": "Recipe written by redstoneguy10ls",
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "firmalife"
+        }
+    ],
     "type": "tfc:heating",
     "ingredient": {
         "item": "lithiccoins:blank_coin/chromium"

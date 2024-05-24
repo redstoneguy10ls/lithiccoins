@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "lithiccoins:minting",
+  "top_dies": [
+    "heartbreak"
+  ],
+  "blank_coin": {
+    "item": "lithiccoins:blank_coin/nickel"
+  },
+  "tier": 1,
+  "result": {
+    "item": "lithiccoins:coin/heartbreak/nickel"
+  }
+}

@@ -1,19 +1,36 @@
 {
   "variants": {
-    "facing=north": {
-      "model": "lithiccoins:block/mint",
-      "y": 90
-    },
-    "facing=east": {
+    "facing=north,hit=false": {
       "model": "lithiccoins:block/mint",
       "y": 180
     },
-    "facing=south": {
+    "facing=east,hit=false": {
       "model": "lithiccoins:block/mint",
       "y": 270
     },
-    "facing=west": {
-      "model": "lithiccoins:block/mint"
+    "facing=south,hit=false": {
+      "model": "lithiccoins:block/mint",
+      "y": 0
+    },
+    "facing=west,hit=false": {
+      "model": "lithiccoins:block/mint",
+      "y": 90
+    },
+    "facing=north,hit=true": {
+      "model": "lithiccoins:block/mint_hit",
+      "y": 180
+    },
+    "facing=east,hit=true": {
+      "model": "lithiccoins:block/mint_hit",
+      "y": 270
+    },
+    "facing=south,hit=true": {
+      "model": "lithiccoins:block/mint_hit",
+      "y": 0
+    },
+    "facing=west,hit=true": {
+      "model": "lithiccoins:block/mint_hit",
+      "y": 90
     }
   }
 }

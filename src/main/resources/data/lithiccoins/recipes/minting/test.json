@@ -1,0 +1,13 @@
+{
+  "type": "lithiccoins:minting",
+  "top_dies": [
+    "blade"
+  ],
+  "blank_coin": {
+    "item": "lithiccoins:blank_coin/gold"
+  },
+  "tier": 1,
+  "result": {
+    "item": "lithiccoins:coin/blade/gold"
+  }
+}

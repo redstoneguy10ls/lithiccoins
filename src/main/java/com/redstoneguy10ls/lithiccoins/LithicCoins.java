@@ -1,13 +1,16 @@
 package com.redstoneguy10ls.lithiccoins;
 
 import com.mojang.logging.LogUtils;
-import com.redstoneguy10ls.lithiccoins.common.blocks.ModBlocks;
+import com.redstoneguy10ls.lithiccoins.common.blockentities.LCBlockEntities;
+import com.redstoneguy10ls.lithiccoins.common.blocks.LCBlocks;
+import com.redstoneguy10ls.lithiccoins.common.items.LCItems;
+import com.redstoneguy10ls.lithiccoins.common.recipes.LCRecipeSerializers;
+import com.redstoneguy10ls.lithiccoins.common.recipes.LCRecipeTypes;
 import com.redstoneguy10ls.lithiccoins.config.LithicConfig;
-import com.redstoneguy10ls.lithiccoins.common.items.ModItems;
-import com.redstoneguy10ls.lithiccoins.common.items.ModTabs;
+import com.redstoneguy10ls.lithiccoins.common.items.LCTabs;
 //import com.redstoneguy10ls.lithiccoins.recipes.ModRecipeSerializers;
 //import com.redstoneguy10ls.lithiccoins.recipes.ModRecipeTypes;
-import com.redstoneguy10ls.lithiccoins.common.misc.ModSounds;
+import com.redstoneguy10ls.lithiccoins.common.misc.LCSounds;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -33,20 +36,21 @@ public class LithicCoins
     public LithicCoins()
     {
         LithicConfig.init();
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        modEventBus.addListener(this::commonSetup);
+        bus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
-        modEventBus.addListener(this::addCreative);
-        ModItems.ITEMS.register(modEventBus);
-        ModTabs.CREATIVE_TABS.register(modEventBus);
-        ModBlocks.BLOCKS.register(modEventBus);
+        bus.addListener(this::addCreative);
+        LCItems.ITEMS.register(bus);
+        LCTabs.CREATIVE_TABS.register(bus);
+        LCBlocks.BLOCKS.register(bus);
+        LCBlockEntities.BLOCK_ENTITIES.register(bus);
 
         ForgeEventHandlers.init();
-        //ModRecipeTypes.RECIPE_TYPES.register(modEventBus);
-        //ModRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
-        ModSounds.SOUNDS.register(modEventBus);
+        LCRecipeTypes.RECIPE_TYPES.register(bus);
+        LCRecipeSerializers.RECIPE_SERIALIZERS.register(bus);
+        LCSounds.SOUNDS.register(bus);
 
 
 
@@ -83,4 +87,6 @@ public class LithicCoins
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         }
     }
+
+
 }

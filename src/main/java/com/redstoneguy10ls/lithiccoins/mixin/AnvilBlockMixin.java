@@ -2,10 +2,10 @@
 package com.redstoneguy10ls.lithiccoins.mixin;
 
 
-import com.redstoneguy10ls.lithiccoins.blocks.ModBlockStateProperties;
+import com.redstoneguy10ls.lithiccoins.blocks.LCStateProperties;
 import com.redstoneguy10ls.lithiccoins.test.SelectionPlace;
 import com.redstoneguy10ls.lithiccoins.test.dieAccessor;
-import com.redstoneguy10ls.lithiccoins.util.ModTags;
+import com.redstoneguy10ls.lithiccoins.util.LCTags;
 import net.dries007.tfc.client.particle.TFCParticles;
 import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.blockentities.AnvilBlockEntity;
@@ -235,7 +235,7 @@ public abstract class AnvilBlockMixin extends DeviceBlock implements Tiered{
                 if(lookingAtDie)
                 {
                     final ItemStack heldStack = player.getItemInHand(hand);
-                    if(Helpers.isItem(heldStack, ModTags.Items.BOTTOM_DIE))
+                    if(Helpers.isItem(heldStack, LCTags.Items.BOTTOM_DIE))
                     {
                         insertOrExtract(level,anvil,inventory,player,heldStack,4);
                     }
@@ -272,7 +272,7 @@ public abstract class AnvilBlockMixin extends DeviceBlock implements Tiered{
         return startMinting.get() ? InteractionResult.sidedSuccess(level.isClientSide) : InteractionResult.FAIL;
     }
 
-    private static final BooleanProperty HAS_BOTTOM_DIE = ModBlockStateProperties.HAS_BOTTOM_DIE;
+    private static final BooleanProperty HAS_BOTTOM_DIE = LCStateProperties.HAS_BOTTOM_DIE;
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder)
     {

@@ -27,9 +27,9 @@ public class coinItem extends Item {
 
 
     @Override
-    public InteractionResult onItemUseFirst(ItemStack stack, UseOnContext context) {
+    public InteractionResultHolder<ItemStack> use(Level pLevel, Player player, InteractionHand pUsedHand) {
 
-        Player player = Objects.requireNonNull(context.getPlayer());
+
         int rand = player.getRandom().nextIntBetweenInclusive(1, 100);
         if(rand <= 50)
         {
@@ -44,7 +44,7 @@ public class coinItem extends Item {
 
         player.getCooldowns().addCooldown(this, 10);
 
-        return InteractionResult.SUCCESS;
+        return super.use(pLevel, player, pUsedHand);
     }
 
 

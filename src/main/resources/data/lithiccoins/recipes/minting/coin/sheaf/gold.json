@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "lithiccoins:minting",
+  "top_dies": [
+    "sheaf"
+  ],
+  "blank_coin": {
+    "item": "lithiccoins:blank_coin/gold"
+  },
+  "tier": 1,
+  "result": {
+    "item": "lithiccoins:coin/sheaf/gold"
+  }
+}

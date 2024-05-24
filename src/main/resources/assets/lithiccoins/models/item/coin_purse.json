@@ -1,9 +1,6 @@
 {
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "lithiccoins:item/coin_purse"
-    },
+    "parent": "lithiccoins:item/coin_purse_empty",
     "overrides": [
-        { "predicate": { "filled": 0.0000001 }, "model": "lithiccoins:item/coin_purse_filled" }
+        { "predicate": { "lithiccoins:filled": 1 }, "model": "lithiccoins:item/coin_purse_filled" }
     ]
 }

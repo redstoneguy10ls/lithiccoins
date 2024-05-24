@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "lithiccoins:minting",
+  "top_dies": [
+    "danger"
+  ],
+  "blank_coin": {
+    "item": "lithiccoins:blank_coin/bismuth"
+  },
+  "tier": 1,
+  "result": {
+    "item": "lithiccoins:coin/danger/bismuth"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "lithiccoins:minting",
+  "top_dies": [
+    "eagle"
+  ],
+  "blank_coin": {
+    "item": "lithiccoins:blank_coin/red_steel"
+  },
+  "tier": 6,
+  "result": {
+    "item": "lithiccoins:coin/eagle/red_steel"
+  }
+}

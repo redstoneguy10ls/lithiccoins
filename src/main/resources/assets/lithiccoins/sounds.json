@@ -1,0 +1,11 @@
+{
+  "block.minting_die.hit": {
+  "subtitle": "subtitles.block.lithiccoins.mint.hit",
+  "sounds": [
+  "lithiccoins:block/minting_die/hit1",
+  "lithiccoins:block/minting_die/hit2",
+  "lithiccoins:block/minting_die/hit3",
+  "lithiccoins:block/minting_die/hit4"
+  ]
+  }
+}

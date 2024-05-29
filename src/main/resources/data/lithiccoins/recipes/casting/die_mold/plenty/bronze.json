@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+    "type": "tfc:casting",
+    "mold": {
+        "item": "lithiccoins:ceramic/die_mold/fired/plenty"
+    },
+    "fluid": {
+        "ingredient": "tfc:metal/bronze",
+        "amount": 100
+    },
+    "result": {
+        "item": "lithiccoins:top_die/plenty/bronze",
+        "count": 1
+    },
+    "break_chance": 1.00
+}

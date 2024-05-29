@@ -3,6 +3,7 @@ package com.redstoneguy10ls.lithiccoins;
 import com.mojang.logging.LogUtils;
 import com.redstoneguy10ls.lithiccoins.common.blockentities.LCBlockEntities;
 import com.redstoneguy10ls.lithiccoins.common.blocks.LCBlocks;
+import com.redstoneguy10ls.lithiccoins.common.container.LCContainerTypes;
 import com.redstoneguy10ls.lithiccoins.common.items.LCItems;
 import com.redstoneguy10ls.lithiccoins.common.recipes.LCRecipeSerializers;
 import com.redstoneguy10ls.lithiccoins.common.recipes.LCRecipeTypes;
@@ -51,6 +52,7 @@ public class LithicCoins
         LCRecipeTypes.RECIPE_TYPES.register(bus);
         LCRecipeSerializers.RECIPE_SERIALIZERS.register(bus);
         LCSounds.SOUNDS.register(bus);
+        LCContainerTypes.CONTAINERS.register(bus);
 
 
 

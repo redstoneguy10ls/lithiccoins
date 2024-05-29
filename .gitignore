@@ -23,3 +23,13 @@ run
 
 # Files from Forge MDK
 forge*changelog.txt
+/datagen/old/specheat/aluminum.json
+/run-data/logs/2024-03-29-2.log.gz
+/datagen/*
+/src/Capture.PNG
+/src/die_holder_hires.png
+/src/full_mint.bbmodel
+/src/full_mint - Copy.bbmodel
+/src/mint_prereqs (1).zip
+/src/recipes.txt
+/src/stamp_holder_hires.png

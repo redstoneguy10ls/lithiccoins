@@ -1,0 +1,19 @@
+{
+  "type": "lithiccoins:wax_knapping",
+  "knapping_type": "lithiccoins:wax",
+  "outside_slot_required": false,
+  "pattern": [
+    "XXXXXXXX",
+    "XXX    X",
+    "   XXX X",
+    "X   XX X",
+    "X  XX  X",
+    "X  X  X ",
+    "XX  XXXX",
+    "XXXXXXXX"
+
+  ],
+  "result": {
+    "item": "lithiccoins:wax/explorer"
+  }
+}

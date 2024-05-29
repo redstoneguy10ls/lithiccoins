@@ -1,0 +1,17 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "tfc:anvil",
+  "input": {
+    "tag": "forge:ingots/wrought_iron"
+  },
+  "result": {
+    "item": "lithiccoins:bottom_die/wrought_iron"
+  },
+  "tier": 3,
+  "rules": [
+    "upset_last",
+    "bend_second_last",
+    "bend_third_last"
+  ],
+  "apply_forging_bonus": true
+}

@@ -1,0 +1,19 @@
+{
+  "type": "lithiccoins:wax_knapping",
+  "knapping_type": "lithiccoins:wax",
+  "outside_slot_required": false,
+  "pattern": [
+    "XXXXXXXX",
+    "X X XXXX",
+    "XXXXXXXX",
+    "X X XXXX",
+    "XXXXXXXX",
+    "XXXXXXXX",
+    "XXXXXXXX",
+    "XXXXXXXX"
+
+  ],
+  "result": {
+    "item": "lithiccoins:ceramic/unfired_coin_mold"
+  }
+}

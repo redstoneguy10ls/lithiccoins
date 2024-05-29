@@ -1,0 +1,19 @@
+{
+  "type": "lithiccoins:wax_knapping",
+  "knapping_type": "lithiccoins:wax",
+  "outside_slot_required": false,
+  "pattern": [
+    "XXXXXXXX",
+    "XX  X XX",
+    "XXX  X X",
+    "X  X  XX",
+    "XX  X  X",
+    "XXX  XXX",
+    "XX    XX",
+    "XXXXXXXX"
+
+  ],
+  "result": {
+    "item": "lithiccoins:wax/sheaf"
+  }
+}

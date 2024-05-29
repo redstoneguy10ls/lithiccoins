@@ -1,0 +1,8 @@
+{
+  "loader": "tfc:contained_fluid",
+  "parent": "forge:item/default",
+  "textures": {
+    "base": "lithiccoins:item/ceramic/die_mold/fired_die_mold",
+    "fluid": "lithiccoins:item/ceramic/die_mold/die_mold_overlay"
+  }
+}

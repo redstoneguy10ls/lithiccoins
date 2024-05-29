@@ -1,0 +1,18 @@
+{
+    "__comment__": "This file was automatically created by redstoneguy10ls",
+    "conditions": [
+    {
+        "type": "forge:mod_loaded",
+        "modid": "tfc"
+    }
+    ],
+    "type": "tfc:heating",
+    "ingredient": {
+       "tag": "lithiccoins:coins/wrought_iron"
+    },
+    "result_fluid": {
+        "fluid": "tfc:metal/wrought_iron",
+        "amount": 20
+    },
+    "temperature": 1535
+}       

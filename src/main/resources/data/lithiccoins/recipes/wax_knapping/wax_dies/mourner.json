@@ -1,0 +1,19 @@
+{
+  "type": "lithiccoins:wax_knapping",
+  "knapping_type": "lithiccoins:wax",
+  "outside_slot_required": false,
+  "pattern": [
+    "XX XX XX",
+    "XX    XX",
+    "XXX  XXX",
+    "XX    XX",
+    "X X X  X",
+    "X  X X X",
+    "XX    XX",
+    "XX XX XX"
+
+  ],
+  "result": {
+    "item": "lithiccoins:wax/mourner"
+  }
+}

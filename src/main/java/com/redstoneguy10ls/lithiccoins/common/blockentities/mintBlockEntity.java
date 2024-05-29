@@ -1,5 +1,6 @@
 package com.redstoneguy10ls.lithiccoins.common.blockentities;
 
+import com.redstoneguy10ls.lithiccoins.common.Capability.LocationCapability;
 import com.redstoneguy10ls.lithiccoins.common.blocks.mintBlock;
 import com.redstoneguy10ls.lithiccoins.common.items.TopDies;
 import com.redstoneguy10ls.lithiccoins.common.recipes.LCRecipeTypes;
@@ -11,6 +12,7 @@ import net.dries007.tfc.common.capabilities.InventoryItemHandler;
 import net.dries007.tfc.common.container.ISlotCallback;
 import net.dries007.tfc.common.recipes.inventory.ItemStackInventory;
 import net.dries007.tfc.util.Helpers;
+import net.dries007.tfc.util.calendar.Calendars;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -18,6 +20,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -240,6 +243,19 @@ public class mintBlockEntity extends InventoryBlockEntity<mintBlockEntity.mintIn
             if(recipe.getTopDie()[0].getId() == LCHelpers.getStampTypesInInt(inventory.getStackInSlot(SLOT_TOPDIE)))
             {
                 final ItemStack result = recipe.assemble(inventory,level.registryAccess());
+
+                ChunkPos chunkPos = new ChunkPos(getBlockPos());
+
+                result.getCapability(LocationCapability.CAPABILITY).ifPresent(test ->
+                {
+                    if (!test.getLocationSet()) {
+                        test.setCreationLocation(chunkPos);
+                        test.setCreationDate(Calendars.get().getTotalYears());
+
+                    }
+                });
+
+
                 if(inventory.getStackInSlot(SLOT_OUTPUT).isEmpty())
                 {
                     inventory.setStackInSlot(SLOT_OUTPUT, result);
@@ -247,6 +263,7 @@ public class mintBlockEntity extends InventoryBlockEntity<mintBlockEntity.mintIn
                 else {
                     inventory.getStackInSlot(SLOT_OUTPUT).grow(1);
                 }
+
 
 
                 inventory.getStackInSlot(SLOT_COIN).shrink(1);
@@ -258,13 +275,12 @@ public class mintBlockEntity extends InventoryBlockEntity<mintBlockEntity.mintIn
                 setAndUpdateSlots(SLOT_TOPDIE);
                 setAndUpdateSlots(SLOT_BOTTOMDIE);
                 markForSync();
+
                 return InteractionResult.SUCCESS;
             }
             else {
                 return InteractionResult.FAIL;
             }
-            //if getTopDie() != topdie type
-            //fail
 
         }
         return InteractionResult.PASS;

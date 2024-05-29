@@ -1,0 +1,19 @@
+{
+  "type": "lithiccoins:wax_knapping",
+  "knapping_type": "lithiccoins:wax",
+  "outside_slot_required": false,
+  "pattern": [
+    "XXXXXXXX",
+    "XX    XX",
+    "X      X",
+    "XX X XXX",
+    "XXX  XXX",
+    "XXXX XXX",
+    "XXXX XXX",
+    "XXXXXXXX"
+
+  ],
+  "result": {
+    "item": "lithiccoins:wax/shelter"
+  }
+}

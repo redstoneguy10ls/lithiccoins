@@ -1,0 +1,19 @@
+{
+  "type": "lithiccoins:wax_knapping",
+  "knapping_type": "lithiccoins:wax",
+  "outside_slot_required": false,
+  "pattern": [
+    "XXXX  XX",
+    "XXX  X X",
+    "X X XX X",
+    " XX  XXX",
+    " X    XX",
+    "X   X  X",
+    "XXXXXX X",
+    "XXXX  XX"
+
+  ],
+  "result": {
+    "item": "lithiccoins:wax/trifoil"
+  }
+}

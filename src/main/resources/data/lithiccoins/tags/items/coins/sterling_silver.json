@@ -1,0 +1,27 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "replace": false,
+  "values": [
+		"lithiccoins:coin/angler/sterling_silver",
+		"lithiccoins:coin/archer/sterling_silver",
+		"lithiccoins:coin/arms_up/sterling_silver",
+		"lithiccoins:coin/blade/sterling_silver",
+		"lithiccoins:coin/brewer/sterling_silver",
+		"lithiccoins:coin/burn/sterling_silver",
+		"lithiccoins:coin/danger/sterling_silver",
+		"lithiccoins:coin/eagle/sterling_silver",
+		"lithiccoins:coin/explorer/sterling_silver",
+		"lithiccoins:coin/friend/sterling_silver",
+		"lithiccoins:coin/heart/sterling_silver",
+		"lithiccoins:coin/heartbreak/sterling_silver",
+		"lithiccoins:coin/howl/sterling_silver",
+		"lithiccoins:coin/miner/sterling_silver",
+		"lithiccoins:coin/mourner/sterling_silver",
+		"lithiccoins:coin/plenty/sterling_silver",
+		"lithiccoins:coin/prize/sterling_silver",
+		"lithiccoins:coin/sheaf/sterling_silver",
+		"lithiccoins:coin/shelter/sterling_silver",
+		"lithiccoins:coin/skull/sterling_silver",
+		"lithiccoins:coin/trifoil/sterling_silver"
+	]
+}

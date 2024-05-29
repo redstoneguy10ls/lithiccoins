@@ -36,13 +36,17 @@ public class LCItems {
             );
 
     //DIES
-    public static final Map<stampTypes, Map<Metal.Default, RegistryObject<Item>>> TOP_DIE =
-            Helpers.mapOfKeys(stampTypes.class, stamps ->
+    public static final Map<TopDies, Map<Metal.Default, RegistryObject<Item>>> TOP_DIE =
+            Helpers.mapOfKeys(TopDies.class, stamps ->
                     Helpers.mapOfKeys(Metal.Default.class, Metal.Default::hasTools, metals -> register("top_die/"+stamps.name()+"/"+metals.name(),
                              () -> new stampItem(metals.toolTier(), new Item.Properties())))
             );
     public static final Map<Metal.Default, RegistryObject<Item>> BOTTOM_DIE = Helpers.mapOfKeys(Metal.Default.class, Metal.Default::hasTools, metal ->
             register("bottom_die/" + metal.name(), () -> new TieredItem(metal.toolTier(), new Item.Properties()))
+    );
+
+    public static final Map<Metal.Default, RegistryObject<Item>> DISPLAY_TOP_DIES = Helpers.mapOfKeys(Metal.Default.class, Metal.Default::hasTools, metal ->
+            register("display/top_dies/" + metal.name(), () -> new TieredItem(metal.toolTier(), new Item.Properties()))
     );
 
     //WAX STUFF
@@ -62,6 +66,11 @@ public class LCItems {
 
 
     public static final RegistryObject<Item> COIN_PURSE = register("coin_purse", () -> new coinPurseItem(new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> STAMP_HOLDER = register("stamp_holder");
+    public static final RegistryObject<Item> DIE_HOLDER = register("die_holder");
+
+
 
     //MOLDS
     public static final RegistryObject<Item> UNFIRED_COIN_MOLD = register("ceramic/unfired_coin_mold");

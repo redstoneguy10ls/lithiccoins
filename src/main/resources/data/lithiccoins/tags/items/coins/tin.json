@@ -1,0 +1,27 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "replace": false,
+  "values": [
+		"lithiccoins:coin/angler/tin",
+		"lithiccoins:coin/archer/tin",
+		"lithiccoins:coin/arms_up/tin",
+		"lithiccoins:coin/blade/tin",
+		"lithiccoins:coin/brewer/tin",
+		"lithiccoins:coin/burn/tin",
+		"lithiccoins:coin/danger/tin",
+		"lithiccoins:coin/eagle/tin",
+		"lithiccoins:coin/explorer/tin",
+		"lithiccoins:coin/friend/tin",
+		"lithiccoins:coin/heart/tin",
+		"lithiccoins:coin/heartbreak/tin",
+		"lithiccoins:coin/howl/tin",
+		"lithiccoins:coin/miner/tin",
+		"lithiccoins:coin/mourner/tin",
+		"lithiccoins:coin/plenty/tin",
+		"lithiccoins:coin/prize/tin",
+		"lithiccoins:coin/sheaf/tin",
+		"lithiccoins:coin/shelter/tin",
+		"lithiccoins:coin/skull/tin",
+		"lithiccoins:coin/trifoil/tin"
+	]
+}

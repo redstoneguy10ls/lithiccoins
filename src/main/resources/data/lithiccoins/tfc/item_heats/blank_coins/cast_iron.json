@@ -1,7 +1,7 @@
 {
-    "__comment__": "Recipe written by redstoneguy10ls",
-    "ingredient": {
+    "__comment__": "This file was automatically created by redstoneguy10ls",
+       "ingredient": {
         "item": "lithiccoins:blank_coin/cast_iron"
     },
-    "heat_capacity": 2.857
-}             
+    "heat_capacity": 0.71425
+}       

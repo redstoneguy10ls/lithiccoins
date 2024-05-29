@@ -1,0 +1,18 @@
+{
+    "__comment__": "This file was automatically created by redstoneguy10ls",
+    "conditions": [
+    {
+        "type": "forge:mod_loaded",
+        "modid": "firmalife"
+    }
+    ],
+    "type": "tfc:heating",
+    "ingredient": {
+       "tag": "lithiccoins:coins/chromium"
+    },
+    "result_fluid": {
+        "fluid": "firmalife:metal/chromium",
+        "amount": 20
+    },
+    "temperature": 1250
+}       

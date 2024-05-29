@@ -1,11 +1,15 @@
 package com.redstoneguy10ls.lithiccoins.util;
 
+import com.google.common.base.Function;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
+import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.KnappingPattern;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.GsonHelper;
+import org.jetbrains.annotations.NotNull;
+
 
 public class LCKnappingPattern{
 
@@ -19,7 +23,7 @@ public class LCKnappingPattern{
     public static final int MAX_HEIGHT = 8;
 
 
-    public static LCKnappingPattern fromJson(JsonObject json)
+    public static @NotNull LCKnappingPattern fromJson(@NotNull JsonObject json)
     {
         final JsonArray array = json.getAsJsonArray("pattern");
         final boolean empty = GsonHelper.getAsBoolean(json, "outside_slot_required", true);
@@ -46,30 +50,44 @@ public class LCKnappingPattern{
 
     public static LCKnappingPattern fromNetwork(FriendlyByteBuf buffer)
     {
+        final boolean[] pat = new boolean[64];
+        for(int i = 0; i < 64; i++)
+        {
+            pat[i] = buffer.readBoolean();
+
+        }
+
         final int width = buffer.readVarInt();
         final int height = buffer.readVarInt();
-        final int data = buffer.readInt();
         final boolean empty = buffer.readBoolean();
-        return new LCKnappingPattern(width, height, data, empty);
+        return new LCKnappingPattern(width, height, pat, empty);
     }
 
     private final int width;
     private final int height;
     private final boolean empty;
-    private int data;
+    private int data; // on = 1, off = 0
+
+    private boolean[] pat;
 
     public LCKnappingPattern(){this(MAX_WIDTH,MAX_HEIGHT, false);}
 
     public LCKnappingPattern(int width, int height, boolean empty)
     {
-        this(width, height, (1 << (width * height)) - 1, empty);
+
+        this(width, height, new boolean[(height*width)], empty);
     }
 
-    private LCKnappingPattern(int width, int height, int data, boolean empty)
+    private LCKnappingPattern(int width, int height, boolean[] pat, boolean empty)
     {
+        for(int i = 0; i < pat.length; i++)
+        {
+            pat[i] = true;
+
+        }
         this.width = width;
         this.height = height;
-        this.data = data;
+        this.pat = pat;
         this.empty = empty;
     }
     public int getWidth()
@@ -89,16 +107,23 @@ public class LCKnappingPattern{
 
     public void setAll(boolean value)
     {
-        data = value ? (1 << (width * height)) - 1 : 0;
+        for(int i = 0; i < 64; i++)
+        {
+            pat[i] = value;
+
+        }
+        //data = value ? (1 << (width * height)) - 1 : 0;
     }
 
-    public void set(int x, int y, boolean value)
+    public void sets(int x, int y, boolean value)
     {
         set(x + y * width, value);
     }
 
     public void set(int index, boolean value)
     {
+        pat[index] = value;
+        /*
         assert index >= 0 && index < 32;
         if (value)
         {
@@ -108,6 +133,8 @@ public class LCKnappingPattern{
         {
             data &= ~(1 << index);
         }
+
+         */
     }
 
     public boolean get(int x, int y)
@@ -117,14 +144,18 @@ public class LCKnappingPattern{
 
     public boolean get(int index)
     {
-        assert index >= 0 && index < 32;
-        return ((data >> index) & 0b1) == 1;
+        return pat[index];
+        //assert index >= 0 && index < 32;
+        //return ((data >> index) & 0b1) == 1;
     }
-    public void toNetwork(FriendlyByteBuf buffer)
+    public void toNetwork(@NotNull FriendlyByteBuf buffer)
     {
+        for(int i = 0; i < 64; i++)
+        {
+            buffer.writeBoolean(pat[i]);
+        }
         buffer.writeVarInt(width);
         buffer.writeVarInt(height);
-        buffer.writeInt(data);
         buffer.writeBoolean(empty);
     }
 
@@ -140,7 +171,7 @@ public class LCKnappingPattern{
         return false;
     }
 
-    public boolean matches(LCKnappingPattern other)
+    public boolean matches(@NotNull LCKnappingPattern other)
     {
         for (int dx = 0; dx <= this.width - other.width; dx++)
         {
@@ -154,7 +185,7 @@ public class LCKnappingPattern{
         }
         return false;
     }
-    public boolean matches(LCKnappingPattern other, int startX, int startY, boolean mirror)
+    private boolean matches(LCKnappingPattern other, int startX, int startY, boolean mirror)
     {
         for (int x = 0; x < this.width; x++)
         {

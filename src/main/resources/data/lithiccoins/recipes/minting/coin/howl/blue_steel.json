@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "lithiccoins:minting",
+  "top_dies": [
+    "howl"
+  ],
+  "blank_coin": {
+    "item": "lithiccoins:blank_coin/blue_steel"
+  },
+  "tier": 6,
+  "result": {
+    "item": "lithiccoins:coin/howl/blue_steel"
+  }
+}

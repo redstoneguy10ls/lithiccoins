@@ -1,0 +1,19 @@
+{
+  "type": "lithiccoins:wax_knapping",
+  "knapping_type": "lithiccoins:wax",
+  "outside_slot_required": false,
+  "pattern": [
+    "XXXXXXXX",
+    "XX    XX",
+    "X  XX XX",
+    "X XX XXX",
+    "XX     X",
+    "XX  XX X",
+    "XX     X",
+    "XXXXXXXX"
+
+  ],
+  "result": {
+    "item": "lithiccoins:wax/plenty"
+  }
+}

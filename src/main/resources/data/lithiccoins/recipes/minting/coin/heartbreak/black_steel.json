@@ -7,7 +7,7 @@
   "blank_coin": {
     "item": "lithiccoins:blank_coin/black_steel"
   },
-  "tier": 6,
+  "tier": 5,
   "result": {
     "item": "lithiccoins:coin/heartbreak/black_steel"
   }

@@ -1,0 +1,27 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "replace": false,
+  "values": [
+		"lithiccoins:coin/angler/constantan",
+		"lithiccoins:coin/archer/constantan",
+		"lithiccoins:coin/arms_up/constantan",
+		"lithiccoins:coin/blade/constantan",
+		"lithiccoins:coin/brewer/constantan",
+		"lithiccoins:coin/burn/constantan",
+		"lithiccoins:coin/danger/constantan",
+		"lithiccoins:coin/eagle/constantan",
+		"lithiccoins:coin/explorer/constantan",
+		"lithiccoins:coin/friend/constantan",
+		"lithiccoins:coin/heart/constantan",
+		"lithiccoins:coin/heartbreak/constantan",
+		"lithiccoins:coin/howl/constantan",
+		"lithiccoins:coin/miner/constantan",
+		"lithiccoins:coin/mourner/constantan",
+		"lithiccoins:coin/plenty/constantan",
+		"lithiccoins:coin/prize/constantan",
+		"lithiccoins:coin/sheaf/constantan",
+		"lithiccoins:coin/shelter/constantan",
+		"lithiccoins:coin/skull/constantan",
+		"lithiccoins:coin/trifoil/constantan"
+	]
+}

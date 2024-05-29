@@ -1,0 +1,19 @@
+{
+  "type": "lithiccoins:wax_knapping",
+  "knapping_type": "lithiccoins:wax",
+  "outside_slot_required": false,
+  "pattern": [
+    "XXXXXXXX",
+    "X  XX  X",
+    "   X    ",
+    "    X   ",
+    "X  X   X",
+    "XX  X XX",
+    "XXX  XXX",
+    "XXXXXXXX"
+
+  ],
+  "result": {
+    "item": "lithiccoins:wax/heartbreak"
+  }
+}

@@ -1,7 +1,7 @@
 {
-    "__comment__": "Recipe written by redstoneguy10ls",
-    "ingredient": {
+    "__comment__": "This file was automatically created by redstoneguy10ls",
+       "ingredient": {
         "item": "lithiccoins:blank_coin/bismuth"
     },
-    "heat_capacity": 7.143
-}             
+    "heat_capacity": 1.78575
+}       

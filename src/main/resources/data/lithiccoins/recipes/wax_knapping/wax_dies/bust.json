@@ -1,0 +1,19 @@
+{
+  "type": "lithiccoins:wax_knapping",
+  "knapping_type": "lithiccoins:wax",
+  "outside_slot_required": false,
+  "pattern": [
+    "XXXXXXXX",
+    "X X  X X",
+    "XX    XX",
+    " X X XX ",
+    " X    X ",
+    "XXX  XXX",
+    "X      X",
+    "XX    XX"
+
+  ],
+  "result": {
+    "item": "lithiccoins:wax/bust"
+  }
+}

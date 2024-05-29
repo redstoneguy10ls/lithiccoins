@@ -1,0 +1,27 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "replace": false,
+  "values": [
+		"lithiccoins:coin/angler/copper",
+		"lithiccoins:coin/archer/copper",
+		"lithiccoins:coin/arms_up/copper",
+		"lithiccoins:coin/blade/copper",
+		"lithiccoins:coin/brewer/copper",
+		"lithiccoins:coin/burn/copper",
+		"lithiccoins:coin/danger/copper",
+		"lithiccoins:coin/eagle/copper",
+		"lithiccoins:coin/explorer/copper",
+		"lithiccoins:coin/friend/copper",
+		"lithiccoins:coin/heart/copper",
+		"lithiccoins:coin/heartbreak/copper",
+		"lithiccoins:coin/howl/copper",
+		"lithiccoins:coin/miner/copper",
+		"lithiccoins:coin/mourner/copper",
+		"lithiccoins:coin/plenty/copper",
+		"lithiccoins:coin/prize/copper",
+		"lithiccoins:coin/sheaf/copper",
+		"lithiccoins:coin/shelter/copper",
+		"lithiccoins:coin/skull/copper",
+		"lithiccoins:coin/trifoil/copper"
+	]
+}

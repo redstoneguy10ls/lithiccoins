@@ -1,0 +1,27 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "replace": false,
+  "values": [
+		"lithiccoins:coin/angler/rose_gold",
+		"lithiccoins:coin/archer/rose_gold",
+		"lithiccoins:coin/arms_up/rose_gold",
+		"lithiccoins:coin/blade/rose_gold",
+		"lithiccoins:coin/brewer/rose_gold",
+		"lithiccoins:coin/burn/rose_gold",
+		"lithiccoins:coin/danger/rose_gold",
+		"lithiccoins:coin/eagle/rose_gold",
+		"lithiccoins:coin/explorer/rose_gold",
+		"lithiccoins:coin/friend/rose_gold",
+		"lithiccoins:coin/heart/rose_gold",
+		"lithiccoins:coin/heartbreak/rose_gold",
+		"lithiccoins:coin/howl/rose_gold",
+		"lithiccoins:coin/miner/rose_gold",
+		"lithiccoins:coin/mourner/rose_gold",
+		"lithiccoins:coin/plenty/rose_gold",
+		"lithiccoins:coin/prize/rose_gold",
+		"lithiccoins:coin/sheaf/rose_gold",
+		"lithiccoins:coin/shelter/rose_gold",
+		"lithiccoins:coin/skull/rose_gold",
+		"lithiccoins:coin/trifoil/rose_gold"
+	]
+}

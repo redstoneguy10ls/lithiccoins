@@ -51,6 +51,9 @@ public final class LCTabs {
     private static void fillTab(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output out)
     {
         accept(out, LCBlocks.MINT);
+        accept(out, LCItems.DIE_HOLDER);
+        accept(out, LCItems.STAMP_HOLDER);
+
         accept(out, LCItems.FIRE_COIN_MOLD);
         accept(out, LCItems.UNFIRED_FIRE_COIN_MOLD);
         accept(out, LCItems.COIN_MOLD);
@@ -65,16 +68,15 @@ public final class LCTabs {
 
 
 
-        for(stampTypes stamps : stampTypes.VALUES)
+        for(TopDies stamps : TopDies.VALUES)
         {
 
-            /*
                 for(Metal.Default mats : Metal.Default.values())
                 {
                     accept(out, LCItems.TOP_DIE.get(stamps), mats);
                 }
-                */
-            accept(out, LCItems.TOP_DIE.get(stamps), Metal.Default.STEEL);
+
+            //accept(out, LCItems.TOP_DIE.get(stamps), Metal.Default.STEEL);
         }
         LCItems.BOTTOM_DIE.values().forEach(reg -> accept(out, reg));
 

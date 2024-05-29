@@ -1,0 +1,13 @@
+{
+    "__comment__": "This file was automatically created by redstoneguy10ls",
+    "type": "tfc:heating",
+    "ingredient": {
+       "tag": "lithiccoins:top_dies/black_steel"
+    },
+    "result_fluid": {
+        "fluid": "tfc:metal/black_steel",
+        "amount": 100
+    },
+    "temperature": 1485,
+    "use_durability": true
+}       

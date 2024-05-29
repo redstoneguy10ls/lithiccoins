@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XYX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:clay_ball"
+    },
+    "Y": {
+      "item": "lithiccoins:wax/friend"
+    }
+  },
+  "result": {
+    "item": "lithiccoins:ceramic/die_mold/unfired/friend"
+  }
+}

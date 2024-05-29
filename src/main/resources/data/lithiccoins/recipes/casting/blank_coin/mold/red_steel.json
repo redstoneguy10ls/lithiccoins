@@ -1,7 +1,11 @@
-
-
 {
-    "__comment__": "Recipe written by redstoneguy10ls",
+    "__comment__": "This file was automatically created by redstoneguy10ls",
+    "conditions": [
+    {
+        "type": "forge:mod_loaded",
+        "modid": "tfc"
+    }
+    ],
     "type": "tfc:casting",
     "mold": {
         "item": "lithiccoins:ceramic/coin_mold"
@@ -14,6 +18,5 @@
         "item": "lithiccoins:blank_coin/red_steel",
         "count": 4
     },
-    "break_chance": 0.01
-}             
-                 
+    "break_chance": 0.1
+}       

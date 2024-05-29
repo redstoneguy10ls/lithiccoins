@@ -1,0 +1,15 @@
+{
+  "input": {
+    "ingredient": {
+      "tag": "lithiccoins:wax_knappable"
+    },
+    "count": 4
+  },
+  "click_sound": "minecraft:block.honey_block.slide",
+  "consume_after_complete": true,
+  "use_disabled_texture": true,
+  "spawns_particles": false,
+  "jei_icon_item": {
+    "item": "firmalife:beeswax"
+  }
+}

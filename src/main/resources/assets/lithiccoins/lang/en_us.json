@@ -839,6 +839,9 @@
   "item.lithiccoins.ceramic.die_mold.unfired.trifoil" : "Trifoil Unfired Die Mold",
   "item.lithiccoins.ceramic.die_mold.fired.trifoil" : "Trifoil Die Mold",
   "item.lithiccoins.wax.wax_die" : "Wax Die",
+  "item.lithiccoins.die_holder" : "Die Holder",
+  "item.lithiccoins.stamp_holder" : "Stamp Holder",
+
   "block.lithiccoins.mint": "Coin Mint",
   "lithiccoins.jei.minting": "Coin Minting",
 
@@ -858,7 +861,9 @@
   "lithiccoins.tooltip.lithiccoins.mint.top_die_to_low" : "The Top die is not a high enough tier to mint that",
   "lithiccoins.tooltip.lithiccoins.mint.both_die_to_low" : "Both dies are not a high enough tier to mint that",
   "lithiccoins.tooltip.lithiccoins.coins.heads" : "HEADS",
-  "lithiccoins.tooltip.lithiccoins.coins.tails" : "TAILS"
+  "lithiccoins.tooltip.lithiccoins.coins.tails" : "TAILS",
+
+  "tfc.jei.wax_knapping": "Wax Knapping"
 
 
 }

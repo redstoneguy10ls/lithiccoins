@@ -28,7 +28,7 @@ public class LCBlocks {
     public static final RegistryObject<Block> MINT = register("mint",
             () -> new mintBlock(ExtendedProperties.of()
                     .mapColor(MapColor.STONE)
-                    .strength(0.5F, 2.0F)
+                    .strength(2.0F, 2.0F)
                     .sound(SoundType.BASALT)
                     .noOcclusion()
                     .blockEntity(LCBlockEntities.MINT)

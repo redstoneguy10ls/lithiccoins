@@ -1,0 +1,27 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "replace": false,
+  "values": [
+		"lithiccoins:coin/angler/black_steel",
+		"lithiccoins:coin/archer/black_steel",
+		"lithiccoins:coin/arms_up/black_steel",
+		"lithiccoins:coin/blade/black_steel",
+		"lithiccoins:coin/brewer/black_steel",
+		"lithiccoins:coin/burn/black_steel",
+		"lithiccoins:coin/danger/black_steel",
+		"lithiccoins:coin/eagle/black_steel",
+		"lithiccoins:coin/explorer/black_steel",
+		"lithiccoins:coin/friend/black_steel",
+		"lithiccoins:coin/heart/black_steel",
+		"lithiccoins:coin/heartbreak/black_steel",
+		"lithiccoins:coin/howl/black_steel",
+		"lithiccoins:coin/miner/black_steel",
+		"lithiccoins:coin/mourner/black_steel",
+		"lithiccoins:coin/plenty/black_steel",
+		"lithiccoins:coin/prize/black_steel",
+		"lithiccoins:coin/sheaf/black_steel",
+		"lithiccoins:coin/shelter/black_steel",
+		"lithiccoins:coin/skull/black_steel",
+		"lithiccoins:coin/trifoil/black_steel"
+	]
+}

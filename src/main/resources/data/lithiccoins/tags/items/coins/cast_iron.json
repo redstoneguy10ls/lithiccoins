@@ -1,0 +1,27 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "replace": false,
+  "values": [
+		"lithiccoins:coin/angler/cast_iron",
+		"lithiccoins:coin/archer/cast_iron",
+		"lithiccoins:coin/arms_up/cast_iron",
+		"lithiccoins:coin/blade/cast_iron",
+		"lithiccoins:coin/brewer/cast_iron",
+		"lithiccoins:coin/burn/cast_iron",
+		"lithiccoins:coin/danger/cast_iron",
+		"lithiccoins:coin/eagle/cast_iron",
+		"lithiccoins:coin/explorer/cast_iron",
+		"lithiccoins:coin/friend/cast_iron",
+		"lithiccoins:coin/heart/cast_iron",
+		"lithiccoins:coin/heartbreak/cast_iron",
+		"lithiccoins:coin/howl/cast_iron",
+		"lithiccoins:coin/miner/cast_iron",
+		"lithiccoins:coin/mourner/cast_iron",
+		"lithiccoins:coin/plenty/cast_iron",
+		"lithiccoins:coin/prize/cast_iron",
+		"lithiccoins:coin/sheaf/cast_iron",
+		"lithiccoins:coin/shelter/cast_iron",
+		"lithiccoins:coin/skull/cast_iron",
+		"lithiccoins:coin/trifoil/cast_iron"
+	]
+}

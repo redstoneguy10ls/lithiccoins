@@ -1,0 +1,18 @@
+{
+    "__comment__": "This file was automatically created by redstoneguy10ls",
+    "conditions": [
+    {
+        "type": "forge:mod_loaded",
+        "modid": "tfc"
+    }
+    ],
+    "type": "tfc:heating",
+    "ingredient": {
+       "item": "lithiccoins:blank_coin/steel"
+    },
+    "result_fluid": {
+        "fluid": "tfc:metal/steel",
+        "amount": 25
+    },
+    "temperature": 1540
+}       

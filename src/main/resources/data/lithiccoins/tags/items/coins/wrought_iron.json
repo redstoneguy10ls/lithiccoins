@@ -1,0 +1,27 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "replace": false,
+  "values": [
+		"lithiccoins:coin/angler/wrought_iron",
+		"lithiccoins:coin/archer/wrought_iron",
+		"lithiccoins:coin/arms_up/wrought_iron",
+		"lithiccoins:coin/blade/wrought_iron",
+		"lithiccoins:coin/brewer/wrought_iron",
+		"lithiccoins:coin/burn/wrought_iron",
+		"lithiccoins:coin/danger/wrought_iron",
+		"lithiccoins:coin/eagle/wrought_iron",
+		"lithiccoins:coin/explorer/wrought_iron",
+		"lithiccoins:coin/friend/wrought_iron",
+		"lithiccoins:coin/heart/wrought_iron",
+		"lithiccoins:coin/heartbreak/wrought_iron",
+		"lithiccoins:coin/howl/wrought_iron",
+		"lithiccoins:coin/miner/wrought_iron",
+		"lithiccoins:coin/mourner/wrought_iron",
+		"lithiccoins:coin/plenty/wrought_iron",
+		"lithiccoins:coin/prize/wrought_iron",
+		"lithiccoins:coin/sheaf/wrought_iron",
+		"lithiccoins:coin/shelter/wrought_iron",
+		"lithiccoins:coin/skull/wrought_iron",
+		"lithiccoins:coin/trifoil/wrought_iron"
+	]
+}

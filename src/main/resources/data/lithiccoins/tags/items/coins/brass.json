@@ -1,0 +1,27 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "replace": false,
+  "values": [
+		"lithiccoins:coin/angler/brass",
+		"lithiccoins:coin/archer/brass",
+		"lithiccoins:coin/arms_up/brass",
+		"lithiccoins:coin/blade/brass",
+		"lithiccoins:coin/brewer/brass",
+		"lithiccoins:coin/burn/brass",
+		"lithiccoins:coin/danger/brass",
+		"lithiccoins:coin/eagle/brass",
+		"lithiccoins:coin/explorer/brass",
+		"lithiccoins:coin/friend/brass",
+		"lithiccoins:coin/heart/brass",
+		"lithiccoins:coin/heartbreak/brass",
+		"lithiccoins:coin/howl/brass",
+		"lithiccoins:coin/miner/brass",
+		"lithiccoins:coin/mourner/brass",
+		"lithiccoins:coin/plenty/brass",
+		"lithiccoins:coin/prize/brass",
+		"lithiccoins:coin/sheaf/brass",
+		"lithiccoins:coin/shelter/brass",
+		"lithiccoins:coin/skull/brass",
+		"lithiccoins:coin/trifoil/brass"
+	]
+}

@@ -3,16 +3,19 @@ package com.redstoneguy10ls.lithiccoins;
 
 import com.mojang.datafixers.util.Either;
 import com.redstoneguy10ls.lithiccoins.client.render.mintBlockEntityRenderer;
+import com.redstoneguy10ls.lithiccoins.client.screen.WaxKanppingScreen;
 import com.redstoneguy10ls.lithiccoins.common.Capability.IPurse;
 import com.redstoneguy10ls.lithiccoins.common.Capability.LocationCapability;
 import com.redstoneguy10ls.lithiccoins.common.Capability.PurseCapability;
 import com.redstoneguy10ls.lithiccoins.common.blockentities.LCBlockEntities;
+import com.redstoneguy10ls.lithiccoins.common.container.LCContainerTypes;
 import com.redstoneguy10ls.lithiccoins.common.items.LCItems;
 import com.redstoneguy10ls.lithiccoins.common.items.stampTypes;
 import com.redstoneguy10ls.lithiccoins.util.LCHelpers;
 import com.redstoneguy10ls.lithiccoins.util.coinTooltip;
 import com.redstoneguy10ls.lithiccoins.util.tooltips;
 import net.dries007.tfc.client.model.ContainedFluidModel;
+import net.dries007.tfc.util.Metal;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.network.chat.Component;
@@ -66,6 +69,8 @@ public class ClientEventHandler {
     {
         event.enqueueWork(() -> {
 
+            MenuScreens.register(LCContainerTypes.WAX_KNAPPING.get(), WaxKanppingScreen::new);
+
             ItemProperties.register(LCItems.COIN_PURSE.get(), new ResourceLocation(MOD_ID, "filled"),
                     (stack, a, b, c) -> stack.getCapability(PurseCapability.CAPABILITY).map(IPurse::hasItem).orElse(false) ? 1f: 0f);
         });
@@ -95,6 +100,8 @@ public class ClientEventHandler {
     public static void registerColorHandlerItems(RegisterColorHandlersEvent.Item event)
     {
         event.register(new ContainedFluidModel.Colors(), LCItems.FIRE_COIN_MOLD.get(), LCItems.COIN_MOLD.get());
+
+        LCItems.FIRED_DIE_MOLD.values().forEach(reg -> event.register(new ContainedFluidModel.Colors(), reg.get()));
     }
 
 

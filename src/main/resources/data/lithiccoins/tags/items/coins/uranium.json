@@ -1,0 +1,27 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "replace": false,
+  "values": [
+		"lithiccoins:coin/angler/uranium",
+		"lithiccoins:coin/archer/uranium",
+		"lithiccoins:coin/arms_up/uranium",
+		"lithiccoins:coin/blade/uranium",
+		"lithiccoins:coin/brewer/uranium",
+		"lithiccoins:coin/burn/uranium",
+		"lithiccoins:coin/danger/uranium",
+		"lithiccoins:coin/eagle/uranium",
+		"lithiccoins:coin/explorer/uranium",
+		"lithiccoins:coin/friend/uranium",
+		"lithiccoins:coin/heart/uranium",
+		"lithiccoins:coin/heartbreak/uranium",
+		"lithiccoins:coin/howl/uranium",
+		"lithiccoins:coin/miner/uranium",
+		"lithiccoins:coin/mourner/uranium",
+		"lithiccoins:coin/plenty/uranium",
+		"lithiccoins:coin/prize/uranium",
+		"lithiccoins:coin/sheaf/uranium",
+		"lithiccoins:coin/shelter/uranium",
+		"lithiccoins:coin/skull/uranium",
+		"lithiccoins:coin/trifoil/uranium"
+	]
+}

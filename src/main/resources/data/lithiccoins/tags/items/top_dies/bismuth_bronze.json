@@ -1,0 +1,27 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "replace": false,
+  "values": [
+		"lithiccoins:top_die/angler/bismuth_bronze",
+		"lithiccoins:top_die/archer/bismuth_bronze",
+		"lithiccoins:top_die/arms_up/bismuth_bronze",
+		"lithiccoins:top_die/blade/bismuth_bronze",
+		"lithiccoins:top_die/brewer/bismuth_bronze",
+		"lithiccoins:top_die/burn/bismuth_bronze",
+		"lithiccoins:top_die/danger/bismuth_bronze",
+		"lithiccoins:top_die/eagle/bismuth_bronze",
+		"lithiccoins:top_die/explorer/bismuth_bronze",
+		"lithiccoins:top_die/friend/bismuth_bronze",
+		"lithiccoins:top_die/heart/bismuth_bronze",
+		"lithiccoins:top_die/heartbreak/bismuth_bronze",
+		"lithiccoins:top_die/howl/bismuth_bronze",
+		"lithiccoins:top_die/miner/bismuth_bronze",
+		"lithiccoins:top_die/mourner/bismuth_bronze",
+		"lithiccoins:top_die/plenty/bismuth_bronze",
+		"lithiccoins:top_die/prize/bismuth_bronze",
+		"lithiccoins:top_die/sheaf/bismuth_bronze",
+		"lithiccoins:top_die/shelter/bismuth_bronze",
+		"lithiccoins:top_die/skull/bismuth_bronze",
+		"lithiccoins:top_die/trifoil/bismuth_bronze"
+	]
+}

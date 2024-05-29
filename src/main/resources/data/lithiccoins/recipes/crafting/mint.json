@@ -1,0 +1,26 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B ",
+    "SbS",
+    "RRR"
+  ],
+  "key": {
+    "B": {
+      "item": "lithiccoins:stamp_holder"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "R": {
+      "tag": "tfc:rock/smooth"
+    },
+    "b": {
+      "item": "lithiccoins:die_holder"
+    }
+  },
+  "result": {
+    "item": "lithiccoins:mint"
+  }
+}

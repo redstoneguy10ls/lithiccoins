@@ -1,0 +1,13 @@
+{
+    "__comment__": "This file was automatically created by redstoneguy10ls",
+    "type": "tfc:heating",
+    "ingredient": {
+       "item": "lithiccoins:bottom_die/wrought_iron"
+    },
+    "result_fluid": {
+        "fluid": "tfc:metal/wrought_iron",
+        "amount": 100
+    },
+    "temperature": 1535,
+    "use_durability": true
+}       

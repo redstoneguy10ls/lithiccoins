@@ -13,7 +13,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.awt.*;
 import java.util.function.Supplier;
 
 import static com.redstoneguy10ls.lithiccoins.LithicCoins.MOD_ID;
@@ -22,10 +21,10 @@ public class LCContainerTypes {
     public static final DeferredRegister<MenuType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, MOD_ID);
 
 
-    public static final RegistryObject<MenuType<LCKnappingContainer>> WAX_KNAPPING = register("wax_knapping", (windowId, playerInventory, buffer) -> {
+    public static final RegistryObject<MenuType<WaxKnappingContainer>> WAX_KNAPPING = register("wax_knapping", (windowId, playerInventory, buffer) -> {
         final KnappingType knappingType = KnappingType.MANAGER.getOrThrow(buffer.readResourceLocation());
         final ItemStackContainerProvider.Info info = ItemStackContainerProvider.read(buffer, playerInventory);
-        return LCKnappingContainer.create(info.stack(), knappingType, info.hand(), info.slot(), playerInventory, windowId);
+        return WaxKnappingContainer.create(info.stack(), knappingType, info.hand(), info.slot(), playerInventory, windowId);
     });
 
 

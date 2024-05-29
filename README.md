@@ -5,9 +5,9 @@ features/road map:
   ✅Coins save creation location
   ✅Top and bottom die items
   ✅Recipes for casting coins
-  ❌Dies insert into an anvil
-  ❌Die processing
-  ❌Die recipes
+  ✅Dies insert into an anvil
+  ✅Die processing
+  ✅Die recipes
   ✅Dies have an image tool tip showing what die it is
   ✅Coin minting recipes
   ✅Coin purse

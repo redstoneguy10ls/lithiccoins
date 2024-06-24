@@ -132,13 +132,13 @@ dependencies {
     implementation fg.deobf("curse.maven:patchouli-306770:4636277")
 
 
-    implementation fg.deobf("curse.maven:terrafirmacraft-302973:5276689")
+    implementation fg.deobf("curse.maven:terrafirmacraft-302973:5425324")
 
     runtimeOnly(fg.deobf("curse.maven:jade-324717:4614153"))
 
     implementation fg.deobf("blusunrize.immersiveengineering:ImmersiveEngineering:1.20.1-10.1.0-171")
 
-    implementation fg.deobf("curse.maven:firmalife-453394:5280601")
+    implementation fg.deobf("curse.maven:firmalife-453394:5456804")
 
     implementation fg.deobf("curse.maven:tfc-ie-crossover-830886:5188548")
 

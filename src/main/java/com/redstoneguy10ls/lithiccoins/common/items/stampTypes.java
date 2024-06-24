@@ -7,6 +7,7 @@ public enum stampTypes {
     BLADE,
     BREWER,
     BURN,
+    BUST,
     DANGER,
     EAGLE,
     EXPLORER,
@@ -18,9 +19,11 @@ public enum stampTypes {
     MOURNER,
     PLENTY,
     PRIZE,
+    PUNCHED,
     SHEAF,
     SHELTER,
     SKULL,
+    SYMBOL,
     TRIFOIL;
     public static final stampTypes[] VALUES = values();
 }

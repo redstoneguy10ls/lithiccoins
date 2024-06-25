@@ -8,6 +8,7 @@
 		"lithiccoins:top_die/blade/copper",
 		"lithiccoins:top_die/brewer/copper",
 		"lithiccoins:top_die/burn/copper",
+		"lithiccoins:top_die/bust/copper",
 		"lithiccoins:top_die/danger/copper",
 		"lithiccoins:top_die/eagle/copper",
 		"lithiccoins:top_die/explorer/copper",
@@ -19,9 +20,11 @@
 		"lithiccoins:top_die/mourner/copper",
 		"lithiccoins:top_die/plenty/copper",
 		"lithiccoins:top_die/prize/copper",
+		"lithiccoins:top_die/punched/copper",
 		"lithiccoins:top_die/sheaf/copper",
 		"lithiccoins:top_die/shelter/copper",
 		"lithiccoins:top_die/skull/copper",
+		"lithiccoins:top_die/symbol/copper",
 		"lithiccoins:top_die/trifoil/copper"
 	]
 }

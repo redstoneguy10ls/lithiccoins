@@ -8,6 +8,7 @@
 		"lithiccoins:coin/blade/black_steel",
 		"lithiccoins:coin/brewer/black_steel",
 		"lithiccoins:coin/burn/black_steel",
+		"lithiccoins:coin/bust/black_steel",
 		"lithiccoins:coin/danger/black_steel",
 		"lithiccoins:coin/eagle/black_steel",
 		"lithiccoins:coin/explorer/black_steel",
@@ -19,9 +20,11 @@
 		"lithiccoins:coin/mourner/black_steel",
 		"lithiccoins:coin/plenty/black_steel",
 		"lithiccoins:coin/prize/black_steel",
+		"lithiccoins:coin/punched/black_steel",
 		"lithiccoins:coin/sheaf/black_steel",
 		"lithiccoins:coin/shelter/black_steel",
 		"lithiccoins:coin/skull/black_steel",
+		"lithiccoins:coin/symbol/black_steel",
 		"lithiccoins:coin/trifoil/black_steel"
 	]
 }

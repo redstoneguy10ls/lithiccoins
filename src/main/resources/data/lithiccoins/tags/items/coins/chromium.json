@@ -8,6 +8,7 @@
 		"lithiccoins:coin/blade/chromium",
 		"lithiccoins:coin/brewer/chromium",
 		"lithiccoins:coin/burn/chromium",
+		"lithiccoins:coin/bust/chromium",
 		"lithiccoins:coin/danger/chromium",
 		"lithiccoins:coin/eagle/chromium",
 		"lithiccoins:coin/explorer/chromium",
@@ -19,9 +20,11 @@
 		"lithiccoins:coin/mourner/chromium",
 		"lithiccoins:coin/plenty/chromium",
 		"lithiccoins:coin/prize/chromium",
+		"lithiccoins:coin/punched/chromium",
 		"lithiccoins:coin/sheaf/chromium",
 		"lithiccoins:coin/shelter/chromium",
 		"lithiccoins:coin/skull/chromium",
+		"lithiccoins:coin/symbol/chromium",
 		"lithiccoins:coin/trifoil/chromium"
 	]
 }

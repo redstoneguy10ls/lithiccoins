@@ -8,6 +8,7 @@
 		"lithiccoins:coin/blade/copper",
 		"lithiccoins:coin/brewer/copper",
 		"lithiccoins:coin/burn/copper",
+		"lithiccoins:coin/bust/copper",
 		"lithiccoins:coin/danger/copper",
 		"lithiccoins:coin/eagle/copper",
 		"lithiccoins:coin/explorer/copper",
@@ -19,9 +20,11 @@
 		"lithiccoins:coin/mourner/copper",
 		"lithiccoins:coin/plenty/copper",
 		"lithiccoins:coin/prize/copper",
+		"lithiccoins:coin/punched/copper",
 		"lithiccoins:coin/sheaf/copper",
 		"lithiccoins:coin/shelter/copper",
 		"lithiccoins:coin/skull/copper",
+		"lithiccoins:coin/symbol/copper",
 		"lithiccoins:coin/trifoil/copper"
 	]
 }

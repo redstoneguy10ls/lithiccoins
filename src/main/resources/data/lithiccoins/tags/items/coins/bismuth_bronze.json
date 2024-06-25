@@ -8,6 +8,7 @@
 		"lithiccoins:coin/blade/bismuth_bronze",
 		"lithiccoins:coin/brewer/bismuth_bronze",
 		"lithiccoins:coin/burn/bismuth_bronze",
+		"lithiccoins:coin/bust/bismuth_bronze",
 		"lithiccoins:coin/danger/bismuth_bronze",
 		"lithiccoins:coin/eagle/bismuth_bronze",
 		"lithiccoins:coin/explorer/bismuth_bronze",
@@ -19,9 +20,11 @@
 		"lithiccoins:coin/mourner/bismuth_bronze",
 		"lithiccoins:coin/plenty/bismuth_bronze",
 		"lithiccoins:coin/prize/bismuth_bronze",
+		"lithiccoins:coin/punched/bismuth_bronze",
 		"lithiccoins:coin/sheaf/bismuth_bronze",
 		"lithiccoins:coin/shelter/bismuth_bronze",
 		"lithiccoins:coin/skull/bismuth_bronze",
+		"lithiccoins:coin/symbol/bismuth_bronze",
 		"lithiccoins:coin/trifoil/bismuth_bronze"
 	]
 }

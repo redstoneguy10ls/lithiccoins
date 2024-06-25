@@ -8,6 +8,7 @@
 		"lithiccoins:coin/blade/brass",
 		"lithiccoins:coin/brewer/brass",
 		"lithiccoins:coin/burn/brass",
+		"lithiccoins:coin/bust/brass",
 		"lithiccoins:coin/danger/brass",
 		"lithiccoins:coin/eagle/brass",
 		"lithiccoins:coin/explorer/brass",
@@ -19,9 +20,11 @@
 		"lithiccoins:coin/mourner/brass",
 		"lithiccoins:coin/plenty/brass",
 		"lithiccoins:coin/prize/brass",
+		"lithiccoins:coin/punched/brass",
 		"lithiccoins:coin/sheaf/brass",
 		"lithiccoins:coin/shelter/brass",
 		"lithiccoins:coin/skull/brass",
+		"lithiccoins:coin/symbol/brass",
 		"lithiccoins:coin/trifoil/brass"
 	]
 }

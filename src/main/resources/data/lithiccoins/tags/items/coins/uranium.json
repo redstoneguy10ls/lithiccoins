@@ -8,6 +8,7 @@
 		"lithiccoins:coin/blade/uranium",
 		"lithiccoins:coin/brewer/uranium",
 		"lithiccoins:coin/burn/uranium",
+		"lithiccoins:coin/bust/uranium",
 		"lithiccoins:coin/danger/uranium",
 		"lithiccoins:coin/eagle/uranium",
 		"lithiccoins:coin/explorer/uranium",
@@ -19,9 +20,11 @@
 		"lithiccoins:coin/mourner/uranium",
 		"lithiccoins:coin/plenty/uranium",
 		"lithiccoins:coin/prize/uranium",
+		"lithiccoins:coin/punched/uranium",
 		"lithiccoins:coin/sheaf/uranium",
 		"lithiccoins:coin/shelter/uranium",
 		"lithiccoins:coin/skull/uranium",
+		"lithiccoins:coin/symbol/uranium",
 		"lithiccoins:coin/trifoil/uranium"
 	]
 }

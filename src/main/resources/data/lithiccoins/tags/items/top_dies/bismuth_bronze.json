@@ -8,6 +8,7 @@
 		"lithiccoins:top_die/blade/bismuth_bronze",
 		"lithiccoins:top_die/brewer/bismuth_bronze",
 		"lithiccoins:top_die/burn/bismuth_bronze",
+		"lithiccoins:top_die/bust/bismuth_bronze",
 		"lithiccoins:top_die/danger/bismuth_bronze",
 		"lithiccoins:top_die/eagle/bismuth_bronze",
 		"lithiccoins:top_die/explorer/bismuth_bronze",
@@ -19,9 +20,11 @@
 		"lithiccoins:top_die/mourner/bismuth_bronze",
 		"lithiccoins:top_die/plenty/bismuth_bronze",
 		"lithiccoins:top_die/prize/bismuth_bronze",
+		"lithiccoins:top_die/punched/bismuth_bronze",
 		"lithiccoins:top_die/sheaf/bismuth_bronze",
 		"lithiccoins:top_die/shelter/bismuth_bronze",
 		"lithiccoins:top_die/skull/bismuth_bronze",
+		"lithiccoins:top_die/symbol/bismuth_bronze",
 		"lithiccoins:top_die/trifoil/bismuth_bronze"
 	]
 }

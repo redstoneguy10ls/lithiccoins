@@ -8,6 +8,7 @@
 		"lithiccoins:coin/blade/stainless_steel",
 		"lithiccoins:coin/brewer/stainless_steel",
 		"lithiccoins:coin/burn/stainless_steel",
+		"lithiccoins:coin/bust/stainless_steel",
 		"lithiccoins:coin/danger/stainless_steel",
 		"lithiccoins:coin/eagle/stainless_steel",
 		"lithiccoins:coin/explorer/stainless_steel",
@@ -19,9 +20,11 @@
 		"lithiccoins:coin/mourner/stainless_steel",
 		"lithiccoins:coin/plenty/stainless_steel",
 		"lithiccoins:coin/prize/stainless_steel",
+		"lithiccoins:coin/punched/stainless_steel",
 		"lithiccoins:coin/sheaf/stainless_steel",
 		"lithiccoins:coin/shelter/stainless_steel",
 		"lithiccoins:coin/skull/stainless_steel",
+		"lithiccoins:coin/symbol/stainless_steel",
 		"lithiccoins:coin/trifoil/stainless_steel"
 	]
 }

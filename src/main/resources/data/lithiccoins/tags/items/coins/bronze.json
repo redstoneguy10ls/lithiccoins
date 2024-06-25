@@ -8,6 +8,7 @@
 		"lithiccoins:coin/blade/bronze",
 		"lithiccoins:coin/brewer/bronze",
 		"lithiccoins:coin/burn/bronze",
+		"lithiccoins:coin/bust/bronze",
 		"lithiccoins:coin/danger/bronze",
 		"lithiccoins:coin/eagle/bronze",
 		"lithiccoins:coin/explorer/bronze",
@@ -19,9 +20,11 @@
 		"lithiccoins:coin/mourner/bronze",
 		"lithiccoins:coin/plenty/bronze",
 		"lithiccoins:coin/prize/bronze",
+		"lithiccoins:coin/punched/bronze",
 		"lithiccoins:coin/sheaf/bronze",
 		"lithiccoins:coin/shelter/bronze",
 		"lithiccoins:coin/skull/bronze",
+		"lithiccoins:coin/symbol/bronze",
 		"lithiccoins:coin/trifoil/bronze"
 	]
 }

@@ -8,6 +8,7 @@
 		"lithiccoins:coin/blade/wrought_iron",
 		"lithiccoins:coin/brewer/wrought_iron",
 		"lithiccoins:coin/burn/wrought_iron",
+		"lithiccoins:coin/bust/wrought_iron",
 		"lithiccoins:coin/danger/wrought_iron",
 		"lithiccoins:coin/eagle/wrought_iron",
 		"lithiccoins:coin/explorer/wrought_iron",
@@ -19,9 +20,11 @@
 		"lithiccoins:coin/mourner/wrought_iron",
 		"lithiccoins:coin/plenty/wrought_iron",
 		"lithiccoins:coin/prize/wrought_iron",
+		"lithiccoins:coin/punched/wrought_iron",
 		"lithiccoins:coin/sheaf/wrought_iron",
 		"lithiccoins:coin/shelter/wrought_iron",
 		"lithiccoins:coin/skull/wrought_iron",
+		"lithiccoins:coin/symbol/wrought_iron",
 		"lithiccoins:coin/trifoil/wrought_iron"
 	]
 }

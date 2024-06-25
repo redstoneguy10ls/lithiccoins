@@ -8,6 +8,7 @@
 		"lithiccoins:coin/blade/electrum",
 		"lithiccoins:coin/brewer/electrum",
 		"lithiccoins:coin/burn/electrum",
+		"lithiccoins:coin/bust/electrum",
 		"lithiccoins:coin/danger/electrum",
 		"lithiccoins:coin/eagle/electrum",
 		"lithiccoins:coin/explorer/electrum",
@@ -19,9 +20,11 @@
 		"lithiccoins:coin/mourner/electrum",
 		"lithiccoins:coin/plenty/electrum",
 		"lithiccoins:coin/prize/electrum",
+		"lithiccoins:coin/punched/electrum",
 		"lithiccoins:coin/sheaf/electrum",
 		"lithiccoins:coin/shelter/electrum",
 		"lithiccoins:coin/skull/electrum",
+		"lithiccoins:coin/symbol/electrum",
 		"lithiccoins:coin/trifoil/electrum"
 	]
 }

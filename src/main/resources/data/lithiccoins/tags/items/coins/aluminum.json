@@ -8,6 +8,7 @@
 		"lithiccoins:coin/blade/aluminum",
 		"lithiccoins:coin/brewer/aluminum",
 		"lithiccoins:coin/burn/aluminum",
+		"lithiccoins:coin/bust/aluminum",
 		"lithiccoins:coin/danger/aluminum",
 		"lithiccoins:coin/eagle/aluminum",
 		"lithiccoins:coin/explorer/aluminum",
@@ -19,9 +20,11 @@
 		"lithiccoins:coin/mourner/aluminum",
 		"lithiccoins:coin/plenty/aluminum",
 		"lithiccoins:coin/prize/aluminum",
+		"lithiccoins:coin/punched/aluminum",
 		"lithiccoins:coin/sheaf/aluminum",
 		"lithiccoins:coin/shelter/aluminum",
 		"lithiccoins:coin/skull/aluminum",
+		"lithiccoins:coin/symbol/aluminum",
 		"lithiccoins:coin/trifoil/aluminum"
 	]
 }

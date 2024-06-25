@@ -8,6 +8,7 @@
 		"lithiccoins:top_die/blade/blue_steel",
 		"lithiccoins:top_die/brewer/blue_steel",
 		"lithiccoins:top_die/burn/blue_steel",
+		"lithiccoins:top_die/bust/blue_steel",
 		"lithiccoins:top_die/danger/blue_steel",
 		"lithiccoins:top_die/eagle/blue_steel",
 		"lithiccoins:top_die/explorer/blue_steel",
@@ -19,9 +20,11 @@
 		"lithiccoins:top_die/mourner/blue_steel",
 		"lithiccoins:top_die/plenty/blue_steel",
 		"lithiccoins:top_die/prize/blue_steel",
+		"lithiccoins:top_die/punched/blue_steel",
 		"lithiccoins:top_die/sheaf/blue_steel",
 		"lithiccoins:top_die/shelter/blue_steel",
 		"lithiccoins:top_die/skull/blue_steel",
+		"lithiccoins:top_die/symbol/blue_steel",
 		"lithiccoins:top_die/trifoil/blue_steel"
 	]
 }

@@ -8,6 +8,7 @@
 		"lithiccoins:coin/blade/silver",
 		"lithiccoins:coin/brewer/silver",
 		"lithiccoins:coin/burn/silver",
+		"lithiccoins:coin/bust/silver",
 		"lithiccoins:coin/danger/silver",
 		"lithiccoins:coin/eagle/silver",
 		"lithiccoins:coin/explorer/silver",
@@ -19,9 +20,11 @@
 		"lithiccoins:coin/mourner/silver",
 		"lithiccoins:coin/plenty/silver",
 		"lithiccoins:coin/prize/silver",
+		"lithiccoins:coin/punched/silver",
 		"lithiccoins:coin/sheaf/silver",
 		"lithiccoins:coin/shelter/silver",
 		"lithiccoins:coin/skull/silver",
+		"lithiccoins:coin/symbol/silver",
 		"lithiccoins:coin/trifoil/silver"
 	]
 }

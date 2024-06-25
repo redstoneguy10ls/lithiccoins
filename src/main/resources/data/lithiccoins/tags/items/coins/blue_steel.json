@@ -8,6 +8,7 @@
 		"lithiccoins:coin/blade/blue_steel",
 		"lithiccoins:coin/brewer/blue_steel",
 		"lithiccoins:coin/burn/blue_steel",
+		"lithiccoins:coin/bust/blue_steel",
 		"lithiccoins:coin/danger/blue_steel",
 		"lithiccoins:coin/eagle/blue_steel",
 		"lithiccoins:coin/explorer/blue_steel",
@@ -19,9 +20,11 @@
 		"lithiccoins:coin/mourner/blue_steel",
 		"lithiccoins:coin/plenty/blue_steel",
 		"lithiccoins:coin/prize/blue_steel",
+		"lithiccoins:coin/punched/blue_steel",
 		"lithiccoins:coin/sheaf/blue_steel",
 		"lithiccoins:coin/shelter/blue_steel",
 		"lithiccoins:coin/skull/blue_steel",
+		"lithiccoins:coin/symbol/blue_steel",
 		"lithiccoins:coin/trifoil/blue_steel"
 	]
 }

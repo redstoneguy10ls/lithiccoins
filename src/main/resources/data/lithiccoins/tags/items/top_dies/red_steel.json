@@ -8,6 +8,7 @@
 		"lithiccoins:top_die/blade/red_steel",
 		"lithiccoins:top_die/brewer/red_steel",
 		"lithiccoins:top_die/burn/red_steel",
+		"lithiccoins:top_die/bust/red_steel",
 		"lithiccoins:top_die/danger/red_steel",
 		"lithiccoins:top_die/eagle/red_steel",
 		"lithiccoins:top_die/explorer/red_steel",
@@ -19,9 +20,11 @@
 		"lithiccoins:top_die/mourner/red_steel",
 		"lithiccoins:top_die/plenty/red_steel",
 		"lithiccoins:top_die/prize/red_steel",
+		"lithiccoins:top_die/punched/red_steel",
 		"lithiccoins:top_die/sheaf/red_steel",
 		"lithiccoins:top_die/shelter/red_steel",
 		"lithiccoins:top_die/skull/red_steel",
+		"lithiccoins:top_die/symbol/red_steel",
 		"lithiccoins:top_die/trifoil/red_steel"
 	]
 }

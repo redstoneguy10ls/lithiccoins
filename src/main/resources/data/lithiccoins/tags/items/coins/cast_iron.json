@@ -8,6 +8,7 @@
 		"lithiccoins:coin/blade/cast_iron",
 		"lithiccoins:coin/brewer/cast_iron",
 		"lithiccoins:coin/burn/cast_iron",
+		"lithiccoins:coin/bust/cast_iron",
 		"lithiccoins:coin/danger/cast_iron",
 		"lithiccoins:coin/eagle/cast_iron",
 		"lithiccoins:coin/explorer/cast_iron",
@@ -19,9 +20,11 @@
 		"lithiccoins:coin/mourner/cast_iron",
 		"lithiccoins:coin/plenty/cast_iron",
 		"lithiccoins:coin/prize/cast_iron",
+		"lithiccoins:coin/punched/cast_iron",
 		"lithiccoins:coin/sheaf/cast_iron",
 		"lithiccoins:coin/shelter/cast_iron",
 		"lithiccoins:coin/skull/cast_iron",
+		"lithiccoins:coin/symbol/cast_iron",
 		"lithiccoins:coin/trifoil/cast_iron"
 	]
 }

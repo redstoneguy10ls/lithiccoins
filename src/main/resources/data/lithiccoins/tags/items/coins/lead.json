@@ -8,6 +8,7 @@
 		"lithiccoins:coin/blade/lead",
 		"lithiccoins:coin/brewer/lead",
 		"lithiccoins:coin/burn/lead",
+		"lithiccoins:coin/bust/lead",
 		"lithiccoins:coin/danger/lead",
 		"lithiccoins:coin/eagle/lead",
 		"lithiccoins:coin/explorer/lead",
@@ -19,9 +20,11 @@
 		"lithiccoins:coin/mourner/lead",
 		"lithiccoins:coin/plenty/lead",
 		"lithiccoins:coin/prize/lead",
+		"lithiccoins:coin/punched/lead",
 		"lithiccoins:coin/sheaf/lead",
 		"lithiccoins:coin/shelter/lead",
 		"lithiccoins:coin/skull/lead",
+		"lithiccoins:coin/symbol/lead",
 		"lithiccoins:coin/trifoil/lead"
 	]
 }

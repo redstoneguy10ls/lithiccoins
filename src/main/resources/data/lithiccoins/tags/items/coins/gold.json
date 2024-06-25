@@ -8,6 +8,7 @@
 		"lithiccoins:coin/blade/gold",
 		"lithiccoins:coin/brewer/gold",
 		"lithiccoins:coin/burn/gold",
+		"lithiccoins:coin/bust/gold",
 		"lithiccoins:coin/danger/gold",
 		"lithiccoins:coin/eagle/gold",
 		"lithiccoins:coin/explorer/gold",
@@ -19,9 +20,11 @@
 		"lithiccoins:coin/mourner/gold",
 		"lithiccoins:coin/plenty/gold",
 		"lithiccoins:coin/prize/gold",
+		"lithiccoins:coin/punched/gold",
 		"lithiccoins:coin/sheaf/gold",
 		"lithiccoins:coin/shelter/gold",
 		"lithiccoins:coin/skull/gold",
+		"lithiccoins:coin/symbol/gold",
 		"lithiccoins:coin/trifoil/gold"
 	]
 }

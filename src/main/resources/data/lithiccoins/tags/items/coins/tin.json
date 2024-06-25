@@ -8,6 +8,7 @@
 		"lithiccoins:coin/blade/tin",
 		"lithiccoins:coin/brewer/tin",
 		"lithiccoins:coin/burn/tin",
+		"lithiccoins:coin/bust/tin",
 		"lithiccoins:coin/danger/tin",
 		"lithiccoins:coin/eagle/tin",
 		"lithiccoins:coin/explorer/tin",
@@ -19,9 +20,11 @@
 		"lithiccoins:coin/mourner/tin",
 		"lithiccoins:coin/plenty/tin",
 		"lithiccoins:coin/prize/tin",
+		"lithiccoins:coin/punched/tin",
 		"lithiccoins:coin/sheaf/tin",
 		"lithiccoins:coin/shelter/tin",
 		"lithiccoins:coin/skull/tin",
+		"lithiccoins:coin/symbol/tin",
 		"lithiccoins:coin/trifoil/tin"
 	]
 }

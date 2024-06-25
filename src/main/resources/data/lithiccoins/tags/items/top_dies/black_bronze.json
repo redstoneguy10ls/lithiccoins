@@ -8,6 +8,7 @@
 		"lithiccoins:top_die/blade/black_bronze",
 		"lithiccoins:top_die/brewer/black_bronze",
 		"lithiccoins:top_die/burn/black_bronze",
+		"lithiccoins:top_die/bust/black_bronze",
 		"lithiccoins:top_die/danger/black_bronze",
 		"lithiccoins:top_die/eagle/black_bronze",
 		"lithiccoins:top_die/explorer/black_bronze",
@@ -19,9 +20,11 @@
 		"lithiccoins:top_die/mourner/black_bronze",
 		"lithiccoins:top_die/plenty/black_bronze",
 		"lithiccoins:top_die/prize/black_bronze",
+		"lithiccoins:top_die/punched/black_bronze",
 		"lithiccoins:top_die/sheaf/black_bronze",
 		"lithiccoins:top_die/shelter/black_bronze",
 		"lithiccoins:top_die/skull/black_bronze",
+		"lithiccoins:top_die/symbol/black_bronze",
 		"lithiccoins:top_die/trifoil/black_bronze"
 	]
 }

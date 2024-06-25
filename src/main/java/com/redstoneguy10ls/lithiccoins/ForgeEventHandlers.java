@@ -66,7 +66,7 @@ public class ForgeEventHandlers {
         if (!stack.isEmpty())
         {
 
-            if (Helpers.isItem(stack, LCTags.Items.STAMPED_COINS) && !stack.getCapability(LocationCapability.CAPABILITY).isPresent())
+            if (Helpers.isItem(stack, LCTags.Items.STAMPED_COINS))
             {
 
                 event.addCapability(LocationCapability.KEY, new LocationHandler(stack));

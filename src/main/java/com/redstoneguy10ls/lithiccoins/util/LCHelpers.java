@@ -1,9 +1,11 @@
 package com.redstoneguy10ls.lithiccoins.util;
 
 import com.redstoneguy10ls.lithiccoins.common.items.LCItems;
+import com.redstoneguy10ls.lithiccoins.common.items.TopDies;
 import com.redstoneguy10ls.lithiccoins.common.items.coinMaterial;
 import com.redstoneguy10ls.lithiccoins.common.items.stampTypes;
 import net.dries007.tfc.util.Helpers;
+import net.dries007.tfc.util.Metal;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -19,6 +21,7 @@ public class LCHelpers {
 
     public static stampTypes getStamptype(Item item)
     {
+
         String x = item.getName(new ItemStack(item)).toString();
         for(stampTypes stamps : stampTypes.VALUES)
         {
@@ -35,14 +38,12 @@ public class LCHelpers {
         return null;
     }
 
-    public static int getStampTypesInInt(ItemStack stack)
-    {
+    public static int getStampTypesInInt(ItemStack stack) {
+
         int count = 1;
-        String x = stack.getItem().getName(stack).getString();
-        for(stampTypes stamps : stampTypes.VALUES)
-        {
-            String str1 = stamps.name();
-            if(!(x.toUpperCase().contains(str1.toUpperCase())) )
+        for (TopDies stamps : TopDies.VALUES) {
+
+            if (!Helpers.isItem(stack, LCItems.TOP_DIE.get(stamps).get(getMetalFromInt(getMetalInInt(stack.getItem().asItem()))).get()) )
             {
                 count++;
             }
@@ -52,6 +53,34 @@ public class LCHelpers {
             }
         }
         return 0;
+    }
+
+
+    public static Metal.Default getMetalFromInt(int number)
+    {
+        switch(number)
+        {
+            case 1:
+                return Metal.Default.COPPER;
+            case 2:
+                return Metal.Default.BRONZE;
+            case 3:
+                return Metal.Default.BISMUTH_BRONZE;
+            case 4:
+                return Metal.Default.BLACK_BRONZE;
+            case 5:
+                return Metal.Default.WROUGHT_IRON;
+            case 6:
+                return Metal.Default.STEEL;
+            case 7:
+                return Metal.Default.BLACK_STEEL;
+            case 8:
+                return Metal.Default.RED_STEEL;
+            case 9:
+                return Metal.Default.BLUE_STEEL;
+            default:
+                return Metal.Default.COPPER;
+        }
     }
 
     public static int getTier(Item item)

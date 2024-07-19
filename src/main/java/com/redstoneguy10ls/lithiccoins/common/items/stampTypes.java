@@ -24,6 +24,7 @@ public enum stampTypes {
     SHELTER,
     SKULL,
     SYMBOL,
-    TRIFOIL;
+    TRIFOIL,
+    FACE;
     public static final stampTypes[] VALUES = values();
 }

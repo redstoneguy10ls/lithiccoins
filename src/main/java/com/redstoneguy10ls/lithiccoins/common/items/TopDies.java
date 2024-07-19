@@ -27,7 +27,8 @@ public enum TopDies {
     SHELTER(21),
     SKULL(22),
     SYMBOL(23),
-    TRIFOIL(24);
+    TRIFOIL(24),
+    FACE(25);
     public static final TopDies[] VALUES = values();
 
     static

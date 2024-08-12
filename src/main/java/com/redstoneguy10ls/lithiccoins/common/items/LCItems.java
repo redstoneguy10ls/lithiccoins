@@ -39,10 +39,10 @@ public class LCItems {
     public static final Map<TopDies, Map<Metal.Default, RegistryObject<Item>>> TOP_DIE =
             Helpers.mapOfKeys(TopDies.class, stamps ->
                     Helpers.mapOfKeys(Metal.Default.class, Metal.Default::hasTools, metals -> register("top_die/"+stamps.name()+"/"+metals.name(),
-                             () -> new stampItem(metals.toolTier(), new Item.Properties())))
+                             () -> new stampItem(metals.toolTier(), new Item.Properties().rarity(metals.getRarity()))))
             );
     public static final Map<Metal.Default, RegistryObject<Item>> BOTTOM_DIE = Helpers.mapOfKeys(Metal.Default.class, Metal.Default::hasTools, metal ->
-            register("bottom_die/" + metal.name(), () -> new TieredItem(metal.toolTier(), new Item.Properties()))
+            register("bottom_die/" + metal.name(), () -> new TieredItem(metal.toolTier(), new Item.Properties().rarity(metal.getRarity())))
     );
 
     public static final Map<Metal.Default, RegistryObject<Item>> DISPLAY_TOP_DIES = Helpers.mapOfKeys(Metal.Default.class, Metal.Default::hasTools, metal ->

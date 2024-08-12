@@ -25,6 +25,7 @@
 		"lithiccoins:top_die/shelter/bronze",
 		"lithiccoins:top_die/skull/bronze",
 		"lithiccoins:top_die/symbol/bronze",
-		"lithiccoins:top_die/trifoil/bronze"
-	]
+		"lithiccoins:top_die/trifoil/bronze",
+		"lithiccoins:top_die/face/bronze"
+  ]
 }

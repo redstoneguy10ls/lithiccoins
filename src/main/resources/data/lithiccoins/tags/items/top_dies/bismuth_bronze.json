@@ -25,6 +25,7 @@
 		"lithiccoins:top_die/shelter/bismuth_bronze",
 		"lithiccoins:top_die/skull/bismuth_bronze",
 		"lithiccoins:top_die/symbol/bismuth_bronze",
-		"lithiccoins:top_die/trifoil/bismuth_bronze"
-	]
+		"lithiccoins:top_die/trifoil/bismuth_bronze",
+		"lithiccoins:top_die/face/bismuth_bronze"
+  ]
 }

@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by JotredDev",
+  "type": "lithiccoins:minting",
+  "top_dies": [
+    "bee"
+  ],
+  "blank_coin": {
+    "item": "lithiccoins:blank_coin/wrought_iron"
+  },
+  "tier": 3,
+  "result": {
+    "item": "lithiccoins:coin/bee/wrought_iron"
+  }
+}

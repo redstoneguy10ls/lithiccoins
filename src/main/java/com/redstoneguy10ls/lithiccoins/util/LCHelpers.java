@@ -14,15 +14,15 @@ import net.minecraft.world.item.ItemStack;
 import static com.redstoneguy10ls.lithiccoins.LithicCoins.MOD_ID;
 
 public class LCHelpers {
-
+    
     public static ResourceLocation identifier(String name) {
         return new ResourceLocation(MOD_ID, name);
     }
 
     public static stampTypes getStamptype(Item item)
     {
-
         String x = item.getName(new ItemStack(item)).toString();
+        stampTypes temp = null;
         for(stampTypes stamps : stampTypes.VALUES)
         {
             String str1 = stamps.name();
@@ -32,10 +32,17 @@ public class LCHelpers {
             }
             else
             {
-                return stamps;
+                if (temp != null && temp.name().toUpperCase().contains(str1.toUpperCase()))
+                {
+                    continue;
+                }
+                else
+                {
+                    temp = stamps;
+                }
             }
         }
-        return null;
+        return temp;
     }
 
     public static int getStampTypesInInt(ItemStack stack) {

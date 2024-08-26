@@ -1,7 +1,7 @@
 package com.redstoneguy10ls.lithiccoins.mixin;
 
 
-import com.redstoneguy10ls.lithiccoins.common.Capability.ItemStackCapabilitySync;
+import com.redstoneguy10ls.lithiccoins.common.capability.ItemStackCapabilitySync;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;

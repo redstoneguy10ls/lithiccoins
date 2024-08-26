@@ -2,9 +2,8 @@ package com.redstoneguy10ls.lithiccoins.common.blocks;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.redstoneguy10ls.lithiccoins.common.blockentities.LCBlockEntities;
-import com.redstoneguy10ls.lithiccoins.common.blockentities.mintBlockEntity;
+import com.redstoneguy10ls.lithiccoins.common.blockentities.MintBlockEntity;
 import com.redstoneguy10ls.lithiccoins.common.misc.LCSounds;
-import com.redstoneguy10ls.lithiccoins.util.LCHelpers;
 import com.redstoneguy10ls.lithiccoins.util.LCTags;
 import net.dries007.tfc.client.IHighlightHandler;
 import net.dries007.tfc.client.particle.TFCParticles;
@@ -32,7 +31,6 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
@@ -43,10 +41,10 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
 
-import static com.redstoneguy10ls.lithiccoins.common.blockentities.mintBlockEntity.*;
+import static com.redstoneguy10ls.lithiccoins.common.blockentities.MintBlockEntity.*;
 
 
-public class mintBlock extends DeviceBlock implements IHighlightHandler {
+public class MintBlock extends DeviceBlock implements IHighlightHandler {
 
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     //public static final IntegerProperty HAS_TOP_DIE = LCStateProperties.HAS_TOP_DIE;
@@ -84,7 +82,7 @@ public class mintBlock extends DeviceBlock implements IHighlightHandler {
 
 
 
-    public mintBlock(ExtendedProperties properties) {
+    public MintBlock(ExtendedProperties properties) {
         super(properties, InventoryRemoveBehavior.DROP);
         //registerDefaultState(getStateDefinition().any().setValue(HAS_BOTTOM_DIE, 0));
         //registerDefaultState(getStateDefinition().any().setValue(HAS_TOP_DIE, 0));
@@ -152,7 +150,7 @@ public class mintBlock extends DeviceBlock implements IHighlightHandler {
 
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        if(level.getBlockEntity(pos) instanceof final mintBlockEntity mint)
+        if(level.getBlockEntity(pos) instanceof final MintBlockEntity mint)
         {
             final ItemStack heldStack = player.getItemInHand(hand);
             final SelectionPlace selection = getPlayerSelection(level,pos,player,hit);
@@ -182,7 +180,7 @@ public class mintBlock extends DeviceBlock implements IHighlightHandler {
         return InteractionResult.PASS;
     }
 
-    private static InteractionResult attemptMint(Level level, mintBlockEntity mint, Player player,BlockPos pos)
+    private static InteractionResult attemptMint(Level level, MintBlockEntity mint, Player player,BlockPos pos)
     {
         final InteractionResult mintResult = mint.minting(player);
         if(mintResult == InteractionResult.SUCCESS)
@@ -203,7 +201,7 @@ public class mintBlock extends DeviceBlock implements IHighlightHandler {
         return InteractionResult.FAIL;
     }
 
-    private static InteractionResult coinstuff(BlockState state, Level level, mintBlockEntity mint, IItemHandler inventory, Player player, ItemStack stack, int slot)
+    private static InteractionResult coinstuff(BlockState state, Level level, MintBlockEntity mint, IItemHandler inventory, Player player, ItemStack stack, int slot)
     {
             if ((player.isShiftKeyDown() || Helpers.isItem(stack, LCTags.Items.BLANK_COIN))) {
                 if(mint.hasBottomDie() > 0)
@@ -221,7 +219,7 @@ public class mintBlock extends DeviceBlock implements IHighlightHandler {
             return InteractionResult.PASS;
     }
 
-    private static InteractionResult lookTest(BlockState state,Level level, mintBlockEntity mint, IItemHandler inventory, Player player, ItemStack stack, int slot){
+    private static InteractionResult lookTest(BlockState state,Level level, MintBlockEntity mint, IItemHandler inventory, Player player, ItemStack stack, int slot){
         if(slot == SLOT_BOTTOMDIE)
         {
                 if ((player.isShiftKeyDown() || Helpers.isItem(stack, LCTags.Items.BOTTOM_DIE))) {
@@ -240,7 +238,7 @@ public class mintBlock extends DeviceBlock implements IHighlightHandler {
         return InteractionResult.PASS;
     }
 
-    private static InteractionResult insertOrExtract(Level level, mintBlockEntity mint, IItemHandler inventory, Player player, ItemStack stack, int slot)
+    private static InteractionResult insertOrExtract(Level level, MintBlockEntity mint, IItemHandler inventory, Player player, ItemStack stack, int slot)
     {
         if(!stack.isEmpty())
         {

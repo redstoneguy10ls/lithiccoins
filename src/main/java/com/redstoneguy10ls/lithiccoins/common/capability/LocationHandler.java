@@ -1,4 +1,4 @@
-package com.redstoneguy10ls.lithiccoins.common.Capability;
+package com.redstoneguy10ls.lithiccoins.common.capability;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Direction;

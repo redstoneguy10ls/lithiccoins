@@ -1,5 +1,5 @@
 
-    package com.redstoneguy10ls.lithiccoins.common.Capability;
+    package com.redstoneguy10ls.lithiccoins.common.capability;
     /*
     import net.minecraft.world.Container;
     import net.minecraft.world.item.ItemStack;

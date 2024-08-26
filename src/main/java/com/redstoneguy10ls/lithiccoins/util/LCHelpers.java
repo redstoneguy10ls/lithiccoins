@@ -2,11 +2,11 @@ package com.redstoneguy10ls.lithiccoins.util;
 
 import com.redstoneguy10ls.lithiccoins.common.items.LCItems;
 import com.redstoneguy10ls.lithiccoins.common.items.TopDies;
-import com.redstoneguy10ls.lithiccoins.common.items.coinMaterial;
-import com.redstoneguy10ls.lithiccoins.common.items.stampTypes;
+import com.redstoneguy10ls.lithiccoins.common.items.CoinMaterial;
+import com.redstoneguy10ls.lithiccoins.common.items.StampTypes;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.Metal;
-import net.minecraft.client.Minecraft;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -19,11 +19,11 @@ public class LCHelpers {
         return new ResourceLocation(MOD_ID, name);
     }
 
-    public static stampTypes getStamptype(Item item)
+    public static StampTypes getStamptype(Item item)
     {
 
         String x = item.getName(new ItemStack(item)).toString();
-        for(stampTypes stamps : stampTypes.VALUES)
+        for(StampTypes stamps : StampTypes.VALUES)
         {
             String str1 = stamps.name();
             if(!(x.toUpperCase().contains(str1.toUpperCase())) )
@@ -143,32 +143,32 @@ public class LCHelpers {
 
     public static int getCoinInInt(ItemStack stack)
     {
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.ALUMINUM).orElse(null))){return 1;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.BISMUTH).orElse(null))){return 2;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.BISMUTH_BRONZE).orElse(null))){return 3;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.BLACK_BRONZE).orElse(null))){return 4;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.BLACK_STEEL).orElse(null))){return 5;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.BLUE_STEEL).orElse(null))){return 6;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.BRASS).orElse(null))){return 7;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.BRONZE).orElse(null))){return 8;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.CAST_IRON).orElse(null))){return 9;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.CHROMIUM).orElse(null))){return 10;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.CONSTANTAN).orElse(null))){return 11;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.COPPER).orElse(null))){return 12;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.ELECTRUM).orElse(null))){return 13;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.GOLD).orElse(null))){return 14;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.LEAD).orElse(null))){return 15;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.NICKEL).orElse(null))){return 16;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.RED_STEEL).orElse(null))){return 17;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.ROSE_GOLD).orElse(null))){return 18;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.SILVER).orElse(null))){return 19;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.STAINLESS_STEEL).orElse(null))){return 20;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.STEEL).orElse(null))){return 21;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.STERLING_SILVER).orElse(null))){return 22;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.TIN).orElse(null))){return 23;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.URANIUM).orElse(null))){return 24;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.WROUGHT_IRON).orElse(null))){return 25;}
-        if(stack.is(LCItems.BLANK_COINS.get(coinMaterial.ZINC).orElse(null))){return 26;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.ALUMINUM).orElse(null))){return 1;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.BISMUTH).orElse(null))){return 2;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.BISMUTH_BRONZE).orElse(null))){return 3;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.BLACK_BRONZE).orElse(null))){return 4;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.BLACK_STEEL).orElse(null))){return 5;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.BLUE_STEEL).orElse(null))){return 6;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.BRASS).orElse(null))){return 7;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.BRONZE).orElse(null))){return 8;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.CAST_IRON).orElse(null))){return 9;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.CHROMIUM).orElse(null))){return 10;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.CONSTANTAN).orElse(null))){return 11;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.COPPER).orElse(null))){return 12;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.ELECTRUM).orElse(null))){return 13;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.GOLD).orElse(null))){return 14;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.LEAD).orElse(null))){return 15;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.NICKEL).orElse(null))){return 16;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.RED_STEEL).orElse(null))){return 17;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.ROSE_GOLD).orElse(null))){return 18;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.SILVER).orElse(null))){return 19;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.STAINLESS_STEEL).orElse(null))){return 20;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.STEEL).orElse(null))){return 21;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.STERLING_SILVER).orElse(null))){return 22;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.TIN).orElse(null))){return 23;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.URANIUM).orElse(null))){return 24;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.WROUGHT_IRON).orElse(null))){return 25;}
+        if(stack.is(LCItems.BLANK_COINS.get(CoinMaterial.ZINC).orElse(null))){return 26;}
         return 0;
     }
 

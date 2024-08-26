@@ -1,6 +1,6 @@
 package com.redstoneguy10ls.lithiccoins.common.items;
 
-public enum stampTypes {
+public enum StampTypes {
     ANGLER,
     ARCHER,
     ARMS_UP,
@@ -26,5 +26,5 @@ public enum stampTypes {
     SYMBOL,
     TRIFOIL,
     FACE;
-    public static final stampTypes[] VALUES = values();
+    public static final StampTypes[] VALUES = values();
 }

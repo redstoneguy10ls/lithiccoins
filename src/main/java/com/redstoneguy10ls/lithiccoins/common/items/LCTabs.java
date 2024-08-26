@@ -30,16 +30,16 @@ public final class LCTabs {
             register("everything_else", () -> new ItemStack(LCBlocks.MINT.get()), LCTabs::fillTab);
 
     public static final LCTabs.CreativeTabHolder COINS =
-            register("coins", () -> new ItemStack(LCItems.BLANK_COINS.get(coinMaterial.GOLD).get()), LCTabs::fillCoinTab);
+            register("coins", () -> new ItemStack(LCItems.BLANK_COINS.get(CoinMaterial.GOLD).get()), LCTabs::fillCoinTab);
 
 
     private static void fillCoinTab(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output out)
     {
         LCItems.BLANK_COINS.values().forEach(reg -> accept(out, reg));
 
-        for(stampTypes stamps : stampTypes.VALUES)
+        for(StampTypes stamps : StampTypes.VALUES)
         {
-            for(coinMaterial mats : coinMaterial.values())
+            for(CoinMaterial mats : CoinMaterial.values())
             {
                 accept(out,LCItems.STAMPED_COINS.get(mats), stamps);
             }

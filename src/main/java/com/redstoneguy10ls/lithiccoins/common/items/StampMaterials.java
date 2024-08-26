@@ -1,6 +1,6 @@
 package com.redstoneguy10ls.lithiccoins.common.items;
 
-public enum stampMaterials {
+public enum StampMaterials {
     BISMUTH_BRONZE,
     BLACK_BRONZE,
     BLACK_STEEL,
@@ -10,5 +10,5 @@ public enum stampMaterials {
     RED_STEEL,
     STEEL,
     WROUGHT_IRON;
-    public static final stampMaterials[] VALUES = values();
+    public static final StampMaterials[] VALUES = values();
 }

@@ -1,6 +1,6 @@
 package com.redstoneguy10ls.lithiccoins.common.items;
 
-public enum coinMaterial {
+public enum CoinMaterial {
         ALUMINUM,
         BISMUTH,
         BISMUTH_BRONZE,
@@ -27,6 +27,6 @@ public enum coinMaterial {
         URANIUM,
         WROUGHT_IRON,
         ZINC;
-        public static final coinMaterial[] VALUES = values();
+        public static final CoinMaterial[] VALUES = values();
 
 }

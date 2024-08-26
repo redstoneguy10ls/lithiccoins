@@ -1,9 +1,7 @@
 package com.redstoneguy10ls.lithiccoins.common.blockentities;
 
-import com.redstoneguy10ls.lithiccoins.common.Capability.LocationCapability;
-import com.redstoneguy10ls.lithiccoins.common.blocks.mintBlock;
-import com.redstoneguy10ls.lithiccoins.common.items.TopDies;
-import com.redstoneguy10ls.lithiccoins.common.recipes.LCRecipeTypes;
+import com.redstoneguy10ls.lithiccoins.common.capability.LocationCapability;
+import com.redstoneguy10ls.lithiccoins.common.blocks.MintBlock;
 import com.redstoneguy10ls.lithiccoins.common.recipes.MintingRecipe;
 import com.redstoneguy10ls.lithiccoins.util.LCHelpers;
 import com.redstoneguy10ls.lithiccoins.util.LCTags;
@@ -27,7 +25,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import static com.redstoneguy10ls.lithiccoins.LithicCoins.MOD_ID;
 
-public class mintBlockEntity extends InventoryBlockEntity<mintBlockEntity.mintInventory> implements ISlotCallback {
+public class MintBlockEntity extends InventoryBlockEntity<MintBlockEntity.mintInventory> implements ISlotCallback {
 
     public static final int SLOT_TOPDIE = 0;
     public static final int SLOT_BOTTOMDIE = 1;
@@ -43,18 +41,18 @@ public class mintBlockEntity extends InventoryBlockEntity<mintBlockEntity.mintIn
 
     private static final Component NAME = Component.translatable(MOD_ID + ".block_entity.mint");
 
-    public mintBlockEntity(BlockPos pos, BlockState state)
+    public MintBlockEntity(BlockPos pos, BlockState state)
     {
         super(LCBlockEntities.MINT.get(), pos, state, mintInventory::new, NAME);
 
     }
-    public mintBlockEntity(BlockEntityType<? extends mintBlockEntity> type, BlockPos pos, BlockState state, InventoryFactory<mintInventory> inventoryFactory, Component defaultName)
+    public MintBlockEntity(BlockEntityType<? extends MintBlockEntity> type, BlockPos pos, BlockState state, InventoryFactory<mintInventory> inventoryFactory, Component defaultName)
     {
         super(type,pos,state,inventoryFactory, defaultName);
 
     }
 
-    public static void serverTick(Level level, BlockPos pos, BlockState state, mintBlockEntity mint)
+    public static void serverTick(Level level, BlockPos pos, BlockState state, MintBlockEntity mint)
     {
         final ServerLevel serverLevel = (ServerLevel) level;
 
@@ -71,7 +69,7 @@ public class mintBlockEntity extends InventoryBlockEntity<mintBlockEntity.mintIn
         clientTick(level, pos, state, mint);
 
     }
-    public static void clientTick(Level level, BlockPos pos, BlockState state, mintBlockEntity mint)
+    public static void clientTick(Level level, BlockPos pos, BlockState state, MintBlockEntity mint)
     {
         if(mint.hittimer > 0)
         {
@@ -127,8 +125,8 @@ public class mintBlockEntity extends InventoryBlockEntity<mintBlockEntity.mintIn
     {
         assert level != null;
         BlockState state = level.getBlockState(worldPosition);
-        BlockState newState = Helpers.setProperty(state, mintBlock.HIT, hasHit());
-        if(hasHit() != state.getValue(mintBlock.HIT))
+        BlockState newState = Helpers.setProperty(state, MintBlock.HIT, hasHit());
+        if(hasHit() != state.getValue(MintBlock.HIT))
         {
             level.setBlockAndUpdate(worldPosition, newState);
         }
@@ -288,11 +286,11 @@ public class mintBlockEntity extends InventoryBlockEntity<mintBlockEntity.mintIn
 
     public static class mintInventory extends InventoryItemHandler implements MintingRecipe.Inventory{
 
-        private final mintBlockEntity mint;
+        private final MintBlockEntity mint;
 
         public mintInventory(InventoryBlockEntity<mintInventory> mint) {
             super(mint, 4);
-            this.mint = (mintBlockEntity) mint;
+            this.mint = (MintBlockEntity) mint;
         }
 
         @Override

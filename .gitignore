@@ -34,3 +34,6 @@ forge*changelog.txt
 /src/recipes.txt
 /src/stamp_holder_hires.png
 /resources/
+
+# Java datagen cache
+/src/generated/resources/.cache

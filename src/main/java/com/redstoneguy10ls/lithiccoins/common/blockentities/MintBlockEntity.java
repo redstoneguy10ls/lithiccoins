@@ -1,5 +1,6 @@
 package com.redstoneguy10ls.lithiccoins.common.blockentities;
 
+import com.redstoneguy10ls.lithiccoins.common.blockentities.MintBlockEntity.MintInventory;
 import com.redstoneguy10ls.lithiccoins.common.capability.LocationCapability;
 import com.redstoneguy10ls.lithiccoins.common.blocks.MintBlock;
 import com.redstoneguy10ls.lithiccoins.common.recipes.MintingRecipe;
@@ -25,7 +26,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import static com.redstoneguy10ls.lithiccoins.LithicCoins.MOD_ID;
 
-public class MintBlockEntity extends InventoryBlockEntity<MintBlockEntity.mintInventory> implements ISlotCallback {
+public class MintBlockEntity extends InventoryBlockEntity<MintInventory> implements ISlotCallback {
 
     public static final int SLOT_TOPDIE = 0;
     public static final int SLOT_BOTTOMDIE = 1;
@@ -43,10 +44,10 @@ public class MintBlockEntity extends InventoryBlockEntity<MintBlockEntity.mintIn
 
     public MintBlockEntity(BlockPos pos, BlockState state)
     {
-        super(LCBlockEntities.MINT.get(), pos, state, mintInventory::new, NAME);
+        super(LCBlockEntities.MINT.get(), pos, state, MintInventory::new, NAME);
 
     }
-    public MintBlockEntity(BlockEntityType<? extends MintBlockEntity> type, BlockPos pos, BlockState state, InventoryFactory<mintInventory> inventoryFactory, Component defaultName)
+    public MintBlockEntity(BlockEntityType<? extends MintBlockEntity> type, BlockPos pos, BlockState state, InventoryFactory<MintInventory> inventoryFactory, Component defaultName)
     {
         super(type,pos,state,inventoryFactory, defaultName);
 
@@ -284,11 +285,11 @@ public class MintBlockEntity extends InventoryBlockEntity<MintBlockEntity.mintIn
         return InteractionResult.PASS;
     }
 
-    public static class mintInventory extends InventoryItemHandler implements MintingRecipe.Inventory{
+    public static class MintInventory extends InventoryItemHandler implements MintingRecipe.Inventory{
 
         private final MintBlockEntity mint;
 
-        public mintInventory(InventoryBlockEntity<mintInventory> mint) {
+        public MintInventory(InventoryBlockEntity<MintInventory> mint) {
             super(mint, 4);
             this.mint = (MintBlockEntity) mint;
         }

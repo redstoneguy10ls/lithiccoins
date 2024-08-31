@@ -7,8 +7,7 @@
     "defaultRequire": 1
   },
   "mixins": [
-    "FriendlyByteBufMixin",
-    "InteractionManagerMixin"
+    "FriendlyByteBufMixin"
 
   ],
   "refmap": "lithiccoins.refmap.json"

@@ -21,25 +21,25 @@ import static com.redstoneguy10ls.lithiccoins.LithicCoins.MOD_ID;
 public class LCItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registries.ITEM, MOD_ID);
 
-    public static final Map<coinMaterial, RegistryObject<Item>> BLANK_COINS = Helpers.mapOfKeys(coinMaterial.class, type ->
+    public static final Map<CoinMaterial, RegistryObject<Item>> BLANK_COINS = Helpers.mapOfKeys(CoinMaterial.class, type ->
             register("blank_coin/" + type.name())
     );
 
-    public static final Map<coinMaterial, RegistryObject<Item>> DISPLAY_COINS = Helpers.mapOfKeys(coinMaterial.class, type ->
+    public static final Map<CoinMaterial, RegistryObject<Item>> DISPLAY_COINS = Helpers.mapOfKeys(CoinMaterial.class, type ->
             register("blank_coin/display/" + type.name())
     );
 
-    public static final Map<coinMaterial, Map<stampTypes, RegistryObject<Item>>> STAMPED_COINS =
-            Helpers.mapOfKeys(coinMaterial.class, coins ->
-                    Helpers.mapOfKeys(stampTypes.class, stamps -> register("coin/"+stamps.name()+"/"+coins.name(),
-                            () -> new coinItem(new Item.Properties())))
+    public static final Map<CoinMaterial, Map<StampTypes, RegistryObject<Item>>> STAMPED_COINS =
+            Helpers.mapOfKeys(CoinMaterial.class, coins ->
+                    Helpers.mapOfKeys(StampTypes.class, stamps -> register("coin/"+stamps.name()+"/"+coins.name(),
+                            () -> new CoinItem(new Item.Properties())))
             );
 
     //DIES
     public static final Map<TopDies, Map<Metal.Default, RegistryObject<Item>>> TOP_DIE =
             Helpers.mapOfKeys(TopDies.class, stamps ->
                     Helpers.mapOfKeys(Metal.Default.class, Metal.Default::hasTools, metals -> register("top_die/"+stamps.name()+"/"+metals.name(),
-                             () -> new stampItem(metals.toolTier(), new Item.Properties().rarity(metals.getRarity()))))
+                             () -> new StampItem(metals.toolTier(), new Item.Properties().rarity(metals.getRarity()))))
             );
     public static final Map<Metal.Default, RegistryObject<Item>> BOTTOM_DIE = Helpers.mapOfKeys(Metal.Default.class, Metal.Default::hasTools, metal ->
             register("bottom_die/" + metal.name(), () -> new TieredItem(metal.toolTier(), new Item.Properties().rarity(metal.getRarity())))
@@ -51,21 +51,21 @@ public class LCItems {
 
     //WAX STUFF
     public static final RegistryObject<Item> WAX_DIE = register("wax/wax_die");
-    public static final Map<stampTypes, RegistryObject<Item>> MOLDED_WAX = Helpers.mapOfKeys(stampTypes.class, stamps ->
-            register("wax/"+stamps.name(), () -> new moldedWaxItem(new Item.Properties())));
+    public static final Map<StampTypes, RegistryObject<Item>> MOLDED_WAX = Helpers.mapOfKeys(StampTypes.class, stamps ->
+            register("wax/"+stamps.name(), () -> new MoldedWaxItem(new Item.Properties())));
 
-    public static final Map<stampTypes, RegistryObject<Item>> UNFIRED_DIE_MOLD = Helpers.mapOfKeys(stampTypes.class, stamps ->
-            register("ceramic/die_mold/unfired/"+stamps.name(), () -> new unfiredCoinDieMold(new Item.Properties())));
+    public static final Map<StampTypes, RegistryObject<Item>> UNFIRED_DIE_MOLD = Helpers.mapOfKeys(StampTypes.class, stamps ->
+            register("ceramic/die_mold/unfired/"+stamps.name(), () -> new UnfiredCoinDieMold(new Item.Properties())));
 
-    public static final Map<stampTypes, RegistryObject<Item>> FIRED_DIE_MOLD =
-            Helpers.mapOfKeys(stampTypes.class, stamps ->
+    public static final Map<StampTypes, RegistryObject<Item>> FIRED_DIE_MOLD =
+            Helpers.mapOfKeys(StampTypes.class, stamps ->
                     register("ceramic/die_mold/fired/"+stamps.name(), () ->
                     new firedCoinDieMold(TFCConfig.SERVER.moldIngotCapacity, TFCTags.Fluids.USABLE_IN_INGOT_MOLD, new Item.Properties())));
 
 
 
 
-    public static final RegistryObject<Item> COIN_PURSE = register("coin_purse", () -> new coinPurseItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> COIN_PURSE = register("coin_purse", () -> new CoinPurseItem(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> STAMP_HOLDER = register("stamp_holder");
     public static final RegistryObject<Item> DIE_HOLDER = register("die_holder");

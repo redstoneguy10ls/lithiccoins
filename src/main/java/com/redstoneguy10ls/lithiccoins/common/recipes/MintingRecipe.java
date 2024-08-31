@@ -3,7 +3,6 @@ package com.redstoneguy10ls.lithiccoins.common.recipes;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.redstoneguy10ls.lithiccoins.common.items.TopDies;
-import com.redstoneguy10ls.lithiccoins.common.items.stampTypes;
 import net.dries007.tfc.common.recipes.ISimpleRecipe;
 import net.dries007.tfc.common.recipes.RecipeSerializerImpl;
 import net.dries007.tfc.common.recipes.inventory.EmptyInventory;

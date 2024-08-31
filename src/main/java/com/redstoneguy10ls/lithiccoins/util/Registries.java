@@ -4,7 +4,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 
-public class registries {
+public class Registries {
 
     public static final ResourceKey<Registry<String>> COIN_TIPS = createRegistryKey("coin_tips");
 

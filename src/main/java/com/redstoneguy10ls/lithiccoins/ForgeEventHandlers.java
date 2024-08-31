@@ -1,8 +1,8 @@
 package com.redstoneguy10ls.lithiccoins;
 
 
-import com.redstoneguy10ls.lithiccoins.common.Capability.LocationCapability;
-import com.redstoneguy10ls.lithiccoins.common.Capability.LocationHandler;
+import com.redstoneguy10ls.lithiccoins.common.capability.LocationCapability;
+import com.redstoneguy10ls.lithiccoins.common.capability.LocationHandler;
 import com.redstoneguy10ls.lithiccoins.util.LCTags;
 import net.dries007.tfc.util.Helpers;
 import net.minecraft.core.BlockPos;

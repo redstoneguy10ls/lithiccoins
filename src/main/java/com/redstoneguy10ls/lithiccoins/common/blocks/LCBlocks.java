@@ -1,7 +1,7 @@
 package com.redstoneguy10ls.lithiccoins.common.blocks;
 
 import com.redstoneguy10ls.lithiccoins.common.blockentities.LCBlockEntities;
-import com.redstoneguy10ls.lithiccoins.common.blockentities.mintBlockEntity;
+import com.redstoneguy10ls.lithiccoins.common.blockentities.MintBlockEntity;
 import com.redstoneguy10ls.lithiccoins.common.items.LCItems;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
@@ -26,13 +26,13 @@ public class LCBlocks {
 
 
     public static final RegistryObject<Block> MINT = register("mint",
-            () -> new mintBlock(ExtendedProperties.of()
+            () -> new MintBlock(ExtendedProperties.of()
                     .mapColor(MapColor.STONE)
                     .strength(2.0F, 2.0F)
                     .sound(SoundType.BASALT)
                     .noOcclusion()
                     .blockEntity(LCBlockEntities.MINT)
-                    .serverTicks(mintBlockEntity::serverTick)));
+                    .serverTicks(MintBlockEntity::serverTick)));
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> blockSupplier)
     {

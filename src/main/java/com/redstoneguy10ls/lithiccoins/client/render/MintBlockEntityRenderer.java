@@ -2,32 +2,25 @@ package com.redstoneguy10ls.lithiccoins.client.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
-import com.redstoneguy10ls.lithiccoins.common.blockentities.mintBlockEntity;
+import com.redstoneguy10ls.lithiccoins.common.blockentities.MintBlockEntity;
 import com.redstoneguy10ls.lithiccoins.common.blocks.LCStateProperties;
-import com.redstoneguy10ls.lithiccoins.common.blocks.mintBlock;
 import net.dries007.tfc.common.capabilities.Capabilities;
 import net.dries007.tfc.util.Helpers;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
-import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+
 import net.minecraftforge.items.IItemHandler;
 
-import static com.redstoneguy10ls.lithiccoins.common.blocks.mintBlock.FACING;
-import static net.minecraft.core.Direction.NORTH;
-import static net.minecraft.core.Direction.SOUTH;
-
-public class mintBlockEntityRenderer implements BlockEntityRenderer<mintBlockEntity> {
+public class MintBlockEntityRenderer implements BlockEntityRenderer<MintBlockEntity> {
 
     @Override
-    public void render(mintBlockEntity mint, float partialTicks, PoseStack stack, MultiBufferSource bufferSource, int packedLight, int packedOverlay)
+    public void render(MintBlockEntity mint, float partialTicks, PoseStack stack, MultiBufferSource bufferSource, int packedLight, int packedOverlay)
     {
         final Level level = mint.getLevel();
         final IItemHandler inventory = Helpers.getCapability(mint, Capabilities.ITEM);
@@ -37,10 +30,10 @@ public class mintBlockEntityRenderer implements BlockEntityRenderer<mintBlockEnt
             return;
         }
 
-        final ItemStack topdie = inventory.getStackInSlot(mintBlockEntity.SLOT_TOPDIE);
-        final ItemStack coin = inventory.getStackInSlot(mintBlockEntity.SLOT_COIN);
-        final ItemStack bottom = inventory.getStackInSlot(mintBlockEntity.SLOT_BOTTOMDIE);
-        final ItemStack output = inventory.getStackInSlot(mintBlockEntity.SLOT_OUTPUT);
+        final ItemStack topdie = inventory.getStackInSlot(MintBlockEntity.SLOT_TOPDIE);
+        final ItemStack coin = inventory.getStackInSlot(MintBlockEntity.SLOT_COIN);
+        final ItemStack bottom = inventory.getStackInSlot(MintBlockEntity.SLOT_BOTTOMDIE);
+        final ItemStack output = inventory.getStackInSlot(MintBlockEntity.SLOT_OUTPUT);
 
         final BlockState blockState = mint.getLevel().getBlockState(mint.getBlockPos());
 

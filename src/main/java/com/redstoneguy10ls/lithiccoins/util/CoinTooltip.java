@@ -1,7 +1,6 @@
 package com.redstoneguy10ls.lithiccoins.util;
 
-import com.redstoneguy10ls.lithiccoins.common.items.stampTypes;
-import net.dries007.tfc.client.ClientDeviceImageTooltip;
+import com.redstoneguy10ls.lithiccoins.common.items.StampTypes;
 import net.dries007.tfc.util.Helpers;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
@@ -10,9 +9,9 @@ import net.minecraft.resources.ResourceLocation;
 
 import java.util.Map;
 
-public class coinTooltip implements ClientTooltipComponent {
+public class CoinTooltip implements ClientTooltipComponent {
 
-    public static final Map<stampTypes, ResourceLocation> TEXTURE_LOCATION = Helpers.mapOfKeys(stampTypes.class, type ->
+    public static final Map<StampTypes, ResourceLocation> TEXTURE_LOCATION = Helpers.mapOfKeys(StampTypes.class, type ->
             LCHelpers.identifier("textures/coin_preview/coin_"+type.name().toLowerCase()+"_preview.png"));
 
 /*
@@ -40,9 +39,9 @@ public class coinTooltip implements ClientTooltipComponent {
 */
     //public static final ResourceLocation TEXTURE_LOCATION = LCHelpers.identifier("textures/entity/coin_angler_preview.png");
 
-    private final tooltips.CoinImageTooltip tooltip;
+    private final Tooltips.CoinImageTooltip tooltip;
 
-    public coinTooltip(tooltips.CoinImageTooltip tooltips) {
+    public CoinTooltip(Tooltips.CoinImageTooltip tooltips) {
         this.tooltip = tooltips;
     }
 
@@ -58,7 +57,7 @@ public class coinTooltip implements ClientTooltipComponent {
     {
         return this.gridSizeX() * 18 + 2;
     }
-    private stampTypes getType()
+    private StampTypes getType()
     {
         return tooltip.stamp();
     }

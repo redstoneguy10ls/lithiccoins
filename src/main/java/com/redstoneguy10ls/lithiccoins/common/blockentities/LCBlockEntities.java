@@ -16,8 +16,8 @@ import static com.redstoneguy10ls.lithiccoins.LithicCoins.MOD_ID;
 public class LCBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, MOD_ID);
 
-    public static final RegistryObject<BlockEntityType<mintBlockEntity>> MINT =
-            register("mint", mintBlockEntity::new, LCBlocks.MINT);
+    public static final RegistryObject<BlockEntityType<MintBlockEntity>> MINT =
+            register("mint", MintBlockEntity::new, LCBlocks.MINT);
 
     private static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> register(String name, BlockEntityType.BlockEntitySupplier<T> factory, Supplier<? extends Block> block)
     {

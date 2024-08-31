@@ -1,6 +1,6 @@
 package com.redstoneguy10ls.lithiccoins.common.items;
 
-import com.redstoneguy10ls.lithiccoins.common.Capability.LocationHandler;
+import com.redstoneguy10ls.lithiccoins.common.capability.LocationHandler;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -14,10 +14,9 @@ import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
-import java.util.Objects;
 
-public class coinItem extends Item {
-    public coinItem(Properties pProperties) {
+public class CoinItem extends Item {
+    public CoinItem(Properties pProperties) {
         super(pProperties);
     }
 

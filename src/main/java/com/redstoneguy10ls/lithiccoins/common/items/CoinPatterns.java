@@ -1,11 +1,5 @@
 package com.redstoneguy10ls.lithiccoins.common.items;
 
-import com.redstoneguy10ls.lithiccoins.util.registries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
-import org.jetbrains.annotations.Nullable;
 /*
 import static com.redstoneguy10ls.lithiccoins.LithicCoins.MOD_ID;
 

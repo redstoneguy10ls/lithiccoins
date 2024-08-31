@@ -1,7 +1,7 @@
 package com.redstoneguy10ls.lithiccoins.common.items;
 
 import com.redstoneguy10ls.lithiccoins.util.LCHelpers;
-import com.redstoneguy10ls.lithiccoins.util.tooltips;
+import com.redstoneguy10ls.lithiccoins.util.Tooltips;
 import net.dries007.tfc.common.items.MoldItem;
 import net.dries007.tfc.util.Metal;
 import net.minecraft.tags.TagKey;
@@ -29,6 +29,6 @@ public class firedCoinDieMold extends MoldItem {
     @Override
     public Optional<TooltipComponent> getTooltipImage(ItemStack stack)
     {
-        return Optional.of(new tooltips.CoinImageTooltip(1,1, LCHelpers.getStamptype(stack.getItem())));
+        return Optional.of(new Tooltips.CoinImageTooltip(1,1, LCHelpers.getStamptype(stack.getItem())));
     }
 }

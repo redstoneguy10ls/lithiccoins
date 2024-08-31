@@ -1,32 +1,26 @@
 
 package com.redstoneguy10ls.lithiccoins;
 
-import com.mojang.datafixers.util.Either;
-import com.redstoneguy10ls.lithiccoins.client.render.mintBlockEntityRenderer;
+import com.redstoneguy10ls.lithiccoins.client.render.MintBlockEntityRenderer;
 import com.redstoneguy10ls.lithiccoins.client.screen.WaxKanppingScreen;
-import com.redstoneguy10ls.lithiccoins.common.Capability.IPurse;
-import com.redstoneguy10ls.lithiccoins.common.Capability.LocationCapability;
-import com.redstoneguy10ls.lithiccoins.common.Capability.PurseCapability;
+import com.redstoneguy10ls.lithiccoins.common.capability.IPurse;
+import com.redstoneguy10ls.lithiccoins.common.capability.LocationCapability;
+import com.redstoneguy10ls.lithiccoins.common.capability.PurseCapability;
 import com.redstoneguy10ls.lithiccoins.common.blockentities.LCBlockEntities;
 import com.redstoneguy10ls.lithiccoins.common.container.LCContainerTypes;
 import com.redstoneguy10ls.lithiccoins.common.items.LCItems;
-import com.redstoneguy10ls.lithiccoins.common.items.stampTypes;
-import com.redstoneguy10ls.lithiccoins.util.LCHelpers;
-import com.redstoneguy10ls.lithiccoins.util.coinTooltip;
-import com.redstoneguy10ls.lithiccoins.util.tooltips;
+import com.redstoneguy10ls.lithiccoins.util.CoinTooltip;
+import com.redstoneguy10ls.lithiccoins.util.Tooltips;
 import net.dries007.tfc.client.model.ContainedFluidModel;
-import net.dries007.tfc.util.Metal;
+
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.inventory.tooltip.TooltipComponent;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterClientTooltipComponentFactoriesEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
-import net.minecraftforge.client.event.RenderTooltipEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -56,12 +50,12 @@ public class ClientEventHandler {
 
     public static void regusterEntityRenderers(EntityRenderersEvent.RegisterRenderers event)
     {
-        event.registerBlockEntityRenderer(LCBlockEntities.MINT.get(), ctx -> new mintBlockEntityRenderer());
+        event.registerBlockEntityRenderer(LCBlockEntities.MINT.get(), ctx -> new MintBlockEntityRenderer());
     }
 
     public static void onTooltipFactoryRegistry(RegisterClientTooltipComponentFactoriesEvent event)
     {
-        event.register(tooltips.CoinImageTooltip.class, coinTooltip::new);
+        event.register(Tooltips.CoinImageTooltip.class, CoinTooltip::new);
     }
 
 

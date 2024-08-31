@@ -2,13 +2,10 @@ package com.redstoneguy10ls.lithiccoins.compat.jei.category;
 
 import com.redstoneguy10ls.lithiccoins.common.items.LCItems;
 import com.redstoneguy10ls.lithiccoins.common.items.TopDies;
-import com.redstoneguy10ls.lithiccoins.common.items.stampTypes;
 import com.redstoneguy10ls.lithiccoins.common.recipes.MintingRecipe;
 import com.redstoneguy10ls.lithiccoins.util.LCTags;
-import com.redstoneguy10ls.lithiccoins.util.tooltips;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
-import mezz.jei.api.gui.builder.IRecipeSlotBuilder;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
@@ -16,14 +13,12 @@ import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import net.dries007.tfc.util.Metal;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class MintingRecipeCategory extends BaseRecipeCategory<MintingRecipe> {
 

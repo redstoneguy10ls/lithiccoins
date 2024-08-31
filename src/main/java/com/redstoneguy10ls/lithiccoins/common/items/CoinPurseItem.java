@@ -1,9 +1,6 @@
 package com.redstoneguy10ls.lithiccoins.common.items;
 
-import com.redstoneguy10ls.lithiccoins.common.Capability.IPurse;
-import com.redstoneguy10ls.lithiccoins.common.Capability.LocationCapability;
-import com.redstoneguy10ls.lithiccoins.common.Capability.PurseCapability;
-import com.redstoneguy10ls.lithiccoins.common.Capability.PurseHandler;
+import com.redstoneguy10ls.lithiccoins.common.capability.LocationCapability;
 import com.redstoneguy10ls.lithiccoins.common.misc.LCSounds;
 import com.redstoneguy10ls.lithiccoins.config.LithicConfig;
 import com.redstoneguy10ls.lithiccoins.util.LCTags;
@@ -30,8 +27,6 @@ import net.minecraft.world.inventory.tooltip.BundleTooltip;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Optional;
@@ -39,13 +34,13 @@ import java.util.stream.Stream;
 
 import static org.openjdk.nashorn.internal.objects.NativeMath.floor;
 
-public class coinPurseItem extends Item {
+public class CoinPurseItem extends Item {
 
     private static final String TAG_ITEMS = "Items";
     public static final int MAX_WEIGHT = 64 * Helpers.getValueOrDefault(LithicConfig.SERVER.numberOfStacksInCoinPurse);
     private static final int BAR_COLOR = Mth.color(0.4F, 0.4F, 1.0F);
 
-    public coinPurseItem(Properties pProperties) {
+    public CoinPurseItem(Properties pProperties) {
         super(pProperties);
     }
 

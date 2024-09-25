@@ -25,7 +25,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WaxKanppingScreen extends TFCContainerScreen<WaxKnappingContainer> {
+public class WaxKnappingScreen extends TFCContainerScreen<WaxKnappingContainer> {
     public static final ResourceLocation BACKGROUND = Helpers.identifier("textures/gui/knapping.png");
 
     private final ResourceLocation buttonLocation;
@@ -51,7 +51,7 @@ public class WaxKanppingScreen extends TFCContainerScreen<WaxKnappingContainer> 
         return LCHelpers.identifier("textures/gui/knapping/" + buttonAssetPath.getPath() + (disabled ? "_disabled" : "") + ".png");
     }
 
-    public WaxKanppingScreen(WaxKnappingContainer container, Inventory inv, Component name)
+    public WaxKnappingScreen(WaxKnappingContainer container, Inventory inv, Component name)
     {
         super(container, inv, name, BACKGROUND);
         imageHeight = 186;

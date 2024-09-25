@@ -1,0 +1,22 @@
+{
+  "__comment__": "This file was created by Jotred",
+  "name": "Coin Purse",
+  "category": "tfc:lithiccoins",
+  "icon": "lithiccoins:coin_purse",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The $(thing)Coin Purse$() can be a vital tool when playing with multiple $(thing)coin$()-based currencies. It allows you to stack up to 256 $(thing)coins$() in a single inventory slot"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lithiccoins:crafting/coin_purse"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "To use a $(thing)Coin Purse$(), you have to right-click on it in your inventory while having some $(thing)coins$() selected, akin to the vanilla $(thing)Bundle$(). $(br2) To retrieve $(thing)coins$() from the $(thing)Coin Purse$(), either right-click in your inventory to retrieve up to a stack of the $(thing)coin$() type you last inserted, or use it in-world to completely empty it out onto the ground."
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 15
+}

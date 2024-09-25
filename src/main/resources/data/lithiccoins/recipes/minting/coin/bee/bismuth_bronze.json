@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by JotredDev",
+  "type": "lithiccoins:minting",
+  "top_dies": [
+    "bee"
+  ],
+  "blank_coin": {
+    "item": "lithiccoins:blank_coin/bismuth_bronze"
+  },
+  "tier": 2,
+  "result": {
+    "item": "lithiccoins:coin/bee/bismuth_bronze"
+  }
+}

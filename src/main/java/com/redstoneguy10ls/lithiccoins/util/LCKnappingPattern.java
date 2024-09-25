@@ -60,7 +60,7 @@ public class LCKnappingPattern{
         final int width = buffer.readVarInt();
         final int height = buffer.readVarInt();
         final boolean empty = buffer.readBoolean();
-        return new LCKnappingPattern(width, height, pat, empty);
+        return new LCKnappingPattern(width, height, pat, empty, false);
     }
 
     private final int width;
@@ -75,11 +75,19 @@ public class LCKnappingPattern{
     public LCKnappingPattern(int width, int height, boolean empty)
     {
 
-        this(width, height, new boolean[(height*width)], empty);
+        this(width, height, new boolean[(height*width)], empty, true);
     }
 
-    private LCKnappingPattern(int width, int height, boolean[] pat, boolean empty)
+    private LCKnappingPattern(int width, int height, boolean[] pat, boolean empty, boolean fill)
     {
+        if (fill) {
+            
+            for(int i = 0; i < 64; i++)
+            {
+                pat[i] = true;
+                
+            }
+        }
         this.width = width;
         this.height = height;
         this.pat = pat;

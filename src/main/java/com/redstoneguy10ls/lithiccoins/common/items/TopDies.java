@@ -28,7 +28,8 @@ public enum TopDies {
     SKULL(22),
     SYMBOL(23),
     TRIFOIL(24),
-    FACE(25);
+    FACE(25),
+    BEE(26);
     public static final TopDies[] VALUES = values();
 
     static

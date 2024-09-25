@@ -80,11 +80,6 @@ public class LCKnappingPattern{
 
     private LCKnappingPattern(int width, int height, boolean[] pat, boolean empty)
     {
-        for(int i = 0; i < pat.length; i++)
-        {
-            pat[i] = true;
-
-        }
         this.width = width;
         this.height = height;
         this.pat = pat;

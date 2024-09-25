@@ -26,7 +26,7 @@
 		"lithiccoins:top_die/skull/wrought_iron",
 		"lithiccoins:top_die/symbol/wrought_iron",
 		"lithiccoins:top_die/trifoil/wrought_iron",
-		"lithiccoins:top_die/face/wrought_iron"
-
-	]
+		"lithiccoins:top_die/face/wrought_iron",
+	    "lithiccoins:top_die/bee/wrought_iron"
+  ]
 }

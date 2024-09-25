@@ -26,7 +26,7 @@
 		"lithiccoins:top_die/skull/blue_steel",
 		"lithiccoins:top_die/symbol/blue_steel",
 		"lithiccoins:top_die/trifoil/blue_steel",
-		"lithiccoins:top_die/face/blue_steel"
-
-	]
+		"lithiccoins:top_die/face/blue_steel",
+	    "lithiccoins:top_die/bee/blue_steel"
+  ]
 }

@@ -3,7 +3,7 @@ package com.redstoneguy10ls.lithiccoins;
 
 import com.mojang.datafixers.util.Either;
 import com.redstoneguy10ls.lithiccoins.client.render.mintBlockEntityRenderer;
-import com.redstoneguy10ls.lithiccoins.client.screen.WaxKanppingScreen;
+import com.redstoneguy10ls.lithiccoins.client.screen.WaxKnappingScreen;
 import com.redstoneguy10ls.lithiccoins.common.Capability.IPurse;
 import com.redstoneguy10ls.lithiccoins.common.Capability.LocationCapability;
 import com.redstoneguy10ls.lithiccoins.common.Capability.PurseCapability;
@@ -69,7 +69,7 @@ public class ClientEventHandler {
     {
         event.enqueueWork(() -> {
 
-            MenuScreens.register(LCContainerTypes.WAX_KNAPPING.get(), WaxKanppingScreen::new);
+            MenuScreens.register(LCContainerTypes.WAX_KNAPPING.get(), WaxKnappingScreen::new);
 
             ItemProperties.register(LCItems.COIN_PURSE.get(), new ResourceLocation(MOD_ID, "filled"),
                     (stack, a, b, c) -> stack.getCapability(PurseCapability.CAPABILITY).map(IPurse::hasItem).orElse(false) ? 1f: 0f);

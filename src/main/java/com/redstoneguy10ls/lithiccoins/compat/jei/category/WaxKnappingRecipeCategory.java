@@ -1,6 +1,6 @@
 package com.redstoneguy10ls.lithiccoins.compat.jei.category;
 
-import com.redstoneguy10ls.lithiccoins.client.screen.WaxKanppingScreen;
+import com.redstoneguy10ls.lithiccoins.client.screen.WaxKnappingScreen;
 import com.redstoneguy10ls.lithiccoins.common.recipes.WaxKnappingRecipe;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.builder.IRecipeSlotBuilder;
@@ -114,7 +114,7 @@ public class WaxKnappingRecipeCategory<T extends WaxKnappingRecipe> extends Base
         return slots.findSlotByName(INPUT_SLOT_NAME)
                 .flatMap(slot -> slot.getDisplayedIngredient(JEIIntegration.ITEM_STACK))
                 .map(displayed -> {
-                    final ResourceLocation high = WaxKanppingScreen.getButtonLocation(displayed.getItem(), disabled);
+                    final ResourceLocation high = WaxKnappingScreen.getButtonLocation(displayed.getItem(), disabled);
                     return helper.drawableBuilder(high, 0, 0, 10, 10).setTextureSize(10, 10).build();
                 })
                 .orElse(null);

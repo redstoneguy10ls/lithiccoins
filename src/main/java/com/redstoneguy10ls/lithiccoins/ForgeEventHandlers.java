@@ -3,6 +3,7 @@ package com.redstoneguy10ls.lithiccoins;
 
 import com.redstoneguy10ls.lithiccoins.common.Capability.LocationCapability;
 import com.redstoneguy10ls.lithiccoins.common.Capability.LocationHandler;
+import com.redstoneguy10ls.lithiccoins.config.LithicConfig;
 import com.redstoneguy10ls.lithiccoins.util.LCTags;
 import net.dries007.tfc.util.Helpers;
 import net.minecraft.core.BlockPos;
@@ -47,6 +48,9 @@ public class ForgeEventHandlers {
                         if (!test.getLocationSet()) {
                             test.setCreationLocation(chunkPos);
                             test.setCreationDate(Calendars.get().getTotalYears());
+                            if(Helpers.getValueOrDefault(LithicConfig.SERVER.printName)) {
+                                test.setName(player.getName().getString());
+                            }
 
                         }
                     });

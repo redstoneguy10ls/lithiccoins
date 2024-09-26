@@ -5,6 +5,7 @@ import com.redstoneguy10ls.lithiccoins.common.blocks.mintBlock;
 import com.redstoneguy10ls.lithiccoins.common.items.TopDies;
 import com.redstoneguy10ls.lithiccoins.common.recipes.LCRecipeTypes;
 import com.redstoneguy10ls.lithiccoins.common.recipes.MintingRecipe;
+import com.redstoneguy10ls.lithiccoins.config.LithicConfig;
 import com.redstoneguy10ls.lithiccoins.util.LCHelpers;
 import com.redstoneguy10ls.lithiccoins.util.LCTags;
 import net.dries007.tfc.common.blockentities.InventoryBlockEntity;
@@ -251,6 +252,9 @@ public class mintBlockEntity extends InventoryBlockEntity<mintBlockEntity.mintIn
                     if (!test.getLocationSet()) {
                         test.setCreationLocation(chunkPos);
                         test.setCreationDate(Calendars.get().getTotalYears());
+                        if(Helpers.getValueOrDefault(LithicConfig.SERVER.printName)) {
+                            test.setName(player.getName().getString());
+                        }
 
                     }
                 });

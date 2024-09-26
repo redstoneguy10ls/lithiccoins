@@ -1074,6 +1074,7 @@
   "lithiccoins.tooltip.lithiccoins.coins.tooltip" : "Minted at %s",
   "lithiccoins.tooltip.lithiccoins.coins.tooltip2" : "Unminted",
   "lithiccoins.tooltip.lithiccoins.coins.tooltip_time" : "Minted in %s",
+  "lithiccoins.tooltip.lithiccoins.coins.tooltip_name" : "Minted by %s",
   "lithiccoins.tooltip.lithiccoins.mint.bottom_die_to_low" : "The Bottom die is not a high enough tier to mint that",
   "lithiccoins.tooltip.lithiccoins.mint.top_die_to_low" : "The Top die is not a high enough tier to mint that",
   "lithiccoins.tooltip.lithiccoins.mint.both_die_to_low" : "Both dies are not a high enough tier to mint that",

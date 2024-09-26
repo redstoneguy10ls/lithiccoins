@@ -15,20 +15,36 @@
     {
       "type": "tfc:anvil_recipe",
       "recipe": "lithiccoins:anvil/die_holder",
-      "text": "The $(thing)Die Holder$() is the lower metal part of the $(thing)Coin Mint$(), holding the $(thing)Bottom Die$()."
+      "text": "The $(thing)Die Holder$() is the lower brass part of the $(thing)Coin Mint$(), holding the $(thing)Bottom Die$()."
     },
     {
       "type": "tfc:anvil_recipe",
       "recipe": "lithiccoins:anvil/stamp_holder",
-      "text": "The $(thing)Stamp Holder$() is the upper metal part of the $(thing)Coin Mint$(), holding the $(thing)Top Die$()."
+      "text": "The $(thing)Stamp Holder$() is the upper brass part of the $(thing)Coin Mint$(), holding the $(thing)Top Die$()."
     },
     {
       "type": "patchouli:text",
-      "text": "To use the $(thing)Coin Mint$(), you first need to insert both a $(thing)Bottom Die$() and $(thing)Top Die$(). This is done by interacting with the appropriate $(thing)die$() in your hand on the metal parts intended to hold the respective die type. Once this is done, you can insert the $(thing)coins$() you want to mint by using it anywhere on the $(thing)Coin Mint$() hitbox except the metal parts."
+      "text": "To use the $(thing)Coin Mint$(), you first need to insert both a $(thing)Bottom Die$() and $(thing)Top Die$(). This is done by interacting with the appropriate $(thing)die$() in your hand on the brass parts intended to hold the respective die type. Once this is done, you can insert the $(thing)coins$() you want to mint by using it anywhere on the $(thing)Coin Mint$() hitbox except the brass parts."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "lithiccoins:textures/gui/book/bottom_die_out.png"
+      ],
+      "text": "Where to look for the $(thing)Bottom Die$()",
+      "border": true
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "lithiccoins:textures/gui/book/bottom_die_in.png"
+      ],
+      "text": "The $(thing)Bottom Die$() in the mint",
+      "border": true
     },
     {
       "type": "patchouli:text",
-      "text": "The last step is stamping the image onto the $(thing)coin$(). This is achieved by using a $(thing)hammer$() on the $(thing)Coin Mint$(). $(br2) If you use the $(thing)hammer$() on the metal parts, the minted $(thing)coin$() will be stored on the edge of the $(thing)Coin Mint$(), retrievable by interacting with the non-metal parts. Otherwise it will go directly into your inventory."
+      "text": "The last step is stamping the image onto the $(thing)coin$(). This is achieved by using a $(thing)hammer$() on the $(thing)Coin Mint$(). $(br2) The minted $(thing)coin$() will be stored on the edge of the $(thing)Coin Mint$(), retrievable by interacting with the base."
     },
     {
       "type": "patchouli:text",

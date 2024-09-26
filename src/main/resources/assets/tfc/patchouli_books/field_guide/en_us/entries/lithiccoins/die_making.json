@@ -162,5 +162,11 @@
     }
   ],
   "read_by_default": true,
+  "extra_recipe_mappings": {
+    "tag:lithiccoins:wax_dies": 0,
+    "tag:lithiccoins:unfired_die_molds": 2,
+    "tag:lithiccoins:die_molds": 3,
+    "tag:lithiccoins:top_dies": 0
+  },
   "sortnum": 15
 }

@@ -4,26 +4,6 @@
   "values": [
     "lithiccoins:ceramic/unfired_coin_mold",
     "lithiccoins:ceramic/unfired_fire_coin_mold",
-    "lithiccoins:ceramic/die_mold/unfired/angler",
-    "lithiccoins:ceramic/die_mold/unfired/archer",
-    "lithiccoins:ceramic/die_mold/unfired/arms_up",
-    "lithiccoins:ceramic/die_mold/unfired/blade",
-    "lithiccoins:ceramic/die_mold/unfired/brewer",
-    "lithiccoins:ceramic/die_mold/unfired/burn",
-    "lithiccoins:ceramic/die_mold/unfired/danger",
-    "lithiccoins:ceramic/die_mold/unfired/eagle",
-    "lithiccoins:ceramic/die_mold/unfired/explorer",
-    "lithiccoins:ceramic/die_mold/unfired/friend",
-    "lithiccoins:ceramic/die_mold/unfired/heart",
-    "lithiccoins:ceramic/die_mold/unfired/heartbreak",
-    "lithiccoins:ceramic/die_mold/unfired/howl",
-    "lithiccoins:ceramic/die_mold/unfired/miner",
-    "lithiccoins:ceramic/die_mold/unfired/mourner",
-    "lithiccoins:ceramic/die_mold/unfired/plenty",
-    "lithiccoins:ceramic/die_mold/unfired/prize",
-    "lithiccoins:ceramic/die_mold/unfired/sheaf",
-    "lithiccoins:ceramic/die_mold/unfired/shelter",
-    "lithiccoins:ceramic/die_mold/unfired/skull",
-    "lithiccoins:ceramic/die_mold/unfired/trifoil"
+    "#lithiccoins:unfired_die_molds"
   ]
 }

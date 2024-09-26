@@ -24,11 +24,13 @@
       "text": "By heating the $(thing)Wax Die$(), you get a $(thing)Die Mold$() with your chosen stamp. This works like any other mold, needing to be filled with one ingot of liquid metal."
     },
     {
-      "type": "patchouli:empty"
+      "type": "tfc:anvil_recipe",
+      "recipe": "lithiccoins:anvil/copper_bottom_die",
+      "text": "Far easier to make is the $(thing)Bottom Die$(). You can use any tool-grade metal, like with the $(thing)Top Die$(), but it can only be made at an anvil."
     },
     {
       "type": "patchouli:text",
-      "text": "Following are the wax knapping recipes for all currently implemented stamp types"
+      "text": "Following are the wax knapping recipes for all currently implemented stamp types."
     },
     {
       "type": "tfc:wax_knapping_recipe",
@@ -162,5 +164,12 @@
     }
   ],
   "read_by_default": true,
+  "extra_recipe_mappings": {
+    "tag:lithiccoins:wax_dies": 0,
+    "tag:lithiccoins:unfired_die_molds": 2,
+    "tag:lithiccoins:die_molds": 3,
+    "tag:lithiccoins:top_dies": 0,
+    "tag:lithiccoins:bottom_dies": 4
+  },
   "sortnum": 15
 }

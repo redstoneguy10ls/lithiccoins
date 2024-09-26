@@ -38,7 +38,9 @@
   "read_by_default": true,
   "extra_recipe_mappings": {
     "tag:lithiccoins:blank_coins": 0,
-    "tag:lithiccoins:stamped_coins": 0
+    "tag:lithiccoins:stamped_coins": 0,
+    "lithiccoins:die_holder":  0,
+    "lithiccoins:stamp_holder": 0
   },
   "sortnum": 15
 }

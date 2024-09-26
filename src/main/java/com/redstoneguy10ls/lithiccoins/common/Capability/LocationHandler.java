@@ -1,5 +1,7 @@
 package com.redstoneguy10ls.lithiccoins.common.Capability;
 
+import com.redstoneguy10ls.lithiccoins.config.LithicConfig;
+import net.dries007.tfc.util.Helpers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -30,6 +32,8 @@ public class LocationHandler implements ICapabilitySerializable<CompoundTag>, IL
 
     protected long creationDate;
 
+    protected String name;
+
 
     public LocationHandler(ItemStack itemStack) {
         stack = itemStack;
@@ -37,6 +41,7 @@ public class LocationHandler implements ICapabilitySerializable<CompoundTag>, IL
         this.creationLocation = DEFUALT_CHUNK_POS;
         this.LocationSet = false;
         this.creationDate = UNKNOWN_CREATION_DATE;
+        this.name = "no one";
     }
 
     @Override
@@ -83,6 +88,16 @@ public class LocationHandler implements ICapabilitySerializable<CompoundTag>, IL
     }
 
     @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
         if (cap == LocationCapability.CAPABILITY || cap == LocationCapability.NETWORK_CAPABILITY)
         {
@@ -102,6 +117,10 @@ public class LocationHandler implements ICapabilitySerializable<CompoundTag>, IL
         else {
             text.add(Component.translatable("lithiccoins.tooltip.lithiccoins.coins.tooltip",creationLocation).withStyle(ChatFormatting.GRAY));
             text.add(Component.translatable("lithiccoins.tooltip.lithiccoins.coins.tooltip_time",creationDate).withStyle(ChatFormatting.GRAY));
+            if(Helpers.getValueOrDefault(LithicConfig.SERVER.printName))
+            {
+                text.add(Component.translatable("lithiccoins.tooltip.lithiccoins.coins.tooltip_name",name).withStyle(ChatFormatting.WHITE));
+            }
         }
 
 
@@ -113,6 +132,9 @@ public class LocationHandler implements ICapabilitySerializable<CompoundTag>, IL
         nbt.putLong("CreationLocation", getCreationLocation().toLong());
         nbt.putBoolean("Location_Set", getLocationSet());
         nbt.putLong("creationDate", getCreationDate());
+        if(Helpers.getValueOrDefault(LithicConfig.SERVER.printName)) {
+            nbt.putString("name", getName());
+        }
         return nbt;
     }
 
@@ -122,6 +144,11 @@ public class LocationHandler implements ICapabilitySerializable<CompoundTag>, IL
         this.creationLocation = new ChunkPos(nbt.contains("CreationLocation") ? nbt.getLong("CreationLocation") : DEFUALT_CHUNK_POS.toLong());
         this.LocationSet = nbt.contains("Location_Set") ? nbt.getBoolean("Location_Set") : FALSE;
         this.creationDate = nbt.contains("creationDate") ? nbt.getLong("creationDate") : UNKNOWN_CREATION_DATE;
+        if(Helpers.getValueOrDefault(LithicConfig.SERVER.printName))
+        {
+            this.name = nbt.contains("name") ? nbt.getString("name") : "no one";
+        }
+
     }
 
 }

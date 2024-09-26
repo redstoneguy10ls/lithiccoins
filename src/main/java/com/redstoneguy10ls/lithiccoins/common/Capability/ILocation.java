@@ -22,6 +22,10 @@ public interface ILocation extends INetworkLocation {
 
     void setCreationLocation(ChunkPos creationLocation);
 
+    String getName();
+
+    void setName(String name);
+
     void funy(ItemStack stack);
 
     default void addTooltipInfo(ItemStack stack, List<Component> text)

@@ -235,7 +235,11 @@ public class mintBlock extends DeviceBlock implements IHighlightHandler {
         }
         if(slot >= 2)
         {
-            coinstuff(state,level,mint,inventory,player,stack,2);
+            if(!player.getItemInHand(InteractionHand.MAIN_HAND).is(TFCTags.Items.HAMMERS))
+            {
+                coinstuff(state,level,mint,inventory,player,stack,2);
+            }
+
         }
         return InteractionResult.PASS;
     }
@@ -248,7 +252,10 @@ public class mintBlock extends DeviceBlock implements IHighlightHandler {
         }
         else
         {
-            ItemHandlerHelper.giveItemToPlayer(player, inventory.extractItem(slot, inventory.getStackInSlot(slot).getCount(), false));
+            if(player.getItemInHand(InteractionHand.MAIN_HAND).isEmpty())
+            {
+                ItemHandlerHelper.giveItemToPlayer(player, inventory.extractItem(slot, inventory.getStackInSlot(slot).getCount(), false));
+            }
             if(slot == SLOT_BOTTOMDIE)
             {
                 insertOrExtract(level,mint,inventory,player,ItemStack.EMPTY,SLOT_COIN);
@@ -256,7 +263,7 @@ public class mintBlock extends DeviceBlock implements IHighlightHandler {
         }
         mint.setAndUpdateSlots(slot);
         mint.markForSync();
-        return InteractionResult.sidedSuccess(level.isClientSide);
+        return InteractionResult.PASS;
     }
 
 

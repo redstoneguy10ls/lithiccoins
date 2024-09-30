@@ -29,6 +29,6 @@ public class firedCoinDieMold extends MoldItem {
     @Override
     public Optional<TooltipComponent> getTooltipImage(ItemStack stack)
     {
-        return Optional.of(new tooltips.CoinImageTooltip(1,1, LCHelpers.getStamptype(stack.getItem())));
+        return Optional.of(new tooltips.CoinImageTooltip(1, 1, LCHelpers.getStamptype(stack.getItem())));
     }
 }

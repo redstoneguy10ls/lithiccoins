@@ -9,8 +9,6 @@ import net.minecraft.world.item.TieredItem;
 
 import java.util.Optional;
 
-import static com.redstoneguy10ls.lithiccoins.common.items.stampTypes.ANGLER;
-
 public class stampItem extends TieredItem {
     public stampItem(Tier tier , Properties properties){super(tier, properties);}
 
@@ -19,6 +17,6 @@ public class stampItem extends TieredItem {
     @Override
     public Optional<TooltipComponent> getTooltipImage(ItemStack stack)
     {
-        return Optional.of(new tooltips.CoinImageTooltip(1,1,LCHelpers.getStamptype(stack.getItem())));
+        return Optional.of(new tooltips.CoinImageTooltip(1, 1, LCHelpers.getStamptype(stack.getItem())));
     }
 }

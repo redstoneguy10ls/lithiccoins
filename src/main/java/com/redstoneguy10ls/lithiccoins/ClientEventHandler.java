@@ -1,7 +1,6 @@
 
 package com.redstoneguy10ls.lithiccoins;
 
-import com.mojang.datafixers.util.Either;
 import com.redstoneguy10ls.lithiccoins.client.render.mintBlockEntityRenderer;
 import com.redstoneguy10ls.lithiccoins.client.screen.WaxKnappingScreen;
 import com.redstoneguy10ls.lithiccoins.common.Capability.IPurse;
@@ -10,23 +9,17 @@ import com.redstoneguy10ls.lithiccoins.common.Capability.PurseCapability;
 import com.redstoneguy10ls.lithiccoins.common.blockentities.LCBlockEntities;
 import com.redstoneguy10ls.lithiccoins.common.container.LCContainerTypes;
 import com.redstoneguy10ls.lithiccoins.common.items.LCItems;
-import com.redstoneguy10ls.lithiccoins.common.items.stampTypes;
-import com.redstoneguy10ls.lithiccoins.util.LCHelpers;
 import com.redstoneguy10ls.lithiccoins.util.coinTooltip;
 import com.redstoneguy10ls.lithiccoins.util.tooltips;
 import net.dries007.tfc.client.model.ContainedFluidModel;
-import net.dries007.tfc.util.Metal;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.inventory.tooltip.TooltipComponent;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterClientTooltipComponentFactoriesEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
-import net.minecraftforge.client.event.RenderTooltipEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -89,12 +82,6 @@ public class ClientEventHandler {
 
         }
     }
-/*
-    public static void onGatherTooltipComponents(RenderTooltipEvent.GatherComponents event){
-
-        event.getTooltipElements().add(Either.right(new tooltips.CoinImageTooltip(LCHelpers.identifier("textures/entity/coin_angler_preview.png"))));
-    }
-*/
 
 
     public static void registerColorHandlerItems(RegisterColorHandlersEvent.Item event)

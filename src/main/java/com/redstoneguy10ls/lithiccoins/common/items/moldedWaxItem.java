@@ -17,6 +17,6 @@ public class moldedWaxItem extends Item {
     @Override
     public Optional<TooltipComponent> getTooltipImage(ItemStack stack)
     {
-        return Optional.of(new tooltips.CoinImageTooltip(1,1, LCHelpers.getStamptype(stack.getItem())));
+        return Optional.of(new tooltips.CoinImageTooltip(1, 1, LCHelpers.getStamptype(stack.getItem())));
     }
 }

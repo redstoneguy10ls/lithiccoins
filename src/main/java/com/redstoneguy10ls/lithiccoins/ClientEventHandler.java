@@ -30,6 +30,7 @@ import net.minecraftforge.client.event.RenderTooltipEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
@@ -61,7 +62,9 @@ public class ClientEventHandler {
 
     public static void onTooltipFactoryRegistry(RegisterClientTooltipComponentFactoriesEvent event)
     {
-        event.register(tooltips.CoinImageTooltip.class, coinTooltip::new);
+        if (ModList.get().isLoaded("jei")) {
+            event.register(tooltips.CoinImageTooltip.class, coinTooltip::new);
+        }
     }
 
 

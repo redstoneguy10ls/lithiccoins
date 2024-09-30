@@ -6,6 +6,7 @@ import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TieredItem;
+import net.minecraftforge.fml.ModList;
 
 import java.util.Optional;
 
@@ -19,6 +20,11 @@ public class stampItem extends TieredItem {
     @Override
     public Optional<TooltipComponent> getTooltipImage(ItemStack stack)
     {
-        return Optional.of(new tooltips.CoinImageTooltip(1,1,LCHelpers.getStamptype(stack.getItem())));
+        if (ModList.get().isLoaded("jei")) {
+            return Optional.of(new tooltips.CoinImageTooltip(1, 1, LCHelpers.getStamptype(stack.getItem())));
+        }
+        else {
+            return Optional.empty();
+        }
     }
 }

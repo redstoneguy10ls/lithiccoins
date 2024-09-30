@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.entity.DecoratedPotPatterns;
 import java.util.List;
 
 public final class tooltips {
+    
     public record CoinImageTooltip(int width, int height, stampTypes stamp) implements TooltipComponent, IRecipeSlotTooltipCallback {
 
         @Override

@@ -1,7 +1,6 @@
 package com.redstoneguy10ls.lithiccoins.util;
 
 import com.redstoneguy10ls.lithiccoins.common.items.stampTypes;
-import net.dries007.tfc.client.ClientDeviceImageTooltip;
 import net.dries007.tfc.util.Helpers;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;

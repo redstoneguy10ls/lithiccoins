@@ -1078,8 +1078,8 @@
   "lithiccoins.tooltip.lithiccoins.mint.bottom_die_to_low" : "底部模具的等级不够高，无法铸造",
   "lithiccoins.tooltip.lithiccoins.mint.top_die_to_low" : "顶部模具的等级不够高，无法铸造",
   "lithiccoins.tooltip.lithiccoins.mint.both_die_to_low" : "这两个模具等级都不够高，不足以铸造",
-  "lithiccoins.tooltip.lithiccoins.coins.heads" : "头文字",
-  "lithiccoins.tooltip.lithiccoins.coins.tails" : "底文字",
+  "lithiccoins.tooltip.lithiccoins.coins.heads" : "硬币正面",
+  "lithiccoins.tooltip.lithiccoins.coins.tails" : "硬币背面",
 
   "tfc.jei.wax_knapping": "蜂蜡雕刻"
 

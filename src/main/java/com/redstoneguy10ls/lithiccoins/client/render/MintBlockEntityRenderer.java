@@ -8,16 +8,19 @@ import com.redstoneguy10ls.lithiccoins.common.blocks.LCStateProperties;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
+import net.minecraft.client.renderer.entity.ItemRenderer;
+import net.minecraft.core.Direction;
+import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.items.IItemHandler;
 
 public class MintBlockEntityRenderer implements BlockEntityRenderer<MintBlockEntity>
 {
-
     @Override
     public void render(MintBlockEntity mint, float partialTicks, PoseStack stack, MultiBufferSource bufferSource, int packedLight, int packedOverlay)
     {
@@ -29,162 +32,134 @@ public class MintBlockEntityRenderer implements BlockEntityRenderer<MintBlockEnt
             return;
         }
 
+        final BlockState blockState = level.getBlockState(mint.getBlockPos());
+        final Direction direction = blockState.hasProperty(BlockStateProperties.HORIZONTAL_FACING) ? blockState.getValue(BlockStateProperties.HORIZONTAL_FACING) : Direction.UP;
+
+        // This function may attempt to run in the same tick a player breaks a mint.
+        // In that case, the block will be air, so we don't need to render anything
+        if (direction == Direction.UP) return;
+
+
         final ItemStack topDie = inventory.getStackInSlot(MintBlockEntity.SLOT_TOP_DIE);
         final ItemStack bottomDie = inventory.getStackInSlot(MintBlockEntity.SLOT_BOTTOM_DIE);
         final ItemStack coin = inventory.getStackInSlot(MintBlockEntity.SLOT_COIN);
         final ItemStack output = inventory.getStackInSlot(MintBlockEntity.SLOT_OUTPUT);
-
-        final BlockState blockState = level.getBlockState(mint.getBlockPos());
-
         final boolean hasHit = blockState.hasProperty(LCStateProperties.HIT) && blockState.getValue(LCStateProperties.HIT);
-        final int rotation = blockState.hasProperty(BlockStateProperties.HORIZONTAL_FACING) ? blockState.getValue(BlockStateProperties.HORIZONTAL_FACING).get2DDataValue() : 0;
 
+        final ItemRenderer renderer = Minecraft.getInstance().getItemRenderer();
+
+        // Rendering coins in the output
         if(!output.isEmpty())
         {
             for(int i = 0; i < output.getCount(); i++)
             {
-                double yPos = 0.625D;
-                stack.pushPose();
-                switch (Math.floorDiv(i, 16))
+                Vec3 coinPos = new Vec3(0.125d, 0.625d, 0.125d + (0.046875d * (i % 16)));
+
+                // Adjusting the position of the coins
+                switch ((intFromDirection(direction) + i / 16) % 4)
                 {
-                    case 0 ->
-                    {
-                        stack.translate(0.125D, yPos, 0.125D + (0.046875D * i));
-                        stack.mulPose(Axis.XP.rotationDegrees(75F));
-                    }
-                    case 1 ->
-                    {
-                        stack.translate(0.125D + (0.046875D * (i - 16)), yPos, 0.875D);
-                        stack.mulPose(Axis.YP.rotationDegrees(90F));
-                        stack.mulPose(Axis.XP.rotationDegrees(75F));
-                    }
-                    case 2 ->
-                    {
-                        stack.translate(0.875D, yPos, 0.875D - (0.046875D * (i - 32)));
-                        stack.mulPose(Axis.YP.rotationDegrees(180F));
-                        stack.mulPose(Axis.XP.rotationDegrees(75F));
-                    }
-                    case 3 ->
-                    {
-                        stack.translate(0.875D - (0.046875D * (i - 48)), yPos, 0.125D);
-                        stack.mulPose(Axis.YP.rotationDegrees(270F));
-                        stack.mulPose(Axis.XP.rotationDegrees(75F));
-                    }
-                    default ->
-                    {
-                        stack.translate(0.5D, 1.0D, 0.5D);
-                        float degrees = (level.getGameTime() + partialTicks) * 4F;
-                        stack.mulPose(Axis.YP.rotationDegrees(degrees));
-                    }
+                    case 0 -> coinPos = coinPos.yRot(Mth.PI).add(1, 0, 1);
+                    case 1 -> coinPos = coinPos.yRot(3 * Mth.HALF_PI).add(1, 0, 0);
+                    case 3 -> coinPos = coinPos.yRot(Mth.HALF_PI).add(0, 0, 1);
                 }
 
-                stack.scale(0.125F, 0.125F, 0.125F);
-                Minecraft.getInstance().getItemRenderer().renderStatic(output, ItemDisplayContext.FIXED, packedLight, packedOverlay, stack, bufferSource, level, 0);
+                stack.pushPose();
+                stack.translate(coinPos.x, coinPos.y, coinPos.z);
+
+                switch ((Math.floorDiv(i, 16) + intFromDirection(direction)) % 4)
+                {
+                    case 1 -> stack.mulPose(Axis.YP.rotationDegrees(90f));
+                    case 2 -> stack.mulPose(Axis.YP.rotationDegrees(180f));
+                    case 3 -> stack.mulPose(Axis.YP.rotationDegrees(270f));
+                }
+
+                stack.mulPose(Axis.XP.rotationDegrees(75f));
+
+                stack.scale(0.125f, 0.125f, 0.125f);
+                renderer.renderStatic(output, ItemDisplayContext.FIXED, packedLight, packedOverlay, stack, bufferSource, level, 0);
 
                 stack.popPose();
             }
         }
 
+        // Rendering the bottom die
         if(!bottomDie.isEmpty())
         {
-
             stack.pushPose();
             stack.translate(((7.125f+1f)/16f), (10f/16), (6.75f/16f));
 
-            if(rotation == 1)
+            switch (direction)
             {
-                stack.translate(((1f)/16),0,((0.25f+1f)/16));
+                case WEST -> stack.translate(((1f)/16),0,((0.25f+1f)/16));
+                case NORTH -> stack.translate(0,0,(2.25f/16f));
+                case EAST -> stack.translate(-((1f)/16),0,((0.25f+1f)/16));
             }
-            if(rotation == 2)
-            {
-                stack.translate(0,0,(2.25f/16f));
-            }
-            if(rotation == 3)
-            {
-                stack.translate(-((1f)/16),0,((0.25f+1f)/16));
-            }
-
 
             stack.scale(0.9F, 0.9F, 0.9F);
-            Minecraft.getInstance().getItemRenderer().renderStatic(bottomDie, ItemDisplayContext.FIXED, packedLight, packedOverlay, stack, bufferSource, level, 0);
+            renderer.renderStatic(bottomDie, ItemDisplayContext.FIXED, packedLight, packedOverlay, stack, bufferSource, level, 0);
+
             stack.popPose();
-
-
-        }
-        if(!topDie.isEmpty())
-        {
-
-                stack.pushPose();
-                stack.translate(((7.125f+1f)/16f), (15f/16), (6.75f/16f));
-
-                if(rotation == 1)
-                {
-                    stack.translate(((1f)/16),0,((0.25f+1f)/16));
-                }
-                if(rotation == 2)
-                {
-                    stack.translate(0,0,(2.25f/16f));
-                }
-                if(rotation == 3)
-                {
-                    stack.translate(-((1f)/16),0,((0.25f+1f)/16));
-                }
-                if(hasHit)
-                {
-                    stack.translate(0,-(1f/16f),0);
-                }
-
-                //stack.translate(((7.5f+1f)/16f), (13.5f/16), ((6.5f+1f)/16f));
-                //stack.translate(0,0,0);
-
-                //stack.translate(0.5075F, (15.0f/16.0f), 0.563f);
-                stack.scale(0.8F, 0.8F, 0.8F);
-                //stack.mulPose(Axis.XP.rotationDegrees(90f));
-                //stack.mulPose(Axis.XP.rotationDegrees(90f* rotation + 270F));
-                //stack.mulPose(Axis.ZP.rotationDegrees(90f * rotation + 270F));
-                Minecraft.getInstance().getItemRenderer().renderStatic(topDie, ItemDisplayContext.FIXED, packedLight, packedOverlay, stack, bufferSource, level, 0);
-                stack.popPose();
-
-
         }
 
+        // Rendering the coins in the input
         if(!coin.isEmpty())
         {
             stack.pushPose();
             stack.translate(((7.25f+1f)/16f), (13.5f/16), (7.125f/16f));
             stack.mulPose(Axis.XP.rotationDegrees(90f));
-            rotateTranslate(stack, rotation);
 
-            //stack.translate(((7.5f+1f)/16f), (13.5f/16), ((6.5f+1f)/16f));
-            //stack.translate(0,0,0);
+            switch (direction)
+            {
+                case WEST -> stack.translate(((1f-(0.125/2))/16),((0.125f+1f)/16),0);
+                case NORTH -> stack.translate(0,((2.25f-(0.125/2))/16f),0);
+                case EAST -> stack.translate(-((1f)/16),((0.2f-(0.125/2)+1f)/16),0);
+            }
 
-            //stack.translate(0.5075F, (15.0f/16.0f), 0.563f);
-            stack.scale(0.3F, 0.3F, 1F);
-            //stack.mulPose(Axis.XP.rotationDegrees(90f));
-            //stack.mulPose(Axis.XP.rotationDegrees(90f* rotation + 270F));
-            //stack.mulPose(Axis.ZP.rotationDegrees(90f * rotation + 270F));
-            Minecraft.getInstance().getItemRenderer().renderStatic(coin, ItemDisplayContext.FIXED, packedLight, packedOverlay, stack, bufferSource, level, 0);
+            stack.scale(0.3f, 0.3f, 1f);
+            renderer.renderStatic(coin, ItemDisplayContext.FIXED, packedLight, packedOverlay, stack, bufferSource, level, 0);
+
             stack.popPose();
         }
 
+        // Rendering the top die
+        if(!topDie.isEmpty())
+        {
+            stack.pushPose();
+            stack.translate(((7.125f+1f)/16f), (15f/16), (6.75f/16f));
+
+            switch (direction)
+            {
+                case WEST -> stack.translate(((1f)/16),0,((0.25f+1f)/16));
+                case NORTH -> stack.translate(0,0,(2.25f/16f));
+                case EAST -> stack.translate(-((1f)/16),0,((0.25f+1f)/16));
+            }
+
+            if(hasHit)
+            {
+                stack.translate(0,-(1f/16f),0);
+            }
+
+            stack.scale(0.8F, 0.8F, 0.8F);
+            renderer.renderStatic(topDie, ItemDisplayContext.FIXED, packedLight, packedOverlay, stack, bufferSource, level, 0);
+
+            stack.popPose();
+        }
     }
-    public void rotateTranslate(PoseStack stack,int rotation)
+
+    /**
+     * The integer values associated with directions via {@link Direction#get2DDataValue()} are not useful for us, as they increase CCW instead of CW.
+     * This is a helper method to map the directions to integers as we require them, allowing us to lower the computation costs of displaying coins in proper rotation
+     */
+    private int intFromDirection(Direction direction)
     {
-        if(rotation == 1)//west
+        return switch (direction)
         {
-            //xzy
-            stack.translate(((1f-(0.125/2))/16),((0.125f+1f)/16),0);
-        }
-        if(rotation == 2)//north
-        {
-            //xzy
-            stack.translate(0,((2.25f-(0.125/2))/16f),0);
-        }
-        if(rotation == 3)//east
-        {
-            //xzy
-            stack.translate(-((1f)/16),((0.2f-(0.125/2)+1f)/16),0);
-        }
+            case NORTH -> 2;
+            case WEST -> 3;
+            case SOUTH -> 0;
+            case EAST -> 1;
+            default -> -1;
+        };
     }
 }
 

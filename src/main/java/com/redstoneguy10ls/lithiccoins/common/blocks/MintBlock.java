@@ -72,36 +72,6 @@ public class MintBlock extends DeviceBlock
         }
     );
 
-    private static final Map<Direction, VoxelShape> SHAPE = Helpers.mapOf(Direction.class, direction ->
-        Shapes.join(Shapes.join(BASE_SHAPE, TOP_DIE_SHAPE.get(direction), BooleanOp.OR), BOTTOM_DIE_SHAPE.get(direction), BooleanOp.OR)
-    );
-
-    private static final Map<Direction, AABB> TOP_DIE_AABB = Helpers.mapOf(Direction.class, direction ->
-        TOP_DIE_SHAPE.get(direction).bounds().inflate(0.01)
-    );
-
-    private static final Map<Direction, AABB> BOTTOM_DIE_AABB = Helpers.mapOf(Direction.class, direction ->
-        BOTTOM_DIE_SHAPE.get(direction).bounds().inflate(0.01)
-    );
-
-    private static final Map<MintPart, TagKey<Item>> VALID_ITEM_TAG = Helpers.mapOf(MintPart.class, part ->
-        switch (part)
-        {
-            case BASE -> LCTags.Items.BLANK_COIN;
-            case TOP_DIE -> LCTags.Items.TOP_DIE;
-            case BOTTOM_DIE -> LCTags.Items.BOTTOM_DIE;
-        }
-    );
-
-    private static final Map<MintPart, Integer> MINT_ITEM_SLOT = Helpers.mapOf(MintPart.class, part ->
-        switch (part)
-        {
-            case BASE -> SLOT_COIN;
-            case TOP_DIE -> SLOT_TOP_DIE;
-            case BOTTOM_DIE -> SLOT_BOTTOM_DIE;
-        }
-    );
-
 
 
     public MintBlock(ExtendedProperties properties)
@@ -118,7 +88,8 @@ public class MintBlock extends DeviceBlock
 
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context)
     {
-        return SHAPE.get(state.getValue(FACING));
+        Direction direction = state.getValue(FACING);
+        return Shapes.join(Shapes.join(BASE_SHAPE, TOP_DIE_SHAPE.get(direction), BooleanOp.OR), BOTTOM_DIE_SHAPE.get(direction), BooleanOp.OR);
     }
 
     /**
@@ -130,11 +101,11 @@ public class MintBlock extends DeviceBlock
         Vec3 hit = hitResult.getLocation();
         Direction direction = state.getValue(FACING);
 
-        if (TOP_DIE_AABB.get(direction).move(pos).contains(hit))
+        if (TOP_DIE_SHAPE.get(direction).bounds().inflate(0.01).move(pos).contains(hit))
         {
             return MintPart.TOP_DIE;
         }
-        else if (BOTTOM_DIE_AABB.get(direction).move(pos).contains(hit))
+        else if (BOTTOM_DIE_SHAPE.get(direction).bounds().inflate(0.01).move(pos).contains(hit))
         {
             return MintPart.BOTTOM_DIE;
         }
@@ -157,7 +128,7 @@ public class MintBlock extends DeviceBlock
                 if (!mint.hasHit())
                 {
                     mint.setHitTimer(5);
-                    attemptMint(level, mint, player,pos);
+                    attemptMinting(level, mint, player,pos);
                     return ItemInteractionResult.SUCCESS;
                 }
 
@@ -167,9 +138,13 @@ public class MintBlock extends DeviceBlock
             {
                 final MintPart selectedPart = getSelectedPart(state, pos, hitResult);
 
-                if (player.isShiftKeyDown() || Helpers.isItem(stack, VALID_ITEM_TAG.get(selectedPart)))
+                if (player.isShiftKeyDown() || Helpers.isItem(stack, selectedPart.validItemTag()))
                 {
-                    insertOrExtract(mint, player, stack, MINT_ITEM_SLOT.get(selectedPart));
+                    insertOrExtract(mint, player, stack, selectedPart.slotIndex());
+                }
+                else if (Helpers.isItem(stack, MintPart.BASE.validItemTag()))
+                {
+                    insertOrExtract(mint, player, stack, MintPart.BASE.slotIndex());
                 }
                 else
                 {
@@ -182,7 +157,7 @@ public class MintBlock extends DeviceBlock
         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
-    private static void attemptMint(Level level, MintBlockEntity mint, Player player, BlockPos pos)
+    private static void attemptMinting(Level level, MintBlockEntity mint, Player player, BlockPos pos)
     {
         final InteractionResult mintResult = mint.tryMinting(player);
         if (mintResult == InteractionResult.SUCCESS)
@@ -205,18 +180,31 @@ public class MintBlock extends DeviceBlock
         
         if (!stack.isEmpty())
         {
+            // Prevent the creation of incorrectly-minted coins via stamp-switching
+            if (slot == MintPart.TOP_DIE.slotIndex())
+            {
+                ItemHandlerHelper.giveItemToPlayer(player, inventory.extractItem(slot, inventory.getStackInSlot(slot).getCount(), false));
+            }
+
             player.setItemInHand(InteractionHand.MAIN_HAND, inventory.insertItem(slot, stack, false));
         }
         else
         {
+            // Prevent 'flying' coins
+            if (slot == MintPart.BOTTOM_DIE.slotIndex())
+            {
+                insertOrExtract(mint, player, ItemStack.EMPTY, MintPart.BASE.slotIndex());
+            }
+
+            // Prevent the creation of incorrectly-minted coins via stamp-switching
+            if (slot == MintPart.TOP_DIE.slotIndex())
+            {
+                insertOrExtract(mint, player, ItemStack.EMPTY, SLOT_OUTPUT);
+            }
+
             if (player.getItemInHand(InteractionHand.MAIN_HAND).isEmpty())
             {
                 ItemHandlerHelper.giveItemToPlayer(player, inventory.extractItem(slot, inventory.getStackInSlot(slot).getCount(), false));
-            }
-            
-            if (slot == SLOT_BOTTOM_DIE)
-            {
-                insertOrExtract(mint, player, ItemStack.EMPTY, SLOT_COIN);
             }
         }
 
@@ -245,10 +233,29 @@ public class MintBlock extends DeviceBlock
 
 
 
-    enum MintPart
+    protected enum MintPart
     {
-        BASE,
-        TOP_DIE,
-        BOTTOM_DIE
+        BASE(LCTags.Items.BLANK_COIN, SLOT_COIN),
+        TOP_DIE(LCTags.Items.TOP_DIE, SLOT_TOP_DIE),
+        BOTTOM_DIE(LCTags.Items.BOTTOM_DIE, SLOT_BOTTOM_DIE);
+
+        private final TagKey<Item> validItemTag;
+        private final int slotIndex;
+
+        MintPart(TagKey<Item> validItemTag, int slotIndex)
+        {
+            this.validItemTag = validItemTag;
+            this.slotIndex = slotIndex;
+        }
+
+        public TagKey<Item> validItemTag()
+        {
+            return this.validItemTag;
+        }
+
+        public int slotIndex()
+        {
+            return this.slotIndex;
+        }
     }
 }

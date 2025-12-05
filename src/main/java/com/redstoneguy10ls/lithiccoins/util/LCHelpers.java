@@ -6,7 +6,6 @@ import net.dries007.tfc.util.Metal;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 
 import static com.redstoneguy10ls.lithiccoins.LithicCoins.MOD_ID;
 

@@ -1,10 +1,11 @@
 package com.redstoneguy10ls.lithiccoins.common.container;
 
-import com.redstoneguy10ls.lithiccoins.common.recipes.LCRecipeTypes;
-import com.redstoneguy10ls.lithiccoins.util.LCKnappingPattern;
+import com.redstoneguy10ls.lithiccoins.common.recipes.LargeKnappingRecipe;
+import com.redstoneguy10ls.lithiccoins.util.LargeKnappingPattern;
 import net.dries007.tfc.common.container.*;
-import net.dries007.tfc.common.recipes.inventory.EmptyInventory;
-import net.dries007.tfc.util.KnappingType;
+import net.dries007.tfc.common.container.slot.CallbackSlot;
+import net.dries007.tfc.util.data.KnappingType;
+
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
@@ -13,9 +14,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.items.ItemStackHandler;
+import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
-
 
 public class WaxKnappingContainer extends ItemStackContainer implements ButtonHandlerContainer, ISlotCallback {
 
@@ -23,13 +23,13 @@ public class WaxKnappingContainer extends ItemStackContainer implements ButtonHa
 
     public static WaxKnappingContainer create(ItemStack stack, KnappingType type, InteractionHand hand, int slot, Inventory playerInventory, int windowId)
     {
-        return new WaxKnappingContainer(LCContainerTypes.WAX_KNAPPING.get(),type,windowId,playerInventory,stack,hand,slot).init(playerInventory, 20);
+        return new WaxKnappingContainer(LCContainerTypes.WAX_KNAPPING.get(), type, windowId, playerInventory, stack, hand, slot).init(playerInventory, 20);
     }
+
     private final KnappingType knappingType;
 
-    private final LCKnappingPattern pattern;
+    private final LargeKnappingPattern pattern;
     private final ItemStack originalStack;
-    private final WaxKnappingContainer.Querys querys;
 
     private boolean requiresReset;
     private boolean hasBeenModified;
@@ -40,15 +40,15 @@ public class WaxKnappingContainer extends ItemStackContainer implements ButtonHa
         super(containerType, windowId, playerInv, stack, hand, slot);
 
         this.knappingType = knappingType;
-        this.querys = new Querys(this);
 
-        pattern = new LCKnappingPattern();
+        pattern = new LargeKnappingPattern();
         hasBeenModified = false;
         hasConsumedIngredient = false;
         originalStack = stack.copy();
 
         setRequiresReset(false);
     }
+
     public KnappingType getKnappingType()
     {
         return knappingType;
@@ -74,9 +74,10 @@ public class WaxKnappingContainer extends ItemStackContainer implements ButtonHa
         final Slot slot = slots.get(SLOT_OUTPUT);
         if (player.level() instanceof ServerLevel level)
         {
-            slot.set(level.getRecipeManager().getRecipeFor(LCRecipeTypes.WAX_KNAPPING.get(), querys, level)
-                    .map(recipe -> recipe.assemble(querys, level.registryAccess()))
-                    .orElse(ItemStack.EMPTY));
+            final @Nullable LargeKnappingRecipe recipe = LargeKnappingRecipe.get(level, this);
+            slot.set(recipe != null
+                ? recipe.assemble()
+                : ItemStack.EMPTY);
         }
     }
 
@@ -102,7 +103,7 @@ public class WaxKnappingContainer extends ItemStackContainer implements ButtonHa
         }
         super.removed(player);
     }
-    public LCKnappingPattern getPattern()
+    public LargeKnappingPattern getPattern()
     {
         return pattern;
     }
@@ -127,6 +128,7 @@ public class WaxKnappingContainer extends ItemStackContainer implements ButtonHa
     {
         this.requiresReset = requiresReset;
     }
+
     @Override
     public boolean isItemValid(int slot, ItemStack stack)
     {
@@ -156,6 +158,7 @@ public class WaxKnappingContainer extends ItemStackContainer implements ButtonHa
         setRequiresReset(true);
         consumeIngredientStackAfterComplete();
     }
+
     protected void consumeIngredientStackAfterComplete()
     {
         if (knappingType.consumeAfterComplete() && !hasConsumedIngredient)
@@ -164,7 +167,4 @@ public class WaxKnappingContainer extends ItemStackContainer implements ButtonHa
             hasConsumedIngredient = true;
         }
     }
-
-
-    public record Querys(WaxKnappingContainer container) implements EmptyInventory {}
 }

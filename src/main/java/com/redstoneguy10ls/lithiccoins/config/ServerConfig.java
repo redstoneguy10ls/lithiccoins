@@ -1,18 +1,22 @@
 package com.redstoneguy10ls.lithiccoins.config;
 
+import net.neoforged.neoforge.common.ModConfigSpec;
 
-import net.dries007.tfc.config.ConfigBuilder;
-import net.minecraftforge.common.ForgeConfigSpec;
+public class ServerConfig
+{
+    private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
-public class ServerConfig {
-    public final ForgeConfigSpec.IntValue numberOfStacksInCoinPurse;
-    public final ForgeConfigSpec.BooleanValue printName;
+    public static final ModConfigSpec.IntValue numberOfStacksInCoinPurse = BUILDER
+        .comment("")
+        .comment(" Number of stacks that can be put into a coin purse")
+        .defineInRange("numberOfStacksInCoinPurse", 4, 1, Integer.MAX_VALUE);
+
+    public static final ModConfigSpec.BooleanValue engraveName = BUILDER
+        .comment("")
+        .comment(" Engrave the name of the player minting a coin onto the it")
+        .define("engraveName",false);
 
 
-    ServerConfig(ConfigBuilder builder) {
-        builder.push("general");
 
-        numberOfStacksInCoinPurse = builder.comment("How many stacks can be added to a coin purse").define("numberOfStacksInCoinPurse", 4, 1, Integer.MAX_VALUE);
-        printName = builder.comment("Should the coins display the name of the person who minted them").define("CoinsPrintName",false);
-    }
+    public static final ModConfigSpec SPEC = BUILDER.build();
 }

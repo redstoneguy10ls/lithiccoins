@@ -1,0 +1,31 @@
+{
+   "replace": false,
+   "values": [
+       "lithiccoins:coin/angler/zinc",
+       "lithiccoins:coin/archer/zinc",
+       "lithiccoins:coin/arms_up/zinc",
+       "lithiccoins:coin/bee/zinc",
+       "lithiccoins:coin/blade/zinc",
+       "lithiccoins:coin/brewer/zinc",
+       "lithiccoins:coin/burn/zinc",
+       "lithiccoins:coin/bust/zinc",
+       "lithiccoins:coin/danger/zinc",
+       "lithiccoins:coin/eagle/zinc",
+       "lithiccoins:coin/explorer/zinc",
+       "lithiccoins:coin/face/zinc",
+       "lithiccoins:coin/friend/zinc",
+       "lithiccoins:coin/heart/zinc",
+       "lithiccoins:coin/heartbreak/zinc",
+       "lithiccoins:coin/howl/zinc",
+       "lithiccoins:coin/miner/zinc",
+       "lithiccoins:coin/mourner/zinc",
+       "lithiccoins:coin/plenty/zinc",
+       "lithiccoins:coin/prize/zinc",
+       "lithiccoins:coin/punched/zinc",
+       "lithiccoins:coin/sheaf/zinc",
+       "lithiccoins:coin/shelter/zinc",
+       "lithiccoins:coin/skull/zinc",
+       "lithiccoins:coin/symbol/zinc",
+       "lithiccoins:coin/trifoil/zinc"
+   ]
+}

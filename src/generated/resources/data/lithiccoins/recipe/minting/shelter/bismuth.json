@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/bismuth"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/shelter/bismuth"
+  },
+  "stamp_type": "shelter",
+  "tier": 1
+}

@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "tfc_ie_addon"
+    }
+  ],
+  "type": "tfc:casting",
+  "fluid": {
+    "amount": 100,
+    "fluid": "tfc_ie_addon:metal/electrum"
+  },
+  "mold": {
+    "item": "lithiccoins:ceramic/fire_coin_mold"
+  },
+  "result": {
+    "count": 4,
+    "id": "lithiccoins:blank_coin/electrum"
+  }
+}

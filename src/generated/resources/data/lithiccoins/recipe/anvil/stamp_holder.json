@@ -1,0 +1,15 @@
+{
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:rods/brass"
+  },
+  "result": {
+    "count": 1,
+    "id": "lithiccoins:stamp_holder"
+  },
+  "rules": [
+    "bend_third_last",
+    "bend_second_last",
+    "hit_last"
+  ]
+}

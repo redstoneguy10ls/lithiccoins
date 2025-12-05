@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "lithiccoins:ceramic/die_mold/unfired/danger"
+  },
+  "result_item": {
+    "count": 1,
+    "id": "lithiccoins:ceramic/die_mold/fired/danger"
+  },
+  "temperature": 1399.0
+}

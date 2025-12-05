@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/steel"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/brewer/steel"
+  },
+  "stamp_type": "brewer",
+  "tier": 4
+}

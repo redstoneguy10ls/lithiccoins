@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/nickel"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/howl/nickel"
+  },
+  "stamp_type": "howl",
+  "tier": 1
+}

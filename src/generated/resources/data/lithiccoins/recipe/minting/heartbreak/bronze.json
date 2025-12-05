@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/bronze"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/heartbreak/bronze"
+  },
+  "stamp_type": "heartbreak",
+  "tier": 2
+}

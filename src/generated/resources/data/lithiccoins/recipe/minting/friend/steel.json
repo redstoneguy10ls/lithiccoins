@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/steel"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/friend/steel"
+  },
+  "stamp_type": "friend",
+  "tier": 4
+}

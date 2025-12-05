@@ -1,0 +1,31 @@
+{
+   "replace": false,
+   "values": [
+       "lithiccoins:coin/angler/lead",
+       "lithiccoins:coin/archer/lead",
+       "lithiccoins:coin/arms_up/lead",
+       "lithiccoins:coin/bee/lead",
+       "lithiccoins:coin/blade/lead",
+       "lithiccoins:coin/brewer/lead",
+       "lithiccoins:coin/burn/lead",
+       "lithiccoins:coin/bust/lead",
+       "lithiccoins:coin/danger/lead",
+       "lithiccoins:coin/eagle/lead",
+       "lithiccoins:coin/explorer/lead",
+       "lithiccoins:coin/face/lead",
+       "lithiccoins:coin/friend/lead",
+       "lithiccoins:coin/heart/lead",
+       "lithiccoins:coin/heartbreak/lead",
+       "lithiccoins:coin/howl/lead",
+       "lithiccoins:coin/miner/lead",
+       "lithiccoins:coin/mourner/lead",
+       "lithiccoins:coin/plenty/lead",
+       "lithiccoins:coin/prize/lead",
+       "lithiccoins:coin/punched/lead",
+       "lithiccoins:coin/sheaf/lead",
+       "lithiccoins:coin/shelter/lead",
+       "lithiccoins:coin/skull/lead",
+       "lithiccoins:coin/symbol/lead",
+       "lithiccoins:coin/trifoil/lead"
+   ]
+}

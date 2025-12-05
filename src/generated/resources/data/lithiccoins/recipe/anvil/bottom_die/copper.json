@@ -1,0 +1,17 @@
+{
+  "type": "tfc:anvil",
+  "apply_bonus": true,
+  "ingredient": {
+    "tag": "c:ingots/copper"
+  },
+  "result": {
+    "count": 1,
+    "id": "lithiccoins:bottom_die/copper"
+  },
+  "rules": [
+    "bend_third_last",
+    "bend_second_last",
+    "upset_last"
+  ],
+  "tier": 1
+}

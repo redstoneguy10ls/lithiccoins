@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/wrought_iron"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/heartbreak/wrought_iron"
+  },
+  "stamp_type": "heartbreak",
+  "tier": 3
+}

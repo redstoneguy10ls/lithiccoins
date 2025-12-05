@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/black_bronze"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/sheaf/black_bronze"
+  },
+  "stamp_type": "sheaf",
+  "tier": 2
+}

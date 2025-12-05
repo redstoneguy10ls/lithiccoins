@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/blue_steel"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/mourner/blue_steel"
+  },
+  "stamp_type": "mourner",
+  "tier": 6
+}

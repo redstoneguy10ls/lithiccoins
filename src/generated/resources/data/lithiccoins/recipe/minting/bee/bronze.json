@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/bronze"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/bee/bronze"
+  },
+  "stamp_type": "bee",
+  "tier": 2
+}

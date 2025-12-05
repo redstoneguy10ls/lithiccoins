@@ -1,7 +1,6 @@
 {
-  "__comment__": "This file was automatically created by mcresources",
-  "loader": "tfc:contained_fluid",
-  "parent": "forge:item/default",
+  "loader": "tfc:fluid_container",
+  "parent": "neoforge:item/default",
   "textures": {
     "base": "lithiccoins:item/ceramic/blank_coin/fired_mold/fire_coin_mold_empty",
     "fluid": "lithiccoins:item/ceramic/blank_coin/fired_mold/fire_coin_mold_overlay"

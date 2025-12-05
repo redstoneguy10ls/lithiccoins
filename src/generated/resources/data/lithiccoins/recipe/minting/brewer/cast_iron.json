@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/cast_iron"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/brewer/cast_iron"
+  },
+  "stamp_type": "brewer",
+  "tier": 1
+}

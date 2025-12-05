@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/brass"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/heart/brass"
+  },
+  "stamp_type": "heart",
+  "tier": 2
+}

@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/brass"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/symbol/brass"
+  },
+  "stamp_type": "symbol",
+  "tier": 2
+}

@@ -1,0 +1,18 @@
+{
+  "type": "lithiccoins:large_knapping",
+  "knapping_type": "lithiccoins:wax",
+  "pattern": [
+    "####  ##",
+    "###  ###",
+    " #     #",
+    "# # # # ",
+    "# # # # ",
+    " #     #",
+    "###  ###",
+    "####  ##"
+  ],
+  "result": {
+    "count": 1,
+    "id": "lithiccoins:wax/bee"
+  }
+}

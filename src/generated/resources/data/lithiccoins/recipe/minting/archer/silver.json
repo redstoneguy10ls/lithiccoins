@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/silver"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/archer/silver"
+  },
+  "stamp_type": "archer",
+  "tier": 1
+}

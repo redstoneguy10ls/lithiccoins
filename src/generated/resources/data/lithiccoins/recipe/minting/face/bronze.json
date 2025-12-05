@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/bronze"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/face/bronze"
+  },
+  "stamp_type": "face",
+  "tier": 2
+}

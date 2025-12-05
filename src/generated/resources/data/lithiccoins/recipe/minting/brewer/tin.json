@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/tin"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/brewer/tin"
+  },
+  "stamp_type": "brewer",
+  "tier": 1
+}

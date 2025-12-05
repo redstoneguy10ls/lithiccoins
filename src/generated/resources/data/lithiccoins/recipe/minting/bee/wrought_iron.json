@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/wrought_iron"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/bee/wrought_iron"
+  },
+  "stamp_type": "bee",
+  "tier": 3
+}

@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/tin"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/blade/tin"
+  },
+  "stamp_type": "blade",
+  "tier": 1
+}

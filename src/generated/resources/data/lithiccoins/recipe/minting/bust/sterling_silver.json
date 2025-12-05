@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/sterling_silver"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/bust/sterling_silver"
+  },
+  "stamp_type": "bust",
+  "tier": 1
+}

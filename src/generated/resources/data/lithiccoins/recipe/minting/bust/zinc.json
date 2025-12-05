@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/zinc"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/bust/zinc"
+  },
+  "stamp_type": "bust",
+  "tier": 1
+}

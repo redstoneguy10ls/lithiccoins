@@ -97,11 +97,6 @@ public class LCItems
         return register(name, () -> new Item(new Item.Properties()));
     }
 
-    private static Id register(String name, Item.Properties properties)
-    {
-        return new Id(ITEMS.register(name.toLowerCase(Locale.ROOT), () -> new Item(properties)));
-    }
-
     private static Id register(String name, Supplier<Item> item)
     {
         return new Id(ITEMS.register(name.toLowerCase(Locale.ROOT), item));

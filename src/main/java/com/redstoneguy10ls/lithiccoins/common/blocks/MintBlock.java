@@ -1,7 +1,6 @@
 package com.redstoneguy10ls.lithiccoins.common.blocks;
 
 import java.util.Map;
-import com.mojang.logging.LogUtils;
 import com.redstoneguy10ls.lithiccoins.common.blockentities.MintBlockEntity;
 import com.redstoneguy10ls.lithiccoins.common.misc.LCSounds;
 import com.redstoneguy10ls.lithiccoins.util.LCTags;
@@ -41,7 +40,6 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.ItemHandlerHelper;
-import org.slf4j.Logger;
 
 import static com.redstoneguy10ls.lithiccoins.common.blockentities.MintBlockEntity.*;
 
@@ -50,11 +48,6 @@ public class MintBlock extends DeviceBlock
 {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final BooleanProperty HIT = LCStateProperties.HIT;
-
-    private final Logger LOGGER = LogUtils.getLogger();
-
-    //to whoever decided to look at this jank ass code
-    //im sorry
 
     // I hope this code is a bit less jank ass
     private static final VoxelShape BASE_SHAPE = box(0D, 0D, 0D, 16D, 10D, 16D);
@@ -256,6 +249,6 @@ public class MintBlock extends DeviceBlock
     {
         BASE,
         TOP_DIE,
-        BOTTOM_DIE;
+        BOTTOM_DIE
     }
 }

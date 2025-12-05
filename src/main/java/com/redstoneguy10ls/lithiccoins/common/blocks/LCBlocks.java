@@ -28,7 +28,7 @@ public class LCBlocks
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(Registries.BLOCK, MOD_ID);
 
 
-    public static final Id MINT = register("mint",
+    public static final Id<MintBlock> MINT = register("mint",
             () -> new MintBlock(ExtendedProperties.of()
                     .mapColor(MapColor.STONE)
                     .strength(2.0F, 2.0F)

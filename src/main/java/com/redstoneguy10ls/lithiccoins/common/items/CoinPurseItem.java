@@ -142,9 +142,7 @@ public class CoinPurseItem extends Item
         {
             if (player instanceof ServerPlayer)
             {
-                purse.contents().forEach(entry -> {
-                    player.drop(entry, true);
-                });
+                purse.contents().forEach(entry -> player.drop(entry, true));
             }
 
             stack.set(LCComponents.PURSE, PurseComponent.EMPTY);

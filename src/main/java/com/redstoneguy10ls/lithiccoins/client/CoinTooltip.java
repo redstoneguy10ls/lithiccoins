@@ -57,16 +57,8 @@ public class CoinTooltip implements ClientTooltipComponent
     @Override
     public void renderImage(Font font, int mouseX, int mouseY, GuiGraphics graphics)
     {
-        int maxX = this.gridSizeX();
-        int maxY = this.gridSizeY();
-        this.drawCoin(mouseX, mouseY, maxX, maxY, graphics);
+        this.blit(graphics, mouseX, mouseY, Texture.COIN);
     }
-
-    private void drawCoin(int x, int y, int slotWidth, int slotHeight, GuiGraphics poseStack)
-    {
-        this.blit(poseStack, x,y, Texture.COIN);
-    }
-
 
     private void blit(GuiGraphics graphics, int x, int y, Texture texture)
     {

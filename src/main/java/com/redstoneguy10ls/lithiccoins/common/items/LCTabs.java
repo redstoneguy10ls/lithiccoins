@@ -1,7 +1,6 @@
 package com.redstoneguy10ls.lithiccoins.common.items;
 
 import com.redstoneguy10ls.lithiccoins.common.blocks.LCBlocks;
-import net.dries007.tfc.common.blocks.DecorationBlockHolder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -28,11 +27,11 @@ public final class LCTabs
 
     private static void fillCoinTab(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output out)
     {
-        LCItems.BLANK_COINS.values().forEach(reg -> out.accept(reg));
+        LCItems.BLANK_COINS.values().forEach(out::accept);
 
         for(StampType type : StampType.values())
         {
-            LCItems.STAMPED_COINS.get(type).values().forEach(reg -> out.accept(reg));
+            LCItems.STAMPED_COINS.get(type).values().forEach(out::accept);
         }
     }
 
@@ -69,13 +68,6 @@ public final class LCTabs
             .displayItems(displayItems)
             .build());
         return new Id(holder, displayItems);
-    }
-
-    private static void accept(CreativeModeTab.Output out, DecorationBlockHolder decoration)
-    {
-        out.accept(decoration.stair());
-        out.accept(decoration.slab());
-        out.accept(decoration.wall());
     }
 
     public record Id(DeferredHolder<CreativeModeTab, CreativeModeTab> tab, CreativeModeTab.DisplayItemsGenerator generator) {}

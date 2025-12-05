@@ -6,7 +6,6 @@ import com.redstoneguy10ls.lithiccoins.util.LargeKnappingPattern;
 import net.dries007.tfc.client.screen.ScreenParticle;
 import net.dries007.tfc.client.screen.TFCContainerScreen;
 import net.dries007.tfc.config.TFCConfig;
-import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.data.KnappingType;
 
 import net.minecraft.client.Minecraft;
@@ -26,7 +25,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.redstoneguy10ls.lithiccoins.LithicCoins.*;
 import static net.dries007.tfc.client.screen.KnappingScreen.*;
 
 public class LargeKnappingScreen extends TFCContainerScreen<WaxKnappingContainer>

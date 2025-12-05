@@ -29,7 +29,7 @@ public class PurseTooltip implements ClientTooltipComponent
 
     public int getHeight()
     {
-        return this.backgroundHeight() + 4;
+        return this.backgroundHeight() + MARGIN_Y;
     }
 
     public int getWidth(Font font)
@@ -39,12 +39,12 @@ public class PurseTooltip implements ClientTooltipComponent
 
     private int backgroundWidth()
     {
-        return this.gridSizeX() * 18 + 2;
+        return this.gridSizeX() * SLOT_SIZE_X + 2 * BORDER_WIDTH;
     }
 
     private int backgroundHeight()
     {
-        return this.gridSizeY() * 20 + 2;
+        return this.gridSizeY() * SLOT_SIZE_Y + 2 * BORDER_WIDTH;
     }
 
     public void renderImage(Font font, int x, int y, GuiGraphics guiGraphics)
@@ -59,8 +59,8 @@ public class PurseTooltip implements ClientTooltipComponent
         {
             for(int i1 = 0; i1 < i; i1++)
             {
-                int j1 = x + i1 * 18 + 1;
-                int k1 = y + l * 20 + 1;
+                int j1 = x + i1 * SLOT_SIZE_X + BORDER_WIDTH;
+                int k1 = y + l * SLOT_SIZE_Y + BORDER_WIDTH;
                 this.renderSlot(j1, k1, k++, flag, guiGraphics, font);
             }
         }
@@ -77,11 +77,11 @@ public class PurseTooltip implements ClientTooltipComponent
         {
             ItemStack itemstack = this.contents.getItemUnsafe(itemIndex);
             this.blit(guiGraphics, x, y, Texture.SLOT);
-            guiGraphics.renderItem(itemstack, x + 1, y + 1, itemIndex);
-            guiGraphics.renderItemDecorations(font, itemstack, x + 1, y + 1);
+            guiGraphics.renderItem(itemstack, x + BORDER_WIDTH, y + BORDER_WIDTH, itemIndex);
+            guiGraphics.renderItemDecorations(font, itemstack, x + BORDER_WIDTH, y + BORDER_WIDTH);
             if (itemIndex == 0)
             {
-                AbstractContainerScreen.renderSlotHighlight(guiGraphics, x + 1, y + 1, 0);
+                AbstractContainerScreen.renderSlotHighlight(guiGraphics, x + BORDER_WIDTH, y + BORDER_WIDTH, 0);
             }
         }
 
@@ -104,8 +104,8 @@ public class PurseTooltip implements ClientTooltipComponent
 
     enum Texture
     {
-        BLOCKED_SLOT(ResourceLocation.withDefaultNamespace("container/bundle/blocked_slot"), 18, 20),
-        SLOT(ResourceLocation.withDefaultNamespace("container/bundle/slot"), 18, 20);
+        BLOCKED_SLOT(ResourceLocation.withDefaultNamespace("container/bundle/blocked_slot"), SLOT_SIZE_X, SLOT_SIZE_Y),
+        SLOT(ResourceLocation.withDefaultNamespace("container/bundle/slot"), SLOT_SIZE_X, SLOT_SIZE_Y);
 
         public final ResourceLocation sprite;
         public final int w;

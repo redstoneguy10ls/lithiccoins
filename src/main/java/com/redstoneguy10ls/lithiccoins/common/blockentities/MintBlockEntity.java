@@ -133,6 +133,12 @@ public class MintBlockEntity extends InventoryBlockEntity<MintBlockEntity.MintIn
 
     public InteractionResult tryMinting(Player player)
     {
+        // If the output is full, we can avoid any complicated logic and instantly return
+        if (inventory.getStackInSlot(SLOT_OUTPUT).getCount() >= 64)
+        {
+            return InteractionResult.FAIL;
+        }
+
         final ItemStack topDie = inventory.getStackInSlot(SLOT_TOP_DIE);
         final ItemStack bottomDie = inventory.getStackInSlot(SLOT_BOTTOM_DIE);
         final ItemStack coin = inventory.getStackInSlot(SLOT_COIN);

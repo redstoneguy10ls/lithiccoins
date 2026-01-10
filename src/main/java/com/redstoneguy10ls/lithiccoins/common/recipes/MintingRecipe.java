@@ -84,7 +84,7 @@ public class MintingRecipe implements ISimpleRecipe<MintBlockEntity.MintInventor
     @Override
     public ItemStack assemble(MintBlockEntity.MintInventory inventory, HolderLookup.Provider provider)
     {
-        return output.getStack(inventory.getItem(MintBlockEntity.SLOT_COIN));
+        return output.getSingleStack(inventory.getItem(MintBlockEntity.SLOT_COIN));
     }
 
     @Override

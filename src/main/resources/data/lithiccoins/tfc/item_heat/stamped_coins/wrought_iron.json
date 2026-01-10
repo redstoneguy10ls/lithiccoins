@@ -1,6 +1,6 @@
 {
   "ingredient": {
-    "tag": "lithiccoins:coins/wrought_iron"
+    "tag": "lithiccoins:stamped_coin/wrought_iron"
   },
   "heat_capacity": 0.71425
 }       

@@ -1,6 +1,6 @@
 {
   "ingredient": {
-    "tag": "lithiccoins:coins/brass"
+    "tag": "lithiccoins:stamped_coin/brass"
   },
   "heat_capacity": 0.71425
 }       

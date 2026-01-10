@@ -1,6 +1,6 @@
 {
   "ingredient": {
-    "tag": "lithiccoins:coins/lead"
+    "tag": "lithiccoins:stamped_coin/lead"
   },
   "heat_capacity": 0.71425
 }       

@@ -1,6 +1,6 @@
 {
   "ingredient": {
-    "tag": "lithiccoins:coins/zinc"
+    "tag": "lithiccoins:stamped_coin/zinc"
   },
   "heat_capacity": 1.1905
 }       

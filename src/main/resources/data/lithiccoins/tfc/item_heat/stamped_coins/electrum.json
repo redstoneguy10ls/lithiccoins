@@ -1,6 +1,6 @@
 {
   "ingredient": {
-    "tag": "lithiccoins:coins/electrum"
+    "tag": "lithiccoins:stamped_coin/electrum"
   },
   "heat_capacity": 0.71425
 }       

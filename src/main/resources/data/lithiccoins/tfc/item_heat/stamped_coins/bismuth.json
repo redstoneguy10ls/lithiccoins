@@ -1,6 +1,6 @@
 {
   "ingredient": {
-    "tag": "lithiccoins:coins/bismuth"
+    "tag": "lithiccoins:stamped_coin/bismuth"
   },
   "heat_capacity": 1.78575
 }       

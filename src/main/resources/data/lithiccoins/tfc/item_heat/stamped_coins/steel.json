@@ -1,6 +1,6 @@
 {
   "ingredient": {
-    "tag": "lithiccoins:coins/steel"
+    "tag": "lithiccoins:stamped_coin/steel"
   },
   "heat_capacity": 0.71425
 }       

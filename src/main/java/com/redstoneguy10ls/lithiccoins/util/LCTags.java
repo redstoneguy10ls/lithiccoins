@@ -21,9 +21,9 @@ public class LCTags
         public static final TagKey<Item> BOTTOM_DIE = tag("bottom_dies");
         public static final TagKey<Item> TOP_DIE = tag("top_dies");
         public static final TagKey<Item> BLANK_COIN = tag("blank_coins");
-        public static final TagKey<Item> WAX_KNAPPABLE = tag("wax_knapping");
+        public static final TagKey<Item> WAX_KNAPPING = tag("wax_knapping");
 
-        public static final TagKey<Item> LARGE_KNAPPABLE = tag("large_knappable");
+        public static final TagKey<Item> FORCE_LARGE_KNAPPING = tag("force_large_knapping");
 
         public static final Map<Integer, TagKey<Item>> BOTTOM_DIE_TIER_MAP = Map.of(
             1, tag("bottom_die/tier_i_dies"),

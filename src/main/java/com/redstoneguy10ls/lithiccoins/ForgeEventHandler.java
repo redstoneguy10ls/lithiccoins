@@ -35,7 +35,7 @@ public class ForgeEventHandler
         {
             final KnappingType type = KnappingType.get(stack);
 
-            if (type != null && Helpers.isItem(stack, LCTags.Items.LARGE_KNAPPABLE))
+            if (type != null && Helpers.isItem(stack, LCTags.Items.FORCE_LARGE_KNAPPING))
             {
                 if (player instanceof ServerPlayer serverPlayer)
                 {

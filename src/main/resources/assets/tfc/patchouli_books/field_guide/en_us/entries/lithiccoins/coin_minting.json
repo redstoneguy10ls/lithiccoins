@@ -23,7 +23,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "To use the $(thing)Coin Mint$(), you first need to insert both a $(thing)Bottom Die$() and $(thing)Top Die$(). This is done by interacting with the appropriate $(thing)die$() in your hand on the brass parts intended to hold the respective die type. Once this is done, you can insert the $(thing)coins$() you want to mint by using it anywhere on the $(thing)Coin Mint$() hitbox except the brass parts."
+      "text": "To use the $(thing)Coin Mint$(), you first need to insert both a $(thing)Bottom Die$() and $(thing)Top Die$(). This is done by interacting with the appropriate $(thing)die$() in your hand on the brass parts intended to hold the respective die type. Once a $(thing)Bottom Die$() is inserted, you can insert the stack of $(thing)coins$() you want to mint by using it anywhere on the $(thing)Coin Mint$()."
     },
     {
       "type": "patchouli:image",

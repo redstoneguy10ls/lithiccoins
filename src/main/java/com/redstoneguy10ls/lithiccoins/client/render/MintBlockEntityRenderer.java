@@ -1,5 +1,6 @@
 package com.redstoneguy10ls.lithiccoins.client.render;
 
+import java.util.Map;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import com.redstoneguy10ls.lithiccoins.common.blockentities.MintBlockEntity;
@@ -10,7 +11,6 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.core.Direction;
-import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -21,6 +21,20 @@ import net.neoforged.neoforge.items.IItemHandler;
 
 public class MintBlockEntityRenderer implements BlockEntityRenderer<MintBlockEntity>
 {
+    private static final Map<Integer, Vec3> startPosition = Map.of(
+        0, new Vec3(0.875d, 0.625d, 0.875d),
+        1, new Vec3(0.875d, 0.625d, 0.125d),
+        2, new Vec3(0.125d, 0.625d, 0.125d),
+        3, new Vec3(0.125d, 0.625d, 0.875d)
+    );
+
+    private static final Map<Integer, Vec3> baseOffset = Map.of(
+        0, new Vec3(0d, 0d, -0.046875d),
+        1, new Vec3(-0.046875d, 0d, 0d),
+        2, new Vec3(0d, 0d, 0.046875d),
+        3, new Vec3(0.046875d, 0d, 0d)
+    );
+
     @Override
     public void render(MintBlockEntity mint, float partialTicks, PoseStack stack, MultiBufferSource bufferSource, int packedLight, int packedOverlay)
     {
@@ -53,15 +67,8 @@ public class MintBlockEntityRenderer implements BlockEntityRenderer<MintBlockEnt
         {
             for(int i = 0; i < output.getCount(); i++)
             {
-                Vec3 coinPos = new Vec3(0.125d, 0.625d, 0.125d + (0.046875d * (i % 16)));
-
-                // Adjusting the position of the coins
-                switch ((intFromDirection(direction) + i / 16) % 4)
-                {
-                    case 0 -> coinPos = coinPos.yRot(Mth.PI).add(1, 0, 1);
-                    case 1 -> coinPos = coinPos.yRot(3 * Mth.HALF_PI).add(1, 0, 0);
-                    case 3 -> coinPos = coinPos.yRot(Mth.HALF_PI).add(0, 0, 1);
-                }
+                int rot = (intFromDirection(direction) + i / 16) % 4;
+                Vec3 coinPos = startPosition.get(rot).add(baseOffset.get(rot).scale((i % 16)));
 
                 stack.pushPose();
                 stack.translate(coinPos.x, coinPos.y, coinPos.z);

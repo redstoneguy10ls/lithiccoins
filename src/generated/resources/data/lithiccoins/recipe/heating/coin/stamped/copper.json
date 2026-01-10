@@ -1,7 +1,7 @@
 {
   "type": "tfc:heating",
   "ingredient": {
-    "tag": "lithiccoins:coins/copper"
+    "tag": "lithiccoins:stamped_coin/copper"
   },
   "result_fluid": {
     "amount": 20,

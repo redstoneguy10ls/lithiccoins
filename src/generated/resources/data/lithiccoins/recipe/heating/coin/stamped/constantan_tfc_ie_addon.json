@@ -7,7 +7,7 @@
   ],
   "type": "tfc:heating",
   "ingredient": {
-    "tag": "lithiccoins:coins/constantan"
+    "tag": "lithiccoins:stamped_coin/constantan"
   },
   "result_fluid": {
     "amount": 20,

@@ -44,7 +44,7 @@ public class LCTags
         );
 
         public static final Map<CoinMaterial, TagKey<Item>> STAMPED_COIN_MAP = Helpers.mapOf(CoinMaterial.class, material ->
-            tag("coins/" + material.name().toLowerCase())
+            tag("stamped_coin/" + material.name().toLowerCase())
         );
 
         public static final Map<Metal, TagKey<Item>> TOP_DIE_METAL_MAP = Helpers.mapOf(Metal.class, LCHelpers::isToolMetal, metal ->

@@ -1,7 +1,7 @@
 {
   "type": "tfc:heating",
   "ingredient": {
-    "tag": "lithiccoins:coins/cast_iron"
+    "tag": "lithiccoins:stamped_coin/cast_iron"
   },
   "result_fluid": {
     "amount": 20,

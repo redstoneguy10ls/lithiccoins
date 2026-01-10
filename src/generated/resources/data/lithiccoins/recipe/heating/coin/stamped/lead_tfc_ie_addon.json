@@ -7,7 +7,7 @@
   ],
   "type": "tfc:heating",
   "ingredient": {
-    "tag": "lithiccoins:coins/lead"
+    "tag": "lithiccoins:stamped_coin/lead"
   },
   "result_fluid": {
     "amount": 20,

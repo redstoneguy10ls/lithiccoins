@@ -7,7 +7,7 @@
   ],
   "type": "tfc:heating",
   "ingredient": {
-    "tag": "lithiccoins:coins/aluminum"
+    "tag": "lithiccoins:stamped_coin/aluminum"
   },
   "result_fluid": {
     "amount": 20,

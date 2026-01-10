@@ -1,7 +1,7 @@
 {
   "type": "tfc:heating",
   "ingredient": {
-    "tag": "lithiccoins:coins/bismuth_bronze"
+    "tag": "lithiccoins:stamped_coin/bismuth_bronze"
   },
   "result_fluid": {
     "amount": 20,

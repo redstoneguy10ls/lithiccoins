@@ -7,7 +7,7 @@
   ],
   "type": "tfc:heating",
   "ingredient": {
-    "tag": "lithiccoins:coins/uranium"
+    "tag": "lithiccoins:stamped_coin/uranium"
   },
   "result_fluid": {
     "amount": 20,

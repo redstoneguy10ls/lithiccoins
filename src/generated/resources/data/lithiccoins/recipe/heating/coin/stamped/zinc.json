@@ -1,7 +1,7 @@
 {
   "type": "tfc:heating",
   "ingredient": {
-    "tag": "lithiccoins:coins/zinc"
+    "tag": "lithiccoins:stamped_coin/zinc"
   },
   "result_fluid": {
     "amount": 20,

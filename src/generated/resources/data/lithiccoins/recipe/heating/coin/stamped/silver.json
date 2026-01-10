@@ -1,7 +1,7 @@
 {
   "type": "tfc:heating",
   "ingredient": {
-    "tag": "lithiccoins:coins/silver"
+    "tag": "lithiccoins:stamped_coin/silver"
   },
   "result_fluid": {
     "amount": 20,

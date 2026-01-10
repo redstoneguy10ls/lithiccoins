@@ -1,7 +1,7 @@
 {
   "type": "tfc:heating",
   "ingredient": {
-    "tag": "lithiccoins:coins/black_bronze"
+    "tag": "lithiccoins:stamped_coin/black_bronze"
   },
   "result_fluid": {
     "amount": 20,

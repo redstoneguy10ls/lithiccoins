@@ -1,7 +1,7 @@
 {
   "type": "tfc:heating",
   "ingredient": {
-    "tag": "lithiccoins:coins/gold"
+    "tag": "lithiccoins:stamped_coin/gold"
   },
   "result_fluid": {
     "amount": 20,

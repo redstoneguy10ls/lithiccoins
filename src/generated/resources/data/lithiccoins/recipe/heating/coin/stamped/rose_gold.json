@@ -1,7 +1,7 @@
 {
   "type": "tfc:heating",
   "ingredient": {
-    "tag": "lithiccoins:coins/rose_gold"
+    "tag": "lithiccoins:stamped_coin/rose_gold"
   },
   "result_fluid": {
     "amount": 20,

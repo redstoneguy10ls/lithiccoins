@@ -7,7 +7,7 @@
   ],
   "type": "tfc:heating",
   "ingredient": {
-    "tag": "lithiccoins:coins/electrum"
+    "tag": "lithiccoins:stamped_coin/electrum"
   },
   "result_fluid": {
     "amount": 20,

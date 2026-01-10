@@ -1061,7 +1061,7 @@
 
   "block.lithiccoins.mint": "Coin Mint",
   "lithiccoins.jei.minting": "Coin Minting",
-
+  "lithiccoins.jei.wax_large_knapping": "Wax Knapping",
 
   "lithiccoins.creative_tab.coins" : "Coin Tab",
   "lithiccoins.creative_tab.everything_else" : "Lithic Coins",
@@ -1080,9 +1080,5 @@
   "lithiccoins.tooltip.lithiccoins.mint.both_die_to_low" : "Both dies are not of a high enough tier to mint that",
   "lithiccoins.tooltip.lithiccoins.mint.dies_to_low" : "The dies need to be of a higher tier to mint that",
   "lithiccoins.tooltip.lithiccoins.coins.heads" : "HEADS",
-  "lithiccoins.tooltip.lithiccoins.coins.tails" : "TAILS",
-
-  "tfc.jei.wax_knapping": "Wax Knapping"
-
-
+  "lithiccoins.tooltip.lithiccoins.coins.tails" : "TAILS"
 }

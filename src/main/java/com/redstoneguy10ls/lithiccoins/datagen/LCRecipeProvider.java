@@ -166,7 +166,7 @@ public class LCRecipeProvider extends RecipeProvider implements IConditionBuilde
             .input('L', Tags.Items.LEATHERS)
             .input('S', Tags.Items.STRINGS)
             .pattern(" C ", "LSL", " L ")
-            .shaped(LCBlocks.MINT.asItem(), 1);
+            .shaped(LCItems.COIN_PURSE, 1);
     }
 
     private void castingRecipes(RecipeOutput recipeOutput)
@@ -215,7 +215,7 @@ public class LCRecipeProvider extends RecipeProvider implements IConditionBuilde
         KnappingRecipeBuilder.clayKnapping(LCItems.UNFIRED_COIN_MOLD, "XXXXX", "X X X", "XXXXX", "X X X", "XXXXX")
             .save(recipeOutput, MOD_ID + ":unfired_coin_mold");
 
-        KnappingRecipeBuilder.fireClayKnapping(LCItems.UNFIRED_COIN_MOLD, "XXXXX", "X X X", "XXXXX", "X X X", "XXXXX")
+        KnappingRecipeBuilder.fireClayKnapping(LCItems.UNFIRED_FIRE_COIN_MOLD, "XXXXX", "X X X", "XXXXX", "X X X", "XXXXX")
             .save(recipeOutput, MOD_ID + ":unfired_fire_coin_mold");
     }
 

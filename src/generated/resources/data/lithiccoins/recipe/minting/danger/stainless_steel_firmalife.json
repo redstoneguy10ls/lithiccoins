@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ],
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/stainless_steel"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/danger/stainless_steel"
+  },
+  "stamp_type": "danger",
+  "tier": 4
+}

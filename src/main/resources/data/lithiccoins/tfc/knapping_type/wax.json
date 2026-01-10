@@ -4,11 +4,11 @@
   "has_off_texture": true,
   "icon": {
     "count": 1,
-    "id": "minecraft:stick"
+    "id": "firmalife:beeswax"
   },
   "input": {
     "count": 4,
-    "tag": "lithiccoins:wax_knappable"
+    "tag": "lithiccoins:wax_knapping"
   },
   "spawns_particles": false
 }

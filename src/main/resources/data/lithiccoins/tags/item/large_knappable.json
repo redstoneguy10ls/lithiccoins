@@ -1,5 +1,6 @@
 {
   "values": [
-    "#lithiccoins:wax_knappable"
+    "#lithiccoins:wax_knapping",
+    "minecraft:stick"
   ]
 }

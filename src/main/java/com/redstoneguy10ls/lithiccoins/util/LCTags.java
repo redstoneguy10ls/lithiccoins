@@ -21,7 +21,7 @@ public class LCTags
         public static final TagKey<Item> BOTTOM_DIE = tag("bottom_dies");
         public static final TagKey<Item> TOP_DIE = tag("top_dies");
         public static final TagKey<Item> BLANK_COIN = tag("blank_coins");
-        public static final TagKey<Item> WAX_KNAPPABLE = tag("wax_knappable");
+        public static final TagKey<Item> WAX_KNAPPABLE = tag("wax_knapping");
 
         public static final TagKey<Item> LARGE_KNAPPABLE = tag("large_knappable");
 

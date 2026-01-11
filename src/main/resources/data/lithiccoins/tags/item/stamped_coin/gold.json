@@ -1,0 +1,31 @@
+{
+   "replace": false,
+   "values": [
+       "lithiccoins:coin/angler/gold",
+       "lithiccoins:coin/archer/gold",
+       "lithiccoins:coin/arms_up/gold",
+       "lithiccoins:coin/bee/gold",
+       "lithiccoins:coin/blade/gold",
+       "lithiccoins:coin/brewer/gold",
+       "lithiccoins:coin/burn/gold",
+       "lithiccoins:coin/bust/gold",
+       "lithiccoins:coin/danger/gold",
+       "lithiccoins:coin/eagle/gold",
+       "lithiccoins:coin/explorer/gold",
+       "lithiccoins:coin/face/gold",
+       "lithiccoins:coin/friend/gold",
+       "lithiccoins:coin/heart/gold",
+       "lithiccoins:coin/heartbreak/gold",
+       "lithiccoins:coin/howl/gold",
+       "lithiccoins:coin/miner/gold",
+       "lithiccoins:coin/mourner/gold",
+       "lithiccoins:coin/plenty/gold",
+       "lithiccoins:coin/prize/gold",
+       "lithiccoins:coin/punched/gold",
+       "lithiccoins:coin/sheaf/gold",
+       "lithiccoins:coin/shelter/gold",
+       "lithiccoins:coin/skull/gold",
+       "lithiccoins:coin/symbol/gold",
+       "lithiccoins:coin/trifoil/gold"
+   ]
+}

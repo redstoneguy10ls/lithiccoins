@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "tfc_ie_addon"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "lithiccoins:blank_coin/uranium"
+  },
+  "result_fluid": {
+    "amount": 25,
+    "id": "tfc_ie_addon:metal/uranium"
+  },
+  "temperature": 1130.0
+}

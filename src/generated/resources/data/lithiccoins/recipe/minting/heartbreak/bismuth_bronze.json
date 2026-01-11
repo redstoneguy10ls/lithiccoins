@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/bismuth_bronze"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/heartbreak/bismuth_bronze"
+  },
+  "stamp_type": "heartbreak",
+  "tier": 2
+}

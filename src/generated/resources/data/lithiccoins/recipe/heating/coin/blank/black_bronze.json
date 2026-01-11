@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "lithiccoins:blank_coin/black_bronze"
+  },
+  "result_fluid": {
+    "amount": 25,
+    "id": "tfc:metal/black_bronze"
+  },
+  "temperature": 1070.0
+}

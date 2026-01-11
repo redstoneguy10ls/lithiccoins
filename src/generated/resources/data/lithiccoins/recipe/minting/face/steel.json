@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/steel"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/face/steel"
+  },
+  "stamp_type": "face",
+  "tier": 4
+}

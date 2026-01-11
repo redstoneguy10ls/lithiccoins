@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "tag": "lithiccoins:stamped_coin/gold"
+  },
+  "result_fluid": {
+    "amount": 20,
+    "id": "tfc:metal/gold"
+  },
+  "temperature": 1060.0
+}

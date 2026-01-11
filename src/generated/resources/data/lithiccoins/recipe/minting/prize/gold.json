@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/gold"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/prize/gold"
+  },
+  "stamp_type": "prize",
+  "tier": 1
+}

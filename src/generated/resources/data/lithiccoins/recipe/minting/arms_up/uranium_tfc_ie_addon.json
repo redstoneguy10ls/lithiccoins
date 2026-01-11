@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "tfc_ie_addon"
+    }
+  ],
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/uranium"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/arms_up/uranium"
+  },
+  "stamp_type": "arms_up",
+  "tier": 3
+}

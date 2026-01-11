@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/bismuth_bronze"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/symbol/bismuth_bronze"
+  },
+  "stamp_type": "symbol",
+  "tier": 2
+}

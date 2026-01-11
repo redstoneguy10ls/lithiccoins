@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/zinc"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/trifoil/zinc"
+  },
+  "stamp_type": "trifoil",
+  "tier": 1
+}

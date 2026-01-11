@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "tag": "lithiccoins:stamped_coin/tin"
+  },
+  "result_fluid": {
+    "amount": 20,
+    "id": "tfc:metal/tin"
+  },
+  "temperature": 230.0
+}

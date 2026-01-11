@@ -9,13 +9,13 @@
       "text": "The most important item for minting $(thing)coins$() is a $(thing)Top Die$(), as this is the part determining what the $(thing)coin$() will depict. $(br2) The first step to making a $(thing)Top Die$() is knapping your desired motive into $(thing)Beeswax$(). This will require 4 pieces of $(thing)Beeswax$() for any of the available stamp types."
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/bee",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/bee",
       "text": "Unlike normal TFC knapping, $(thing)Beeswax$() knapping is on an 8x8 grid to allow more easily distinguishable recipes. All other recipes will be at the end of this chapter."
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "lithiccoins:crafting/ceramic/die_mold/unfired/bee",
+      "recipe": "lithiccoins:crafting/die_mold/unfired/bee",
       "text": "Once you have crafted a $(thing)Wax Die$(), you can turn it into an $(thing)Unfired Die Mold$()."
     },
     {
@@ -25,7 +25,7 @@
     },
     {
       "type": "tfc:anvil_recipe",
-      "recipe": "lithiccoins:anvil/copper_bottom_die",
+      "recipe": "lithiccoins:anvil/bottom_die/copper",
       "text": "Far easier to make is the $(thing)Bottom Die$(). You can use any tool-grade metal, like with the $(thing)Top Die$(), but it can only be made at an anvil."
     },
     {
@@ -33,133 +33,133 @@
       "text": "Following are the wax knapping recipes for all currently implemented stamp types."
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/angler",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/angler",
       "text": "$(italics)Angler$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/archer",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/archer",
       "text": "$(italics)Archer$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/arms_up",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/arms_up",
       "text": "$(italics)Arms up$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/bee",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/bee",
       "text": "$(italics)Bee$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/blade",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/blade",
       "text": "$(italics)Blade$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/brewer",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/brewer",
       "text": "$(italics)Brewer$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/burn",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/burn",
       "text": "$(italics)Burn$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/bust",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/bust",
       "text": "$(italics)Bust$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/danger",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/danger",
       "text": "$(italics)Danger$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/eagle",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/eagle",
       "text": "$(italics)Eagle$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/explorer",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/explorer",
       "text": "$(italics)Explorer$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/face",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/face",
       "text": "$(italics)Face$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/friend",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/friend",
       "text": "$(italics)Friend$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/heart",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/heart",
       "text": "$(italics)Heart$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/heartbreak",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/heartbreak",
       "text": "$(italics)Heartbreak$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/howl",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/howl",
       "text": "$(italics)Howl$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/miner",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/miner",
       "text": "$(italics)Miner$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/mourner",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/mourner",
       "text": "$(italics)Mourner$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/plenty",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/plenty",
       "text": "$(italics)Plenty$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/prize",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/prize",
       "text": "$(italics)Prize$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/punched",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/punched",
       "text": "$(italics)Punched$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/sheaf",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/sheaf",
       "text": "$(italics)Sheaf$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/shelter",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/shelter",
       "text": "$(italics)Shelter$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/skull",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/skull",
       "text": "$(italics)Skull$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/symbol",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/symbol",
       "text": "$(italics)Symbol$()"
     },
     {
-      "type": "tfc:wax_knapping_recipe",
-      "recipe": "lithiccoins:wax_knapping/wax_dies/trifoil",
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/trifoil",
       "text": "$(italics)Trifoil$()"
     }
   ],

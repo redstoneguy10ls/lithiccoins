@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/red_steel"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/face/red_steel"
+  },
+  "stamp_type": "face",
+  "tier": 6
+}

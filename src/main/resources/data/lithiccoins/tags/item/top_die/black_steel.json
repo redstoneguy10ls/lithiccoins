@@ -1,0 +1,31 @@
+{
+  "replace": false,
+  "values": [
+		"lithiccoins:top_die/angler/black_steel",
+		"lithiccoins:top_die/archer/black_steel",
+		"lithiccoins:top_die/arms_up/black_steel",
+		"lithiccoins:top_die/blade/black_steel",
+		"lithiccoins:top_die/brewer/black_steel",
+		"lithiccoins:top_die/burn/black_steel",
+		"lithiccoins:top_die/bust/black_steel",
+		"lithiccoins:top_die/danger/black_steel",
+		"lithiccoins:top_die/eagle/black_steel",
+		"lithiccoins:top_die/explorer/black_steel",
+		"lithiccoins:top_die/friend/black_steel",
+		"lithiccoins:top_die/heart/black_steel",
+		"lithiccoins:top_die/heartbreak/black_steel",
+		"lithiccoins:top_die/howl/black_steel",
+		"lithiccoins:top_die/miner/black_steel",
+		"lithiccoins:top_die/mourner/black_steel",
+		"lithiccoins:top_die/plenty/black_steel",
+		"lithiccoins:top_die/prize/black_steel",
+		"lithiccoins:top_die/punched/black_steel",
+		"lithiccoins:top_die/sheaf/black_steel",
+		"lithiccoins:top_die/shelter/black_steel",
+		"lithiccoins:top_die/skull/black_steel",
+		"lithiccoins:top_die/symbol/black_steel",
+		"lithiccoins:top_die/trifoil/black_steel",
+		"lithiccoins:top_die/face/black_steel",
+	    "lithiccoins:top_die/bee/black_steel"
+  ]
+}

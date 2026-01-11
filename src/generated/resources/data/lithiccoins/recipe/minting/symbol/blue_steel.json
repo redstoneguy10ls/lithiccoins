@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/blue_steel"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/symbol/blue_steel"
+  },
+  "stamp_type": "symbol",
+  "tier": 6
+}

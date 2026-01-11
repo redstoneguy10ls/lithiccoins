@@ -1,0 +1,31 @@
+{
+  "replace": false,
+  "values": [
+		"lithiccoins:top_die/angler/red_steel",
+		"lithiccoins:top_die/archer/red_steel",
+		"lithiccoins:top_die/arms_up/red_steel",
+		"lithiccoins:top_die/blade/red_steel",
+		"lithiccoins:top_die/brewer/red_steel",
+		"lithiccoins:top_die/burn/red_steel",
+		"lithiccoins:top_die/bust/red_steel",
+		"lithiccoins:top_die/danger/red_steel",
+		"lithiccoins:top_die/eagle/red_steel",
+		"lithiccoins:top_die/explorer/red_steel",
+		"lithiccoins:top_die/friend/red_steel",
+		"lithiccoins:top_die/heart/red_steel",
+		"lithiccoins:top_die/heartbreak/red_steel",
+		"lithiccoins:top_die/howl/red_steel",
+		"lithiccoins:top_die/miner/red_steel",
+		"lithiccoins:top_die/mourner/red_steel",
+		"lithiccoins:top_die/plenty/red_steel",
+		"lithiccoins:top_die/prize/red_steel",
+		"lithiccoins:top_die/punched/red_steel",
+		"lithiccoins:top_die/sheaf/red_steel",
+		"lithiccoins:top_die/shelter/red_steel",
+		"lithiccoins:top_die/skull/red_steel",
+		"lithiccoins:top_die/symbol/red_steel",
+		"lithiccoins:top_die/trifoil/red_steel",
+		"lithiccoins:top_die/face/red_steel",
+	    "lithiccoins:top_die/bee/red_steel"
+  ]
+}

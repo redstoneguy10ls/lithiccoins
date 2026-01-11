@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/sterling_silver"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/shelter/sterling_silver"
+  },
+  "stamp_type": "shelter",
+  "tier": 1
+}

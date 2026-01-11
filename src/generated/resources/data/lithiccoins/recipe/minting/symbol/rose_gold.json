@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/rose_gold"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/symbol/rose_gold"
+  },
+  "stamp_type": "symbol",
+  "tier": 1
+}

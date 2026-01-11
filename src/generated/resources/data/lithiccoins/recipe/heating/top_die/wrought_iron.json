@@ -1,0 +1,12 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "tag": "lithiccoins:top_die/wrought_iron"
+  },
+  "result_fluid": {
+    "amount": 100,
+    "id": "tfc:metal/wrought_iron"
+  },
+  "temperature": 1535.0,
+  "use_durability": true
+}

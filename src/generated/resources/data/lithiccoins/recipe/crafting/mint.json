@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "lithiccoins:die_holder"
+    },
+    "R": {
+      "tag": "c:stones/smooth"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "U": {
+      "item": "lithiccoins:stamp_holder"
+    }
+  },
+  "pattern": [
+    " U ",
+    "SLS",
+    "RRR"
+  ],
+  "result": {
+    "count": 1,
+    "id": "lithiccoins:mint"
+  }
+}

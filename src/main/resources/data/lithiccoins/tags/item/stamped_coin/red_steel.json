@@ -1,0 +1,31 @@
+{
+   "replace": false,
+   "values": [
+       "lithiccoins:coin/angler/red_steel",
+       "lithiccoins:coin/archer/red_steel",
+       "lithiccoins:coin/arms_up/red_steel",
+       "lithiccoins:coin/bee/red_steel",
+       "lithiccoins:coin/blade/red_steel",
+       "lithiccoins:coin/brewer/red_steel",
+       "lithiccoins:coin/burn/red_steel",
+       "lithiccoins:coin/bust/red_steel",
+       "lithiccoins:coin/danger/red_steel",
+       "lithiccoins:coin/eagle/red_steel",
+       "lithiccoins:coin/explorer/red_steel",
+       "lithiccoins:coin/face/red_steel",
+       "lithiccoins:coin/friend/red_steel",
+       "lithiccoins:coin/heart/red_steel",
+       "lithiccoins:coin/heartbreak/red_steel",
+       "lithiccoins:coin/howl/red_steel",
+       "lithiccoins:coin/miner/red_steel",
+       "lithiccoins:coin/mourner/red_steel",
+       "lithiccoins:coin/plenty/red_steel",
+       "lithiccoins:coin/prize/red_steel",
+       "lithiccoins:coin/punched/red_steel",
+       "lithiccoins:coin/sheaf/red_steel",
+       "lithiccoins:coin/shelter/red_steel",
+       "lithiccoins:coin/skull/red_steel",
+       "lithiccoins:coin/symbol/red_steel",
+       "lithiccoins:coin/trifoil/red_steel"
+   ]
+}

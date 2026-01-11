@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "tfc_ie_addon"
+    }
+  ],
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/aluminum"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/symbol/aluminum"
+  },
+  "stamp_type": "symbol",
+  "tier": 1
+}

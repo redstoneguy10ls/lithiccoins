@@ -1,0 +1,31 @@
+{
+   "replace": false,
+   "values": [
+       "lithiccoins:coin/angler/nickel",
+       "lithiccoins:coin/archer/nickel",
+       "lithiccoins:coin/arms_up/nickel",
+       "lithiccoins:coin/bee/nickel",
+       "lithiccoins:coin/blade/nickel",
+       "lithiccoins:coin/brewer/nickel",
+       "lithiccoins:coin/burn/nickel",
+       "lithiccoins:coin/bust/nickel",
+       "lithiccoins:coin/danger/nickel",
+       "lithiccoins:coin/eagle/nickel",
+       "lithiccoins:coin/explorer/nickel",
+       "lithiccoins:coin/face/nickel",
+       "lithiccoins:coin/friend/nickel",
+       "lithiccoins:coin/heart/nickel",
+       "lithiccoins:coin/heartbreak/nickel",
+       "lithiccoins:coin/howl/nickel",
+       "lithiccoins:coin/miner/nickel",
+       "lithiccoins:coin/mourner/nickel",
+       "lithiccoins:coin/plenty/nickel",
+       "lithiccoins:coin/prize/nickel",
+       "lithiccoins:coin/punched/nickel",
+       "lithiccoins:coin/sheaf/nickel",
+       "lithiccoins:coin/shelter/nickel",
+       "lithiccoins:coin/skull/nickel",
+       "lithiccoins:coin/symbol/nickel",
+       "lithiccoins:coin/trifoil/nickel"
+   ]
+}

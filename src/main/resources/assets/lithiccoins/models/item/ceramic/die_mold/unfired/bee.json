@@ -2,6 +2,6 @@
   "__comment__": "This file was automatically created by JotredDev",
   "parent": "item/generated",
   "textures": {
-    "layer0": "lithiccoins:item/ceramic/die_mold/die_mold"
+    "layer0": "lithiccoins:item/ceramic/die_mold/unfired_die_mold"
   }
 }

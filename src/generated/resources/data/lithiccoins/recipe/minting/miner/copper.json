@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/copper"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/miner/copper"
+  },
+  "stamp_type": "miner",
+  "tier": 1
+}

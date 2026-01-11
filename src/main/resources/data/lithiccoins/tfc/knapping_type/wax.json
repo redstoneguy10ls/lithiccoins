@@ -1,0 +1,14 @@
+{
+  "click_sound": "minecraft:block.honey_block.slide",
+  "consume_after_complete": true,
+  "has_off_texture": true,
+  "icon": {
+    "count": 1,
+    "id": "firmalife:beeswax"
+  },
+  "input": {
+    "count": 4,
+    "tag": "lithiccoins:wax_knapping"
+  },
+  "spawns_particles": false
+}

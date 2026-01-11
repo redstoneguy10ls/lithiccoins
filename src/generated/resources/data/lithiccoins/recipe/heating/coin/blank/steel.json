@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "lithiccoins:blank_coin/steel"
+  },
+  "result_fluid": {
+    "amount": 25,
+    "id": "tfc:metal/steel"
+  },
+  "temperature": 1540.0
+}

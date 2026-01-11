@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/black_steel"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/danger/black_steel"
+  },
+  "stamp_type": "danger",
+  "tier": 5
+}

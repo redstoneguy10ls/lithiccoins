@@ -1,0 +1,23 @@
+{
+  "loader": "tfc:mold",
+  "textures": {
+    "0": "tfc:block/mold",
+    "particle": "tfc:block/mold"
+  },
+  "pattern": [
+    "XXXXXXXXXXXXXX",
+    "XX  XXXXXX  XX",
+    "X    XXXX    X",
+    "X    XXXX    X",
+    "XX  XXXXXX  XX",
+    "XXXXXXXXXXXXXX",
+    "XXXXXXXXXXXXXX",
+    "XXXXXXXXXXXXXX",
+    "XXXXXXXXXXXXXX",
+    "XX  XXXXXX  XX",
+    "X    XXXX    X",
+    "X    XXXX    X",
+    "XX  XXXXXX  XX",
+    "XXXXXXXXXXXXXX"
+  ]
+}

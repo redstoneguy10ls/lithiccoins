@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:clay_ball"
+    },
+    "W": {
+      "item": "lithiccoins:wax/sheaf"
+    }
+  },
+  "pattern": [
+    "CCC",
+    "CWC",
+    "CCC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "lithiccoins:ceramic/die_mold/unfired/sheaf"
+  }
+}

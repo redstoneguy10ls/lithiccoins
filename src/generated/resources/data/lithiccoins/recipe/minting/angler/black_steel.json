@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/black_steel"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/angler/black_steel"
+  },
+  "stamp_type": "angler",
+  "tier": 5
+}

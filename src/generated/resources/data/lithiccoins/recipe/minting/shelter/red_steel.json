@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/red_steel"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/shelter/red_steel"
+  },
+  "stamp_type": "shelter",
+  "tier": 6
+}

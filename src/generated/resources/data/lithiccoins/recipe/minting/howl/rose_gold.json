@@ -1,0 +1,12 @@
+{
+  "type": "lithiccoins:minting",
+  "coin": {
+    "item": "lithiccoins:blank_coin/rose_gold"
+  },
+  "output": {
+    "count": 1,
+    "id": "lithiccoins:coin/howl/rose_gold"
+  },
+  "stamp_type": "howl",
+  "tier": 1
+}

@@ -1,0 +1,14 @@
+{
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:sheets/brass"
+  },
+  "result": {
+    "count": 1,
+    "id": "lithiccoins:die_holder"
+  },
+  "rules": [
+    "punch_any",
+    "punch_last"
+  ]
+}

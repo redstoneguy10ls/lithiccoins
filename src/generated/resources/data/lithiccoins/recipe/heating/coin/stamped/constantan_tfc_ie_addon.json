@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "tfc_ie_addon"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "tag": "lithiccoins:stamped_coin/constantan"
+  },
+  "result_fluid": {
+    "amount": 20,
+    "id": "tfc_ie_addon:metal/electrum"
+  },
+  "temperature": 1250.0
+}

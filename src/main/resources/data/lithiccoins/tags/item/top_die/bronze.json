@@ -1,0 +1,31 @@
+{
+  "replace": false,
+  "values": [
+		"lithiccoins:top_die/angler/bronze",
+		"lithiccoins:top_die/archer/bronze",
+		"lithiccoins:top_die/arms_up/bronze",
+		"lithiccoins:top_die/blade/bronze",
+		"lithiccoins:top_die/brewer/bronze",
+		"lithiccoins:top_die/burn/bronze",
+		"lithiccoins:top_die/bust/bronze",
+		"lithiccoins:top_die/danger/bronze",
+		"lithiccoins:top_die/eagle/bronze",
+		"lithiccoins:top_die/explorer/bronze",
+		"lithiccoins:top_die/friend/bronze",
+		"lithiccoins:top_die/heart/bronze",
+		"lithiccoins:top_die/heartbreak/bronze",
+		"lithiccoins:top_die/howl/bronze",
+		"lithiccoins:top_die/miner/bronze",
+		"lithiccoins:top_die/mourner/bronze",
+		"lithiccoins:top_die/plenty/bronze",
+		"lithiccoins:top_die/prize/bronze",
+		"lithiccoins:top_die/punched/bronze",
+		"lithiccoins:top_die/sheaf/bronze",
+		"lithiccoins:top_die/shelter/bronze",
+		"lithiccoins:top_die/skull/bronze",
+		"lithiccoins:top_die/symbol/bronze",
+		"lithiccoins:top_die/trifoil/bronze",
+		"lithiccoins:top_die/face/bronze",
+	    "lithiccoins:top_die/bee/bronze"
+  ]
+}

@@ -1,14 +1,11 @@
 package com.redstoneguy10ls.lithiccoins.compat.jei.category;
 
 import com.redstoneguy10ls.lithiccoins.common.items.LCItems;
-import com.redstoneguy10ls.lithiccoins.common.items.TopDies;
-import com.redstoneguy10ls.lithiccoins.common.items.stampTypes;
+import com.redstoneguy10ls.lithiccoins.common.items.StampType;
 import com.redstoneguy10ls.lithiccoins.common.recipes.MintingRecipe;
 import com.redstoneguy10ls.lithiccoins.util.LCTags;
-import com.redstoneguy10ls.lithiccoins.util.tooltips;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
-import mezz.jei.api.gui.builder.IRecipeSlotBuilder;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
@@ -16,47 +13,40 @@ import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import net.dries007.tfc.util.Metal;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class MintingRecipeCategory extends BaseRecipeCategory<MintingRecipe> {
 
     public MintingRecipeCategory(RecipeType<MintingRecipe> type, IGuiHelper helper)
     {
-        super(type,helper,helper.createBlankDrawable(118,26), new ItemStack(LCItems.BOTTOM_DIE.get(Metal.Default.RED_STEEL).get()));
+        super(type, helper, 118, 26, new ItemStack(LCItems.BOTTOM_DIE.get(Metal.RED_STEEL).get()));
     }
+
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, MintingRecipe recipe, IFocusGroup focuses)
     {
-        //topdie(recipe);
-
-        final List<ItemStack> topdies = new ArrayList<>(topdie(recipe));
-
+        final List<ItemStack> topDies = new ArrayList<>(topDie(recipe));
 
         builder.addSlot(RecipeIngredientRole.INPUT, 6, 5)
-                .addIngredients(VanillaTypes.ITEM_STACK, topdies)
-                .setBackground(slot, -1, -1);
+            .addIngredients(VanillaTypes.ITEM_STACK, topDies)
+            .setBackground(slot, -1, -1);
 
         builder.addSlot(RecipeIngredientRole.INPUT, 26, 5)
-                .addIngredients(recipe.getCoin())
-                .setBackground(slot, -1, -1);
+            .addIngredients(recipe.getCoin())
+            .setBackground(slot, -1, -1);
 
         builder.addSlot(RecipeIngredientRole.INPUT, 46, 5)
-                .addIngredients(bottom_teir(recipe))
-                .setBackground(slot, -1, -1);
+            .addIngredients(bottomTier(recipe))
+            .setBackground(slot, -1, -1);
 
         builder.addSlot(RecipeIngredientRole.OUTPUT, 96, 5)
-                .addItemStack(recipe.getResultItem(registryAccess()))
-                .setBackground(slot, -1, -1);
-
-
-
+            .addItemStack(recipe.getResultItem(registryAccess()))
+            .setBackground(slot, -1, -1);
     }
 
     @Override
@@ -67,50 +57,33 @@ public class MintingRecipeCategory extends BaseRecipeCategory<MintingRecipe> {
     }
 
     //Ingredient
-    public List<ItemStack> topdie(MintingRecipe recipe)
+    public List<ItemStack> topDie(MintingRecipe recipe)
     {
-        final List<ItemStack> topdies = new ArrayList<>();
-        //System.out.println(recipe.getTopDie()[0].name());
-        int int1 = recipe.getTopDie()[0].getId();
+        final List<ItemStack> topDies = new ArrayList<>();
+        StampType type = recipe.getStampType();
 
-        for(TopDies dies : TopDies.VALUES)
-        {
+        topTier(recipe).forEach(tier -> topDies.add(new ItemStack(LCItems.TOP_DIE.get(type).get(tier).get())));
 
-            if(int1 == dies.getId())
-            {
-                top_tier(recipe).forEach(teirs -> topdies.add( new ItemStack(LCItems.TOP_DIE.get(dies).get(teirs).get()) ));
-            }
-
-        }
-        return topdies;
+        return topDies;
     }
 
-    public Ingredient bottom_teir(MintingRecipe recipe)
+    public Ingredient bottomTier(MintingRecipe recipe)
     {
-        switch(recipe.getTier())
-        {
-            case 2: return Ingredient.of(LCTags.Items.T2_BOTTOM_DIES);
-            case 3: return Ingredient.of(LCTags.Items.T3_BOTTOM_DIES);
-            case 4: return Ingredient.of(LCTags.Items.T4_BOTTOM_DIES);
-            case 5: return Ingredient.of(LCTags.Items.T5_BOTTOM_DIES);
-            case 6: return Ingredient.of(LCTags.Items.T6_BOTTOM_DIES);
-            default: return Ingredient.of(LCTags.Items.T1_BOTTOM_DIES);
-        }
-
+        return Ingredient.of(LCTags.Items.BOTTOM_DIE_TIER_MAP.getOrDefault(recipe.getTier(), LCTags.Items.BOTTOM_DIE_TIER_MAP.get(1)));
     }
 
-    public List<Metal.Default> top_tier(@NotNull MintingRecipe recipe)
+    public List<Metal> topTier(@NotNull MintingRecipe recipe)
     {
-        final List<Metal.Default> list = new ArrayList<>();
+        final List<Metal> list = new ArrayList<>();
         final int recipeTier = recipe.getTier();
         for(int i = 7; i >= recipeTier; i--)
         {
-            if(i == 6){list.add(Metal.Default.BLUE_STEEL); list.add(Metal.Default.RED_STEEL);}
-            if(i == 5){list.add(Metal.Default.BLACK_STEEL);}
-            if(i == 4){list.add(Metal.Default.STEEL);}
-            if(i == 3){list.add(Metal.Default.WROUGHT_IRON);}
-            if(i == 2){list.add(Metal.Default.BLACK_BRONZE); list.add(Metal.Default.BRONZE); list.add(Metal.Default.BISMUTH_BRONZE);}
-            if(i == 1){list.add(Metal.Default.COPPER);}
+            if(i == 6){list.add(Metal.BLUE_STEEL); list.add(Metal.RED_STEEL);}
+            if(i == 5){list.add(Metal.BLACK_STEEL);}
+            if(i == 4){list.add(Metal.STEEL);}
+            if(i == 3){list.add(Metal.WROUGHT_IRON);}
+            if(i == 2){list.add(Metal.BLACK_BRONZE); list.add(Metal.BRONZE); list.add(Metal.BISMUTH_BRONZE);}
+            if(i == 1){list.add(Metal.COPPER);}
         }
         return list;
     }

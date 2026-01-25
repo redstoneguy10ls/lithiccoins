@@ -70,7 +70,7 @@ public class LCRecipeProvider extends RecipeProvider implements IConditionBuilde
                         else
                         {
                             MintingRecipeBuilder.mint(type, Ingredient.of(LCItems.BLANK_COINS.get(metal.material())), metalType.metalTier(), LCItems.STAMPED_COINS.get(type).get(metal.material()))
-                                .save(recipeOutput.withConditions(metal.loadingCondition(metalType.modID())), MOD_ID + ":" + type.name().toLowerCase() + "/" + metal.name().toLowerCase() + "_" + metalType.modID());
+                                .save(recipeOutput, MOD_ID + ":" + type.name().toLowerCase() + "/" + metal.name().toLowerCase() + "_" + metalType.modID());
                         }
                     }
                 }

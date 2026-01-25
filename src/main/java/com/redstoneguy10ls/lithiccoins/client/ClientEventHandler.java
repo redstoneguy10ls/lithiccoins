@@ -7,7 +7,6 @@ import com.redstoneguy10ls.lithiccoins.common.blockentities.LCBlockEntities;
 import com.redstoneguy10ls.lithiccoins.common.component.LCComponents;
 import com.redstoneguy10ls.lithiccoins.common.component.PurseComponent;
 import com.redstoneguy10ls.lithiccoins.common.container.LCContainerTypes;
-import com.redstoneguy10ls.lithiccoins.common.items.CoinPurseItem;
 import com.redstoneguy10ls.lithiccoins.common.items.LCItems;
 import com.redstoneguy10ls.lithiccoins.util.LCHelpers;
 import com.redstoneguy10ls.lithiccoins.util.Tooltips;
@@ -60,7 +59,6 @@ public class ClientEventHandler
     public static void onClientSetup(FMLClientSetupEvent event)
     {
         event.enqueueWork(() ->
-        {
             ItemProperties.register(
                 LCItems.COIN_PURSE.asItem(),
                 LCHelpers.identifier("filled"),
@@ -69,8 +67,8 @@ public class ClientEventHandler
                     final PurseComponent purse = stack.getOrDefault(LCComponents.PURSE, PurseComponent.EMPTY);
                     return purse.isEmpty() ? 0f : 1f;
                 }
-            );
-        });
+            )
+        );
     }
 }
 

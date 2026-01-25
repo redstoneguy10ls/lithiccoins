@@ -38,10 +38,3 @@ issueTrackerURL = "https://github.com/redstoneguy10ls/lithiccoins/issues"
     versionRange = "[3.0.3,)"
     ordering = "AFTER"
     side = "BOTH"
-
-[[dependencies.${mod_id}]]
-    modId = "tfc_ie_addon"
-    mandatory = false
-    versionRange = "[2.1.0,)"
-    ordering = "AFTER"
-    side = "BOTH"

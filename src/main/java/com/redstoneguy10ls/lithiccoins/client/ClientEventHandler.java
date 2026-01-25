@@ -4,14 +4,20 @@ package com.redstoneguy10ls.lithiccoins.client;
 import com.redstoneguy10ls.lithiccoins.client.render.MintBlockEntityRenderer;
 import com.redstoneguy10ls.lithiccoins.client.screen.LargeKnappingScreen;
 import com.redstoneguy10ls.lithiccoins.common.blockentities.LCBlockEntities;
+import com.redstoneguy10ls.lithiccoins.common.component.LCComponents;
+import com.redstoneguy10ls.lithiccoins.common.component.PurseComponent;
 import com.redstoneguy10ls.lithiccoins.common.container.LCContainerTypes;
+import com.redstoneguy10ls.lithiccoins.common.items.CoinPurseItem;
 import com.redstoneguy10ls.lithiccoins.common.items.LCItems;
+import com.redstoneguy10ls.lithiccoins.util.LCHelpers;
 import com.redstoneguy10ls.lithiccoins.util.Tooltips;
 
 import net.dries007.tfc.client.model.ContainedFluidModel;
 
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterClientTooltipComponentFactoriesEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
@@ -26,6 +32,7 @@ public class ClientEventHandler
         bus.addListener(ClientEventHandler::registerColorHandlerItems);
         bus.addListener(ClientEventHandler::registerEntityRenderers);
         bus.addListener(ClientEventHandler::registerMenuScreens);
+        bus.addListener(ClientEventHandler::onClientSetup);
     }
 
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event)
@@ -50,5 +57,20 @@ public class ClientEventHandler
         event.register(LCContainerTypes.WAX_KNAPPING.get(), LargeKnappingScreen::new);
     }
 
+    public static void onClientSetup(FMLClientSetupEvent event)
+    {
+        event.enqueueWork(() ->
+        {
+            ItemProperties.register(
+                LCItems.COIN_PURSE.asItem(),
+                LCHelpers.identifier("filled"),
+                (stack, level, player, seed) ->
+                {
+                    final PurseComponent purse = stack.getOrDefault(LCComponents.PURSE, PurseComponent.EMPTY);
+                    return purse.isEmpty() ? 0f : 1f;
+                }
+            );
+        });
+    }
 }
 

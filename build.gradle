@@ -127,11 +127,11 @@ dependencies {
     //runtimeOnly "curse.maven:mouse-tweaks-60089:5637846" // For some reason this interferes with datagen, so comment it out if you are trying to regenerate data
 
     implementation "curse.maven:patchouli-306770:6842247"
-    implementation "curse.maven:terrafirmacraft-302973:7343990"
+    implementation "curse.maven:terrafirmacraft-302973:7476548"
 
     implementation "curse.maven:immersive-engineering-231951:6733669"
-    implementation "curse.maven:tfc-ie-crossover-830886:7267802"
-    implementation "curse.maven:firmalife-453394:7442721"
+    implementation "curse.maven:tfc-ie-crossover-830886:7472428"
+    implementation "curse.maven:firmalife-453394:7498010"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
@@ -147,6 +147,7 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
             mod_license            : mod_license,
             mod_version            : mod_version,
             mod_authors            : mod_authors,
+            mod_credits            : mod_credits,
             mod_description        : mod_description
     ]
     inputs.properties replaceProperties

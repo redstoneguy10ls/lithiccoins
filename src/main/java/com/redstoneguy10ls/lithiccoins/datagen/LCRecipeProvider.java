@@ -179,18 +179,18 @@ public class LCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 {
                     if (metalType.modID().equals("tfc"))
                     {
-                        CastingRecipeBuilder.cast(LCItems.COIN_MOLD, metalType.fluid().get(), 100, LCItems.BLANK_COINS.get(metal.material()), 4, 1f)
+                        CastingRecipeBuilder.cast(LCItems.COIN_MOLD, metalType.fluid().get(), 100, LCItems.BLANK_COINS.get(metal.material()), 4, 0.1f)
                             .save(recipeOutput, MOD_ID + ":blank_coin/mold/" + metal.name().toLowerCase());
 
-                        CastingRecipeBuilder.cast(LCItems.FIRE_COIN_MOLD, metalType.fluid().get(), 100, LCItems.BLANK_COINS.get(metal.material()), 4, 1f)
+                        CastingRecipeBuilder.cast(LCItems.FIRE_COIN_MOLD, metalType.fluid().get(), 100, LCItems.BLANK_COINS.get(metal.material()), 4, 0.01f)
                             .save(recipeOutput, MOD_ID + ":blank_coin/fire_mold/" + metal.name().toLowerCase());
                     }
                     else
                     {
-                        CastingRecipeBuilder.cast(LCItems.COIN_MOLD, metalType.fluid().get(), 100, LCItems.BLANK_COINS.get(metal.material()), 4, 1f)
+                        CastingRecipeBuilder.cast(LCItems.COIN_MOLD, metalType.fluid().get(), 100, LCItems.BLANK_COINS.get(metal.material()), 4, 0.1f)
                             .save(recipeOutput.withConditions(modLoaded(metalType.modID())), MOD_ID + ":blank_coin/mold/" + metal.name().toLowerCase() + "_" + metalType.modID());
 
-                        CastingRecipeBuilder.cast(LCItems.FIRE_COIN_MOLD, metalType.fluid().get(), 100, LCItems.BLANK_COINS.get(metal.material()), 4, 1f)
+                        CastingRecipeBuilder.cast(LCItems.FIRE_COIN_MOLD, metalType.fluid().get(), 100, LCItems.BLANK_COINS.get(metal.material()), 4, 0.01f)
                             .save(recipeOutput.withConditions(modLoaded(metalType.modID())), MOD_ID + ":blank_coin/fire_mold/" + metal.name().toLowerCase() + "_" + metalType.modID());
                     }
                 }

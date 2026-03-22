@@ -1,5 +1,6 @@
 {
   "type": "tfc:casting",
+  "break_chance": 0.01,
   "fluid": {
     "amount": 100,
     "fluid": "tfc:metal/bismuth_bronze"

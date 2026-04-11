@@ -1,0 +1,61 @@
+{
+  "name": "Чеканка монет",
+  "category": "tfc:lithiccoins",
+  "icon": "lithiccoins:mint",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Монетный станок$() — это основной инструмент для настройки ваших $(thing)монет$(). Он позволяет наносить различные узоры на нечеканенные $(thing)монеты$(), используя $(thing)нижний штамп$() и $(thing)верхний штамп$() из металла того же или более высокого уровня, чем $(thing)монета$(), которую вы хотите отчеканить."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lithiccoins:crafting/mint"
+    },
+    {
+      "type": "tfc:anvil_recipe",
+      "recipe": "lithiccoins:anvil/die_holder",
+      "text": "$(thing)Держатель матриц$() — это нижняя латунная часть $(thing)монетного станка$(), удерживающая $(thing)нижний штамп$()."
+    },
+    {
+      "type": "tfc:anvil_recipe",
+      "recipe": "lithiccoins:anvil/stamp_holder",
+      "text": "$(thing)Держатель штампов$() — это верхняя латунная часть $(thing)монетного станка$(), удерживающая $(thing)верхний штамп$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Чтобы использовать $(thing)монетный станок$(), сначала нужно вставить $(thing)нижний штамп$() и $(thing)верхний штамп$(). Для этого взаимодействуйте с соответствующим $(thing)штампом$() в руке с латунными частями, предназначенными для удержания соответствующего типа штампа. После вставки $(thing)нижнего штампа$() вы можете вставить стопку $(thing)монет$(), которые хотите отчеканить, используя её в любом месте $(thing)монетного станка$()."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "lithiccoins:textures/gui/book/bottom_die_out.png"
+      ],
+      "text": "Где находится $(thing)нижний штамп$()",
+      "border": true
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "lithiccoins:textures/gui/book/bottom_die_in.png"
+      ],
+      "text": "$(thing)Нижний штамп$() в станке",
+      "border": true
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Последний шаг — нанесение изображения на $(thing)монету$(). Это делается путём использования $(thing)молота$() на $(thing)монетном станке$(). $(br2) Отчеканенная $(thing)монета$() появится на краю $(thing)монетного станка$(), откуда её можно забрать, взаимодействуя с основанием."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Если вы хотите изменить что-либо из вставленного в $(thing)монетный станок$(), просто взаимодействуйте с соответствующей частью, присев. Это может быть полезно, если вы хотите сделать $(thing)монеты$() с различными узорами."
+    }
+  ],
+  "read_by_default": true,
+  "extra_recipe_mappings": {
+    "tag:lithiccoins:blank_coins": 0,
+    "tag:lithiccoins:stamped_coins": 0,
+    "lithiccoins:die_holder":  0,
+    "lithiccoins:stamp_holder": 0
+  },
+  "sortnum": 15
+}

@@ -1,0 +1,175 @@
+{
+  "__comment__": "This file was created by Jotred",
+  "name": "Изготовление штампов",
+  "category": "tfc:lithiccoins",
+  "icon": "lithiccoins:wax/bee",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Самым важным предметом для чеканки $(thing)монет$() является $(thing)верхний штамп$(), так как именно он определяет, что будет изображено на $(thing)монете$(). $(br2) Первый шаг к созданию $(thing)верхнего штампа$() — вырезать желаемый узор на $(thing)пчелином воске$(). Для любого из доступных типов штампа потребуется 4 кусочка $(thing)пчелиного воска$()."
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/bee",
+      "text": "В отличие от обычной обработки TFC, обработка $(thing)пчелиного воска$() происходит на сетке 8x8, чтобы обеспечить более легко различимые рецепты. Все остальные рецепты будут в конце этой главы."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lithiccoins:crafting/die_mold/unfired/bee",
+      "text": "После создания $(thing)воскового штампа$() вы можете превратить его в $(thing)необожжённую форму штампа$()."
+    },
+    {
+      "type": "tfc:heat_recipe",
+      "recipe": "lithiccoins:heating/ceramic/die_mold/bee",
+      "text": "Нагрев $(thing)восковой штамп$(), вы получите $(thing)форму штампа$() с выбранным узором. Это работает как любая другая форма, требуя заполнения одним слитком жидкого металла."
+    },
+    {
+      "type": "tfc:anvil_recipe",
+      "recipe": "lithiccoins:anvil/bottom_die/copper",
+      "text": "Значительно проще изготовить $(thing)нижний штамп$(). Можно использовать любой металл инструментального качества, как и с $(thing)верхним штампом$(), но его можно сделать только на наковальне."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Далее приведены рецепты обработки воска для всех реализованных типов штампов."
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/angler",
+      "text": "$(italics)Рыбак$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/archer",
+      "text": "$(italics)Лучник$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/arms_up",
+      "text": "$(italics)Руки вверх$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/bee",
+      "text": "$(italics)Пчела$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/blade",
+      "text": "$(italics)Клинок$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/brewer",
+      "text": "$(italics)Пивовар$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/burn",
+      "text": "$(italics)Огонь$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/bust",
+      "text": "$(italics)Бюст$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/danger",
+      "text": "$(italics)Опасность$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/eagle",
+      "text": "$(italics)Орёл$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/explorer",
+      "text": "$(italics)Исследователь$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/face",
+      "text": "$(italics)Лицо$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/friend",
+      "text": "$(italics)Друг$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/heart",
+      "text": "$(italics)Сердце$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/heartbreak",
+      "text": "$(italics)Разбитое сердце$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/howl",
+      "text": "$(italics)Вой$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/miner",
+      "text": "$(italics)Шахтёр$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/mourner",
+      "text": "$(italics)Скорбящий$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/plenty",
+      "text": "$(italics)Изобилие$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/prize",
+      "text": "$(italics)Приз$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/punched",
+      "text": "$(italics)Пробитая$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/sheaf",
+      "text": "$(italics)Сноп$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/shelter",
+      "text": "$(italics)Убежище$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/skull",
+      "text": "$(italics)Череп$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/symbol",
+      "text": "$(italics)Символ$()"
+    },
+    {
+      "type": "tfc:large_knapping_recipe",
+      "recipe": "lithiccoins:large_knapping/wax_die/trifoil",
+      "text": "$(italics)Трилистник$()"
+    }
+  ],
+  "read_by_default": true,
+  "extra_recipe_mappings": {
+    "tag:lithiccoins:wax_dies": 0,
+    "tag:lithiccoins:unfired_die_molds": 2,
+    "tag:lithiccoins:die_molds": 3,
+    "tag:lithiccoins:top_dies": 0,
+    "tag:lithiccoins:bottom_dies": 4
+  },
+  "sortnum": 15
+}

@@ -1,11 +1,41 @@
 {
-  "block.minting_die.hit": {
-  "subtitle": "subtitles.block.lithiccoins.mint.hit",
-  "sounds": [
-  "lithiccoins:block/minting_die/hit1",
-  "lithiccoins:block/minting_die/hit2",
-  "lithiccoins:block/minting_die/hit3",
-  "lithiccoins:block/minting_die/hit4"
-  ]
+  "block.mint.hit": {
+    "subtitle": "subtitles.block.lithiccoins.mint.hit",
+    "sounds": [
+      "lithiccoins:block/mint/hit1",
+      "lithiccoins:block/mint/hit2",
+      "lithiccoins:block/mint/hit3",
+      "lithiccoins:block/mint/hit4"
+    ]
+  },
+  "item.coin_purse.add_few": {
+    "subtitle": "subtitles.item.lithiccoins.coin_purse.rattle",
+    "sounds": [
+      "lithiccoins:item/coin_purse/add_few1",
+      "lithiccoins:item/coin_purse/add_few2",
+      "lithiccoins:item/coin_purse/add_few3"
+    ]
+  },
+  "item.coin_purse.add_some": {
+    "subtitle": "subtitles.item.lithiccoins.coin_purse.rattle",
+    "sounds": [
+      "lithiccoins:item/coin_purse/add_some1",
+      "lithiccoins:item/coin_purse/add_some2"
+    ]
+  },
+  "item.coin_purse.add_many": {
+    "subtitle": "subtitles.item.lithiccoins.coin_purse.rattle",
+    "sounds": [
+      "lithiccoins:item/coin_purse/add_many1",
+      "lithiccoins:item/coin_purse/add_many2"
+    ]
+  },
+  "item.coin_purse.remove": {
+    "subtitle": "subtitles.item.lithiccoins.coin_purse.rattle",
+    "sounds": [
+      "lithiccoins:item/coin_purse/remove1",
+      "lithiccoins:item/coin_purse/remove2",
+      "lithiccoins:item/coin_purse/remove3"
+    ]
   }
 }

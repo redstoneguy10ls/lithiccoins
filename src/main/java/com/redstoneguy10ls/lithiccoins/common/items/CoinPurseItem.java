@@ -47,7 +47,7 @@ public class CoinPurseItem extends Item
                 PurseComponent.Mutable mutable = new PurseComponent.Mutable(purse);
                 if (itemstack.isEmpty())
                 {
-                    this.playRemoveOneSound(player);
+                    this.playRemoveSound(player);
 
                     ItemStack itemstack1 = mutable.removeOne();
                     if (itemstack1 != null)
@@ -60,7 +60,7 @@ public class CoinPurseItem extends Item
                 {
                     int i = mutable.tryTransfer(slot, player);
                     if (i > 0) {
-                        this.playInsertSound(player);
+                        this.playInsertSound(player, i);
                     }
                 }
 
@@ -96,7 +96,7 @@ public class CoinPurseItem extends Item
                     ItemStack itemstack = mutable.removeOne();
                     if (itemstack != null)
                     {
-                        this.playRemoveOneSound(player);
+                        this.playRemoveSound(player);
                         access.set(itemstack);
                     }
                 }
@@ -105,7 +105,7 @@ public class CoinPurseItem extends Item
                     int i = mutable.tryInsert(other);
                     if (i > 0)
                     {
-                        this.playInsertSound(player);
+                        this.playInsertSound(player, i);
                     }
                 }
 
@@ -216,20 +216,24 @@ public class CoinPurseItem extends Item
     /**
      * Sounds that play when coins are added / removed from the purse
      */
-    private void playRemoveOneSound(Entity entity)
+    private void playRemoveSound(Entity entity)
     {
-        entity.playSound(SoundEvents.BUNDLE_REMOVE_ONE, 0.8F, 0.8F + entity.level().getRandom().nextFloat() * 0.4F);
+        entity.playSound(LCSounds.COINPURSE_REMOVE.get(), 2.0F, 0.8F + entity.level().getRandom().nextFloat() * 0.4F);
     }
 
-    private void playInsertSound(Entity entity)
+    private void playInsertSound(Entity entity, int insert)
     {
-        if(getContentWeight(new ItemStack(this)) == 0)
+        if (insert < 9)
         {
-            entity.playSound(LCSounds.COINPURSE_EMPTY_ADD.get(), 0.8F, 0.8F + entity.level().getRandom().nextFloat() * 0.4F);
+            entity.playSound(LCSounds.COINPURSE_ADD_FEW.get(), 0.8F, 0.8F + entity.level().getRandom().nextFloat() * 0.4F);
+        }
+        else if (insert < 33)
+        {
+            entity.playSound(LCSounds.COINPURSE_ADD_SOME.get(), 0.8F, 0.8F + entity.level().getRandom().nextFloat() * 0.4F);
         }
         else
         {
-            entity.playSound(LCSounds.COINPURSE_ADD.get(), 0.8F, 0.8F + entity.level().getRandom().nextFloat() * 0.4F);
+            entity.playSound(LCSounds.COINPURSE_ADD_MANY.get(), 0.8F, 0.8F + entity.level().getRandom().nextFloat() * 0.4F);
         }
     }
 

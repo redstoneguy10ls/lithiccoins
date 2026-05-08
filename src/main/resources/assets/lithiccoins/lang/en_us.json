@@ -1080,5 +1080,8 @@
   "lithiccoins.tooltip.lithiccoins.mint.both_die_to_low" : "Both dies are not of a high enough tier to mint that",
   "lithiccoins.tooltip.lithiccoins.mint.dies_to_low" : "The dies need to be of a higher tier to mint that",
   "lithiccoins.tooltip.lithiccoins.coins.heads" : "HEADS",
-  "lithiccoins.tooltip.lithiccoins.coins.tails" : "TAILS"
+  "lithiccoins.tooltip.lithiccoins.coins.tails" : "TAILS",
+
+  "subtitles.block.lithiccoins.mint.hit" : "Mint clangs",
+  "subtitles.item.lithiccoins.coin_purse.rattle" : "Purse rattling"
 }

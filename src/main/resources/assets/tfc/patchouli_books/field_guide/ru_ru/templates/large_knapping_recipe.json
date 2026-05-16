@@ -1,0 +1,17 @@
+{
+  "components": [
+    {
+      "type": "patchouli:custom",
+      "x": 0,
+      "y": 0,
+      "class": "com.redstoneguy10ls.lithiccoins.compat.patchouli.LargeKnappingComponent",
+      "recipe": "#recipe"
+    },
+    {
+      "type": "patchouli:text",
+      "x": 0,
+      "y": 99,
+      "text": "#text"
+    }
+  ]
+}

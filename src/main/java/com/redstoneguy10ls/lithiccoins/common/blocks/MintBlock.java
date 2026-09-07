@@ -31,7 +31,6 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.BooleanOp;
@@ -125,13 +124,12 @@ public class MintBlock extends DeviceBlock
             // If the player is holding a hammer, we want to attempt to mint a coin
             if (Helpers.isItem(heldStack, TFCTags.Items.TOOLS_HAMMER))
             {
-                if (!mint.hasHit())
+                if (!state.getValue(LCStateProperties.HIT))
                 {
                     mint.setHitTimer(5);
-                    attemptMinting(level, mint, player,pos);
+                    attemptMinting(level, mint, player, pos);
                     return ItemInteractionResult.SUCCESS;
                 }
-
             }
             // Otherwise, we want to try with the inventory of the mint, if possible
             else
@@ -153,7 +151,6 @@ public class MintBlock extends DeviceBlock
                 return ItemInteractionResult.SUCCESS;
             }
         }
-
         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
